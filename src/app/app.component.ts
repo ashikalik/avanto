@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Directionality} from '@angular/cdk/bidi';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'events';
+  title = 'evento';
+  private isRtl: boolean;
+
+
+  constructor(dir: Directionality) {
+    this.isRtl = dir.value === 'rtl';
+    console.log(this.isRtl);
+  }
+
 }
