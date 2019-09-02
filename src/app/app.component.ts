@@ -9,11 +9,18 @@ import {Directionality} from '@angular/cdk/bidi';
 export class AppComponent {
   title = 'evento';
   private isRtl: boolean;
+  private direction: string;
 
 
   constructor(dir: Directionality) {
+    this.direction = 'ltr';
     this.isRtl = dir.value === 'rtl';
-    console.log(this.isRtl);
+  }
+
+  onDirectionChanged(newDirecion: string) {
+   
+    console.log(newDirecion);
+    this.direction = newDirecion;
   }
 
 }

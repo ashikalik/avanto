@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<div dir="{{direction}}">
+  <app-header (directionChanged)="onDirectionChanged($event)"></app-header>
+  <router-outlet></router-outlet>
+</div>

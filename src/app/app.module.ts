@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {BidiModule} from '@angular/cdk/bidi';
+
+import { GlobalModule} from './global/global.module';
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import {BidiModule} from '@angular/cdk/bidi';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BidiModule
+    GlobalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
