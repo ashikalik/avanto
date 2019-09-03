@@ -1,0 +1,18 @@
+@import '../shared/_color-palette';
+@import '../shared/_contrast-colors';
+@import './_font-sizes';
+
+@import '../../utils/_theme-utils';
+
+
+
+
+.evento-nav-bar {
+
+    background-color: theme-color('background', 'light');;
+    color:theme-color('foreground', 'dark');
+
+    .nav-link {
+        color:theme-color('foreground', 'dark');
+    }
+}

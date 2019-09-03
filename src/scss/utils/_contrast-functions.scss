@@ -1,0 +1,21 @@
+/* Primarily used for text contrast */
+
+@function contrast($background: "light", $type: "primary") {
+  $map: map-get($contrast-colors, $background);
+  @return map-get($map, $type);
+}
+
+@mixin contrast($background: "light", $type: "primary") {
+  color: contrast($background, $type);
+}
+
+// .selector {
+//     @include text-color();
+//     // or @include text-color('light', 'secondary'); for more faded content 
+//   }
+
+
+// .selector {
+//     @include contrast('dark');
+//    // or @include contrast('dark', 'secondary'); for more faded content
+//   }

@@ -1,0 +1,6 @@
+@function theme-color($key: "primary", $variant: "base") {
+  $map: map-get($theme-colors, $key);
+  @return map-get($map, $variant);
+}
+//background-color: theme-color(); // "primary base" color;
+//boder: 1px solid theme-color('foreground', 'light'); // "foreground light" color;
