@@ -1,0 +1,28 @@
+
+.navbar-brand {
+    margin-right:0;
+    margin-left:0;
+}
+.evento-navbar-nav {
+    text-align: right;
+    padding-right:0px;
+    padding-left:0px;
+}
+
+@media (min-width: 992px) {
+    .evento-navbar-collapse {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .evento-navbar-collapse div:nth-child(1) {
+      flex: 1;
+    }
+
+    .evento-navbar-nav {
+        text-align: right;
+        padding-right:50px;
+        padding-left:50px;
+    }
+
+  }
