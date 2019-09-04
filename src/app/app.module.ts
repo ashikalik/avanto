@@ -12,7 +12,7 @@ import { GlobalModule} from './global/global.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     GlobalModule
   ],

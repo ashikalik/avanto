@@ -9,7 +9,7 @@ import {Directionality} from '@angular/cdk/bidi';
 export class AppComponent {
   title = 'evento';
   private isRtl: boolean;
-  private direction: string;
+  public direction: string;
 
 
   constructor(dir: Directionality) {
