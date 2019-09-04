@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Directionality} from '@angular/cdk/bidi';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -12,15 +13,22 @@ export class AppComponent {
   public direction: string;
 
 
-  constructor(dir: Directionality) {
+  constructor(dir: Directionality, translate: TranslateService) {
     this.direction = 'ltr';
     this.isRtl = dir.value === 'rtl';
+
+    translate.setDefaultLang('en');
+    translate.use('en');
+    
   }
 
   onDirectionChanged(newDirecion: string) {
    
     console.log(newDirecion);
     this.direction = newDirecion;
+
+   
+
   }
 
 }
