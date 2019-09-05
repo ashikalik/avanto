@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import {Directionality} from '@angular/cdk/bidi';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -10,7 +11,9 @@ export class HeaderComponent implements OnInit {
 
   @Output() directionChanged = new EventEmitter<String>();
 
-  constructor(public direction: Directionality) { }
+  constructor(public direction: Directionality) { 
+
+  }
 
   ngOnInit() {
   }

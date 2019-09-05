@@ -13,6 +13,7 @@ import {MissingTranslationHandler, MissingTranslationHandlerParams} from '@ngx-t
 import { GlobalModule } from "./global/global.module";
 
 export function createTranslateLoader(http: HttpClient) {
+  console.log("a")
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 

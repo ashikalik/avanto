@@ -16,10 +16,8 @@ export class AppComponent {
   constructor(dir: Directionality, translate: TranslateService) {
     this.direction = 'ltr';
     this.isRtl = dir.value === 'rtl';
-
     translate.setDefaultLang('en');
     translate.use('en');
-    
   }
 
   onDirectionChanged(newDirecion: string) {
