@@ -1,8 +1,7 @@
 {
-  "HOME": "Home",
-  "Home": "الرئيسية",
-  "About US": "من نحن",
-  "Contact US": "تواصل معنا",
+  "HOME": "الرئيسية",
+  "ABOUT_US": "من نحن",
+  "CONTACT_US": "تواصل معنا",
   "Calendar": "التقويم",
   "Organize": "التنظيم",
   "SEARCH": "ابحث",
