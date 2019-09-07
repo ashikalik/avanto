@@ -1,7 +1,111 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            
+    <div class="row search-event-component">
+        <!-- SEARCH EVENT COLUMN-->
+        <div class="col-sm-12 col-md-6 search-event">
+
+            <!--SEARCH CHOOSE BOOKE AND ENJOY TEXT-->
+            <div class="row ">
+                <div class="col-sm-12 text-center">
+                    <span [translate]="'SEARCH'">Search</span><span>,&nbsp;</span>
+                    <span [translate]="'CHOOSE'">Choose</span><span>,&nbsp;</span>
+                    <span [translate]="'BOOK'">Book</span><span>,&nbsp;</span>
+                    <span [translate]="'AND_ENJOY'">and Enjoy</span>
+                </div>
+            </div>
+            <!--/SEARCH CHOOSE BOOKE AND ENJOY TEXT-->
+
+            <!--SEARCH FORM-->
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control evento-input"
+                               placeholder="Event Name"
+                               [(ngModel)]="searchService.name" />
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
+                    <div class="form-group position-relative">
+                        <select class="form-control evento-input evento_select"
+                                [(ngModel)]="searchService.region">
+                            <option value=""
+                                    translate>Choose City</option>
+                            <ng-container *ngIf="region">
+                                <option *ngFor="let region of region.data"
+                                        [value]="region.region_id">
+                                    {{ region.name }}
+                                </option>
+                            </ng-container>
+                        </select>
+                        <i class="fas fa-chevron-down embed"></i>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
+                    <div class="form-group position-relative">
+                        <select class="form-control evento-input evento_select"
+                                [(ngModel)]="searchService.type">
+                            <option value=""
+                                    translate>Choose Event Type</option>
+                            <ng-container *ngIf="eventTypes">
+                                <option *ngFor="let type of eventTypes.data"
+                                        [value]="type.id">
+                                    {{ type.name }}
+                                </option>
+                            </ng-container>
+                        </select>
+                        <i class="fas fa-chevron-down embed"></i>
+                    </div>
+                </div>
+            </div>
+            <!--/SEARCH FORM-->
+
+            <!--FIND, SEE ALL BUTTONS-->
+            <div class="row">
+                <div class="col-sm-12 col-md-6 text-center mb-4">
+                    <button type="button"
+                            class="btn btn-dark evento-button"
+                            (click)="onSearch()"
+                            translate>
+                        Find
+                    </button>
+                </div>
+                <div class="col-sm-12 col-md-6 text-center mb-4">
+                    <button type="button"
+                            class="btn btn-danger evento-button"
+                            (click)="onSearch()"
+                            translate>
+                        See All Events
+                    </button>
+                </div>
+            </div>
+            <!--/FIND, SEE ALL BUTTONS-->
+
+        </div>
+        <!-- /SEARCH EVENT COLUMN-->
+
+        <!-- PLAN EVENT COLUMN-->
+        <div class="col-sm-12 col-md-6 plan-event">
+
+            <!--OR PLAN YOUR EVENTS-->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="text-center"
+                         [translate]="'SEARCH'">OR PLAN YOUR EVENTS</div>
+                </div>
+                <div class="col-sm-12">
+                    <img class="img-fluid" src="assets/img/plan-your-event.png" alt="" />
+                </div>
+                    <div class="col-sm-12">
+                        <div class="text-center"
+                             [translate]="'SEARCH'">OR PLAN YOUR EVENTS</div>
+                    </div>
+                </div>
+                <!--/OR PLAN YOUR EVENTS-->
+
+            </div>
+            <!-- /PLAN EVENT COLUMN-->
+
         </div>
     </div>
-</div>
