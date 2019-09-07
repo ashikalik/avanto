@@ -1,6 +1,28 @@
 .search-event-component {
-    padding-top: 40px;
-    .search-event {
-        padding-top: 0px;
+    padding-top: 70px;
+    background-image: url(/assets/img/search-events-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.title-text{
+    .search {
+        color:theme-color('primary', 'base') !important;
+    }
+}
+.search-event {
+    .title-text{
+        margin-bottom: 70px;
+    }
+    .search-form {
+        margin-bottom: 40px;
+    }
+    .button-row {
+        margin: 0 auto;
+    }
+}
+
+.plan-event{
+    .img-plan-event {
+        max-width:250px;
     }
 }
