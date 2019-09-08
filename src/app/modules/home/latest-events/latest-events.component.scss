@@ -1,25 +1,58 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.event-tags {
+    
+
+    .tag {
+        border-radius: calc(1.0rem + 1px) calc(1.0rem + 1px) 0 0;
+        padding: 2px 20px;
+        @include text-setting('xs');
+        font-weight:lighter;
+        margin:0 -2px
+    }
+
+    .tag-0 {
+        background-color: theme-color('primary', 'dark');
+        color: theme-color('background', 'light');
+    }
+
+    .tag-1 {
+        background-color: theme-color('accent-one', 'dark');
+        color: theme-color('background', 'light');
+    }
+
+    .tag-2 {
+        background-color: theme-color('accent-two', 'dark');
+        color: theme-color('background', 'light');
+    }
+}
+
 .event-item {
-    height:120px;
+    height: 120px;
     border: 1px solid #f2f2f2;
     border-radius: calc(1.125rem + 1px);
 
+
+
     .event-thumb {
-        width:120px;
+        width: 120px;
         height: 100%;
-        border-radius: calc(1.125rem + 1px) 0 0 calc(1.125rem + 1px); 
+        border-radius: calc(1.125rem + 1px) 0 0 calc(1.125rem + 1px);
     }
 
     .event-title {
-        color:#444444;
+        color: #444444;
     }
 
     .event-description {
         height: 55px;
         overflow: hidden;
-        text-emphasis:none;
-        font-size:0.8rem;
+        text-emphasis: none;
+        font-size: text-scale('xs');
+        //line-height:line-height('xs');
     }
+
     .event-location {
-        font-size:0.8rem;
+        font-size: 0.8rem;
     }
 }
