@@ -2,7 +2,16 @@
 .navbar-brand {
     margin-right:0;
     margin-left:0;
+    background-image: url(/assets/img/evento-logo-en.png);
+    background-size: 90px 44px;
+    background-repeat: no-repeat;
+    width: 90px;
+    height: 44px;
 }
+.navbar-brand:lang(ar){
+    background-image: url(/assets/img/evento-logo-ar.png);
+}
+
 .evento-navbar-nav {
     text-align: right;
     padding-right:0px;
