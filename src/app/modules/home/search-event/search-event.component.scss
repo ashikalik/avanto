@@ -1,28 +1,45 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
 .search-event-component {
     padding-top: 70px;
     background-image: url(/assets/img/search-events-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.title-text{
-    .search {
-        color:theme-color('primary', 'base') !important;
-    }
-}
+
 .search-event {
-    .title-text{
+    .search-event-title {
+        @include text-setting('xl');
         margin-bottom: 70px;
+
+        .search {
+            color: theme-color('accent-two', 'base');
+        }
+
+        .choose {
+            color: theme-color('accent-one', 'base');
+        }
+
+        .book {
+            color: theme-color('primary', 'base');
+        }
     }
+
     .search-form {
         margin-bottom: 40px;
     }
+
     .button-row {
         margin: 0 auto;
     }
 }
 
-.plan-event{
+.plan-event {
+    .plan-event-title {
+        @include text-setting('xl');
+    }
+
     .img-plan-event {
-        max-width:250px;
+        max-width: 250px;
     }
 }

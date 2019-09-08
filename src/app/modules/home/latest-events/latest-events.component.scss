@@ -1,0 +1,25 @@
+.event-item {
+    height:120px;
+    border: 1px solid #f2f2f2;
+    border-radius: calc(1.125rem + 1px);
+
+    .event-thumb {
+        width:120px;
+        height: 100%;
+        border-radius: calc(1.125rem + 1px) 0 0 calc(1.125rem + 1px); 
+    }
+
+    .event-title {
+        color:#444444;
+    }
+
+    .event-description {
+        height: 55px;
+        overflow: hidden;
+        text-emphasis:none;
+        font-size:0.8rem;
+    }
+    .event-location {
+        font-size:0.8rem;
+    }
+}

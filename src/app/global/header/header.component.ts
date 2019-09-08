@@ -9,7 +9,7 @@ import {Directionality} from '@angular/cdk/bidi';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() directionChanged = new EventEmitter<String>();
+  @Output() languageChanged = new EventEmitter<String>();
 
   constructor(public direction: Directionality) { 
 
@@ -18,13 +18,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleLTRClick():void {
+  handleEnglishClick():void {
 
-    this.directionChanged.emit('LTR');
+    this.languageChanged.emit('en');
   }
-  handleRTLClick():void {
+  handleArabicClick():void {
 
-    this.directionChanged.emit('RTL');
+    this.languageChanged.emit('ar');
   }
 
 }

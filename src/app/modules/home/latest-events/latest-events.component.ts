@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./latest-events.component.scss']
 })
 export class LatestEventsComponent implements OnInit {
-
-  constructor() { }
+  public events;
+  constructor() {
+    this.events = [1,2,3,4]
+   }
 
   ngOnInit() {
   }

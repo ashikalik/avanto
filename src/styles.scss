@@ -1,2 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
-@import './scss/themes/evento-en/evento-theme-english.scss';
+@import './scss/themes/evento-light/evento-theme-light.scss';
+
+body:lang(ar) {
+    font-family: font-family('sky');
+    font-weight:normal;
+}
+body:lang(en) {
+    font-family: font-family('bahnschrift');
+    font-weight:normal;
+}
+
+.evento-nav-bar {
+    background-color: theme-color('background', 'light');;
+    color:theme-color('foreground', 'dark');
+
+    .nav-link {
+        color:theme-color('foreground', 'base');
+    }
+}
+
+.evento-input {
+    border-radius: calc(1.125rem + 1px);
+    border-color: theme-color('foreground', 'base');
+    padding: 0.375rem 1.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.evento-button {
+    min-width: 130px;
+    border-radius: calc(1.125rem + 1px);
+    padding: 0.375rem 1.5rem;
+}

@@ -1,0 +1,13 @@
+@function font-family($family) {
+  @return map-get(map-get($font-settings, $family), "font-family");
+}
+
+@mixin font-family($family) {
+  font-family: font-family($family);
+}
+
+//   .selector{
+//     @include font-family('sky')
+//   }
+
+

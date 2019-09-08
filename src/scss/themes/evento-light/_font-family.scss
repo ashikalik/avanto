@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Sky;
+    src: url(/assets/font/sky.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: HelveticaNeueW23foSKY-Bd;
+    src: url(/assets/font/sky-bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Bahnschrift;
+    src: url(/assets/font/bahnschrift.ttf) format("truetype");
+}
+
+
+$font-settings: ('sky': (font-family: Sky),
+    'sky-bold': (font-family: HelveticaNeueW23foSKY-Bd),
+    'bahnschrift': (font-family: Bahnschrift));

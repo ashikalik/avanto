@@ -4,11 +4,11 @@
         <div class="col-sm-12 col-md-7 search-event ">
 
             <!--SEARCH CHOOSE BOOKE AND ENJOY TEXT-->
-            <div class="row title-text mx-md-2">
+            <div class="row search-event-title mx-md-2">
                 <div class="col-sm-12 text-center">
-                    <span class="accent-two-color" [translate]="'SEARCH'">SEARCH</span><span class="accent-two-color">,&nbsp;</span>
-                    <span class="accent-one-color" [translate]="'CHOOSE'">CHOOSE</span><span class="accent-one-color">,&nbsp;</span>
-                    <span class="primary-color" [translate]="'BOOK'">BOOK</span><span>&nbsp;</span>
+                    <span class="search" [translate]="'SEARCH'">SEARCH</span><span class="search">,&nbsp;</span>
+                    <span class="choose" [translate]="'CHOOSE'">CHOOSE</span><span class="choose">,&nbsp;</span>
+                    <span class="book" [translate]="'BOOK'">BOOK</span><span>&nbsp;</span>
                     <span [translate]="'AND_ENJOY'">AND ENJOY</span>
                 </div>
             </div>
@@ -21,14 +21,14 @@
                         <input type="text"
                                class="form-control evento-input"
                                placeholder="Event Name"
-                               [(ngModel)]="searchService.name" />
+                                />
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
                         <select class="form-control evento-input evento_select"
-                                [(ngModel)]="searchService.region">
+                                >
                             <option value=""
                                     translate>Choose City</option>
                             <ng-container *ngIf="region">
@@ -45,7 +45,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
                         <select class="form-control evento-input evento_select"
-                                [(ngModel)]="searchService.type">
+                                >
                             <option value=""
                                     translate>Choose Event Type</option>
                             <ng-container *ngIf="eventTypes">
@@ -86,11 +86,11 @@
         <!-- /SEARCH EVENT COLUMN-->
 
         <!-- PLAN EVENT COLUMN-->
-        <div class="col-sm-12 col-md-5 plan-event ">
+        <div class="col-sm-12 col-md-5 plan-event">
             <!--OR PLAN YOUR EVENTS-->
             <div class="row mt-4 mt-md-0">
                 <div class="col-sm-12 mb-4">
-                    <div class="text-center"
+                    <div class="text-center plan-event-title"
                          [translate]="'SEARCH'">
                         OR PLAN YOUR EVENTS!
                     </div>

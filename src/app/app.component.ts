@@ -1,6 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, Inject } from "@angular/core";
 import { Directionality } from "@angular/cdk/bidi";
 import { TranslateService } from "@ngx-translate/core";
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: "app-root",
@@ -11,20 +12,29 @@ export class AppComponent {
   title = "evento";
   private isRtl: boolean;
   public direction: string;
+  public language: string;
   private translate;
 
-  constructor(dir: Directionality, translate: TranslateService) {
-    this.translate = translate;
-    this.direction = "ltr";
-    this.isRtl = dir.value === "rtl";
-    translate.setDefaultLang("en");
-    translate.use("en");
+  constructor(dir: Directionality, translateService: TranslateService, @Inject(DOCUMENT) private document: Document) {
+    this.translate = translateService;
+    this.translate.setDefaultLang('en');
+    this.onLanguageChanged('en');
   }
 
-  onDirectionChanged(newDirecion: string) {
-    console.log(newDirecion);
-    this.direction = newDirecion;
-    if (this.direction === "RTL") this.translate.use("ar");
-    else this.translate.use("en");
+  onLanguageChanged(newLanguage: string) {
+    console.log(newLanguage);
+    this.language = newLanguage;
+
+    if (this.language === 'ar') {
+      this.translate.use('ar');
+      this.direction = 'rtl';
+      this.document.documentElement.lang = 'ar'; 
+    } else {
+      this.translate.use('en');
+      this.direction = 'ltr';
+      this.document.documentElement.lang = 'en'; 
+    }
+    
+
   }
 }
