@@ -1,37 +1,42 @@
-
 .navbar-brand {
-    margin-right:0;
-    margin-left:0;
+    margin-right: 0;
+    margin-left: 0;
     background-image: url(/assets/img/evento-logo-en.png);
-    background-size: 90px 44px;
+    background-size: 80px 40px;
     background-repeat: no-repeat;
-    width: 90px;
-    height: 44px;
+    width: 80px;
+    height: 40px;
 }
-.navbar-brand:lang(ar){
+
+.navbar-brand:lang(ar) {
     background-image: url(/assets/img/evento-logo-ar.png);
 }
 
 .evento-navbar-nav {
-    text-align: right;
-    padding-right:0px;
-    padding-left:0px;
+    text-align: center;
+    padding-right: 0px;
+    padding-left: 0px;
+
+    .nav-item {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
 }
 
 @media (min-width: 992px) {
     .evento-navbar-collapse {
-      display: flex;
-      justify-content: space-between;
+        display: flex;
+        justify-content: space-between;
     }
-  
+
     .evento-navbar-collapse div:nth-child(1) {
-      flex: 1;
+        flex: 1;
     }
 
     .evento-navbar-nav {
         text-align: right;
-        padding-right:50px;
-        padding-left:50px;
+        padding-right: 50px;
+        padding-left: 50px;
     }
 
-  }
+}

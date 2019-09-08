@@ -4,6 +4,11 @@ $theme-colors: (
     'light': #e44c5d,
     'dark': #bb0e22
   ),
+  'secondary': (
+    'base': #2c2c2c,
+    'light': #3c3c3c,
+    'dark': #202020
+  ),
   'accent-one': (
     'base': #43c0b5,
     'light': #73c2bb,
@@ -23,6 +28,10 @@ $theme-colors: (
     'base': #393939,
     'light': #6e6e6e,
     'dark': #111
+  ),
+  'negative': (
+    'base': #636161,
+    'light': #797676,
+    'dark': #525050
   )
-  
 );
