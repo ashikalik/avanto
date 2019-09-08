@@ -2,6 +2,10 @@ $base-font-size: 1rem;
 $base-line-height: 1.25 * $base-font-size;
 
 $text-settings: (
+  'xxs': (
+    font-size: .65rem, // 12px
+    line-height: $base-line-height
+  ),
   'xs': (
     font-size: .75rem, // 12px
     line-height: $base-line-height
