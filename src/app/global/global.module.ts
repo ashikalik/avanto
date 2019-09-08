@@ -6,6 +6,7 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {MissingTranslationHandler, MissingTranslationHandlerParams} from '@ngx-translate/core';
+import { FooterComponent } from './footer/footer.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -20,7 +21,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
 
 
 @NgModule({
-  declarations: [HeaderComponent],
+  declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     TranslateModule.forChild({
@@ -33,7 +34,8 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     }),
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class GlobalModule { }
