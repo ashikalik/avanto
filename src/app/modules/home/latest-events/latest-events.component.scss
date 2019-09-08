@@ -71,3 +71,8 @@
         border-radius:  0 calc(1.125rem + 1px) calc(1.125rem + 1px) 0 ;
     }
 }
+
+.view-all-button {
+    @include text-setting('xs');
+    padding: 0 30px;
+}
