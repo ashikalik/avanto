@@ -62,3 +62,12 @@
         font-size: text-scale('xxs');
     }
 }
+
+.event-item:lang(ar) {
+    text-align: right;
+
+    .event-thumb {
+       
+        border-radius:  0 calc(1.125rem + 1px) calc(1.125rem + 1px) 0 ;
+    }
+}
