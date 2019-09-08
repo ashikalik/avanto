@@ -12,23 +12,23 @@
     }
 
     .tag-0 {
-        background-color: theme-color('primary', 'dark');
-        color: theme-color('background', 'light');
+        background-color: theme-color('primary', 'base');
+        color: theme-color('background', 'base');
     }
 
     .tag-1 {
-        background-color: theme-color('accent-one', 'dark');
-        color: theme-color('background', 'light');
+        background-color: theme-color('accent-one', 'base');
+        color: theme-color('background', 'base');
     }
 
     .tag-2 {
-        background-color: theme-color('accent-two', 'dark');
-        color: theme-color('background', 'light');
+        background-color: theme-color('accent-two', 'base');
+        color: theme-color('background', 'base');
     }
 }
 
 .event-item {
-    height: 120px;
+    height: 130px;
     border: 1px solid #f2f2f2;
     border-radius: calc(1.125rem + 1px);
 
@@ -49,10 +49,15 @@
         overflow: hidden;
         text-emphasis: none;
         font-size: text-scale('xs');
+        color:theme-color('negative', 'light');
         //line-height:line-height('xs');
     }
 
     .event-location {
         font-size: 0.8rem;
+    }
+
+    .see-more-button {
+        font-size: text-scale('xs');
     }
 }

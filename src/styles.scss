@@ -32,6 +32,14 @@ body:lang(en) {
     border-radius: calc(1.125rem + 1px);
     padding: 0.375rem 1.5rem;
 }
+.evento-button-sm {
+    border-radius: calc(1.125rem + 1px);
+    padding: 0.175rem 0.8rem;
+}
+.evento-button-xs {
+    border-radius: calc(1.125rem + 1px);
+    padding: 0.1rem 0.7rem;
+}
 //Primary Button
 .evento-button-primary {
     background-color: theme-color('primary', 'base');
