@@ -1,8 +1,3 @@
-<div class="container-fluid">
-    <div class="row search-event-component pb-5">
-        <!-- SEARCH EVENT COLUMN-->
-        <div class="col-sm-12 col-md-7 search-event ">
-
             <!--SEARCH CHOOSE BOOKE AND ENJOY TEXT-->
             <div class="row search-event-title mx-md-2">
                 <div class="col-sm-12 text-center">
@@ -20,15 +15,13 @@
                     <div class="form-group">
                         <input type="text"
                                class="form-control evento-input"
-                               placeholder="Event Name"
-                                />
+                               placeholder="Event Name" />
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
-                        <select class="form-control evento-input evento_select"
-                                >
+                        <select class="form-control evento-input evento_select">
                             <option value=""
                                     translate>Choose City</option>
                             <ng-container *ngIf="region">
@@ -44,8 +37,7 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
-                        <select class="form-control evento-input evento_select"
-                                >
+                        <select class="form-control evento-input evento_select">
                             <option value=""
                                     translate>Choose Event Type</option>
                             <ng-container *ngIf="eventTypes">
@@ -81,35 +73,3 @@
                 </div>
             </div>
             <!--/FIND, SEE ALL BUTTONS-->
-
-        </div>
-        <!-- /SEARCH EVENT COLUMN-->
-
-        <!-- PLAN EVENT COLUMN-->
-        <div class="col-sm-12 col-md-5 plan-event">
-            <!--OR PLAN YOUR EVENTS-->
-            <div class="row mt-4 mt-md-0">
-                <div class="col-sm-12 mb-4">
-                    <div class="text-center plan-event-title"
-                         [translate]="'SEARCH'">
-                        OR PLAN YOUR EVENTS!
-                    </div>
-                </div>
-                <div class="col-sm-12 text-center mb-5">
-                    <img class="img-fluid img-plan-event" src="assets/img/plan-your-event.png" alt="" />
-                </div>
-                    <div class="col-sm-12 mb-4 text-center">
-                        <button type="button"
-                                class="btn btn-outline-secondary evento-button"
-                                (click)="onSearch()"
-                                translate>
-                            Create Your Event
-                        </button>
-                    </div>
-                </div>
-                <!--/OR PLAN YOUR EVENTS-->
-
-            </div>
-            <!-- /PLAN EVENT COLUMN-->
-        </div>
-    </div>

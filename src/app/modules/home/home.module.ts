@@ -2,18 +2,26 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomePageComponent } from './home-page/home-page.component';
-import { SearchEventComponent } from './search-event/search-event.component';
 import { LatestEventsComponent } from './latest-events/latest-events.component';
 import { PartnersComponent } from './partners/partners.component';
 import { FormsModule } from '@angular/forms';
-
+import { SearchCreateEventComponent } from './search-create-event/search-create-event.component';
+import { CreateEventComponent } from './create-event/create-event.component';
+import { SearchEventModule } from '../../shared/search-event/search-event.module';
 
 @NgModule({
-  declarations: [HomePageComponent, SearchEventComponent, LatestEventsComponent, PartnersComponent],
+  declarations: [
+    HomePageComponent,
+    LatestEventsComponent,
+    PartnersComponent,
+    CreateEventComponent,
+    SearchCreateEventComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    SearchEventModule
   ]
 })
 export class HomeModule { }

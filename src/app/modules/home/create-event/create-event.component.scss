@@ -1,0 +1,8 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+.plan-event-title {
+    @include text-setting('xl');
+}
+
+.img-plan-event {
+    max-width: 250px;
+}
