@@ -18,6 +18,10 @@ body:lang(en) {
     }
 }
 
+.evento-text-faded {
+    color:#777777;
+}
+
 .evento-input {
     border-radius: calc(1.125rem + 1px);
     border-color: theme-color('foreground', 'base');

@@ -15,7 +15,11 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: './modules/search/search.module#SearchModule',
-  }
+  },
+  {
+    path: 'about-us',
+    loadChildren: './modules/about-us/about-us.module#AboutUsModule',
+  },
 ];
 
 @NgModule({
