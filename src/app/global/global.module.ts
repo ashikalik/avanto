@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
-
+import { RouterModule } from '@angular/router';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -24,6 +24,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
   declarations: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
+    RouterModule,
     TranslateModule.forChild({
       missingTranslationHandler: {provide: MissingTranslationHandler, useClass: MyMissingTranslationHandler},
       loader: {
