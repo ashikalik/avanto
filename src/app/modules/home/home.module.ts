@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchCreateEventComponent } from './search-create-event/search-create-event.component';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { SearchEventModule } from '../../shared/search-event/search-event.module';
+import { EventListModule } from '../../shared/event-list/event-list.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SearchEventModule } from '../../shared/search-event/search-event.module
     CommonModule,
     FormsModule,
     HomeRoutingModule,
-    SearchEventModule
+    SearchEventModule,
+    EventListModule
   ]
 })
 export class HomeModule { }
