@@ -1,0 +1,21 @@
+.our-services {
+    background:#f2f2f2;
+
+    .service {
+
+        .icon-service {
+            width:80px;
+            height:80px;
+        }
+        .txt-service {
+            //width:150px;
+            color:#777777;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .txt-service {
+        width:150px;
+    }
+}
