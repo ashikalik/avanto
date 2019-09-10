@@ -1,5 +1,7 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
 .our-vision {
-    background:#ffffff;
+    background:theme-color('gray-lightest', 'base');
 }
 
 .img-our-vision{

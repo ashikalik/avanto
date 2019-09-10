@@ -1,7 +1,7 @@
 @import '../../../../scss/themes/evento-light/evento-theme-light.scss';
 
 .statistics {
-    background:#ffffff;
+    background:theme-color('background', 'light');
 
     .statistic-item {
 

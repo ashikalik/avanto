@@ -29,8 +29,8 @@
 
 .event-item {
     height: 130px;
-    border: 1px solid #f2f2f2;
-    background: #fdfdfd;
+    border: 1px solid theme-color('gray-lightest', 'base');
+    background: theme-color('gray-lightest', 'light');
     border-radius: calc(1.125rem + 1px);
 
     .event-thumb {
