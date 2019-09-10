@@ -1,60 +1,53 @@
 <div class="">
     <form>
         <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
+
+            <input type="text"
+                   class="form-control evento-form-field"
+                   id="contact-first-name"
+                   placeholder="First name">
+            <small id="first-name-error" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+
+            <input type="text"
+                   class="form-control evento-form-field"
+                   id="contact-last-name"
+                   placeholder="Last name">
+            <small id="last-name-error" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
             <input type="email"
-                   class="form-control evento-form-input"
-                   id="exampleInputEmail1"
-                   aria-describedby="emailHelp"
+                   class="form-control evento-form-field"
+                   id="contact-email"
                    placeholder="Enter email">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            <small id="email-error" class="form-text text-muted"></small>
         </div>
+        <div class="form-group mb-5">
+            <input type="text"
+                   class="form-control evento-form-field"
+                   id="contact-phone"
+                   placeholder="Phone Number">
+            <small id="phone-error" class="form-text text-muted"></small>
+        </div>
+
         <div class="form-group">
-            <!-- <label for="exampleInputPassword1">Password</label> -->
-            <input type="password"
-                   class="form-control evento-form-input"
-                   id="exampleInputPassword1"
-                   placeholder="Password">
+            <input type="text"
+                   class="form-control evento-form-field"
+                   id="contact-subject"
+                   placeholder="Subject">
+            <small id="subject-error" class="form-text text-muted"></small>
         </div>
+
         <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
-            <input type="email"
-                   class="form-control evento-form-input"
-                   id="exampleInputEmail1"
-                   aria-describedby="emailHelp"
-                   placeholder="Enter email">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+
+            <textarea class="form-control evento-form-field"
+                      id="contact-message"
+                      placeholder="Message"
+                      rows="4"></textarea>
+            <small id="message-error" class="form-text text-muted"></small>
         </div>
-        <div class="form-group">
-            <!-- <label for="exampleInputPassword1">Password</label> -->
-            <input type="password"
-                   class="form-control evento-form-input"
-                   id="exampleInputPassword1"
-                   placeholder="Password">
-        </div>
-        <div class="form-group">
-            <!-- <label for="exampleInputEmail1">Email address</label> -->
-            <input type="email"
-                   class="form-control evento-form-input"
-                   id="exampleInputEmail1"
-                   aria-describedby="emailHelp"
-                   placeholder="Enter email">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        </div>
-        <div class="form-group">
-            <!-- <label for="exampleInputPassword1">Password</label> -->
-            <input type="password"
-                   class="form-control evento-form-input"
-                   id="exampleInputPassword1"
-                   placeholder="Password">
-        </div>
-        <!-- <div class="form-check">
-        <input type="checkbox"
-               class="form-check-input"
-               id="exampleCheck1">
-        <label class="form-check-label"
-               for="exampleCheck1">Check me out</label>
-    </div> -->
+
         <button type="submit"
                 class="btn btn-primary">Submit</button>
     </form>

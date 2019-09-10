@@ -37,13 +37,20 @@ body:lang(en) {
     appearance: none;
 }
 
-.evento-form-input {
+.evento-form-field {
     border-radius: calc(1.125rem + 1px);
-    border-color: theme-color('foreground', 'base');
+    background: theme-color('background', 'light');
+    border:1px solid;
+    border-color: gray-color('light', 'base');
     padding: 0.375rem 1.25rem;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+}
+.evento-form-field:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem gray-color('light', 'light');
+    border-color: gray-color('light', 'base');
 }
 
 /* Buttons */
