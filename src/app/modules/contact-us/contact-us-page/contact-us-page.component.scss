@@ -1,0 +1,19 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.contact-us-page {
+    padding-top: 100px;
+    background-image: url(/assets/img/crowd-bg-blue.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 400px;
+}
+
+.contact-us-form-wrapper {
+    margin: 0 100px;
+    background: theme-color('background', 'base');
+    border-radius: calc(1.125rem + 1px);
+}
+
+.img-get-in-touch {
+    margin-top:-100px;
+}

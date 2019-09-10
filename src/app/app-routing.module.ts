@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'about-us',
     loadChildren: './modules/about-us/about-us.module#AboutUsModule',
   },
+  {
+    path: 'contact-us',
+    loadChildren: './modules/contact-us/contact-us.module#ContactUsModule',
+  },
 ];
 
 @NgModule({
