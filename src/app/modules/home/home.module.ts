@@ -9,6 +9,7 @@ import { SearchCreateEventComponent } from './search-create-event/search-create-
 import { CreateEventComponent } from './create-event/create-event.component';
 import { SearchEventModule } from '../../shared/search-event/search-event.module';
 import { EventListModule } from '../../shared/event-list/event-list.module';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EventListModule } from '../../shared/event-list/event-list.module';
     LatestEventsComponent,
     PartnersComponent,
     CreateEventComponent,
-    SearchCreateEventComponent
+    SearchCreateEventComponent,
+    StatisticsComponent
   ],
   imports: [
     CommonModule,

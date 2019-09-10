@@ -18,9 +18,15 @@ body:lang(en) {
     }
 }
 
+.evento-section-title {
+    color:theme-color('foreground', 'base');
+    @include text-setting('lg');
+}
+
 .evento-text-faded {
     color:#777777;
 }
+
 
 .evento-input {
     border-radius: calc(1.125rem + 1px);

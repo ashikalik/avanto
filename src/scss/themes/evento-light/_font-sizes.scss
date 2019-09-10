@@ -2,8 +2,12 @@ $base-font-size: 1rem;
 $base-line-height: 1.25 * $base-font-size;
 
 $text-settings: (
+  'xxxs': (
+    font-size: .55rem, // 8px
+    line-height: $base-line-height
+  ),
   'xxs': (
-    font-size: .65rem, // 12px
+    font-size: .65rem, // 10px
     line-height: $base-line-height
   ),
   'xs': (
@@ -23,11 +27,19 @@ $text-settings: (
     line-height: $base-line-height * 2
   ),
   'lg': (
-    font-size: 1.25rem, // 20px
+    font-size: 1.5rem, // 20px
     line-height: $base-line-height * 2
   ),
   'xl': (
-    font-size: 1.5rem, // 24px
+    font-size: 1.75rem, // 24px
+    line-height: $base-line-height * 2
+  ),
+  'xxl': (
+    font-size: 2.0rem, // 32px
+    line-height: $base-line-height * 2
+  ),
+  'xxxl': (
+    font-size: 2.5rem, // 40px
     line-height: $base-line-height * 2
   )
 );

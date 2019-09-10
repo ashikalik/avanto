@@ -1,0 +1,36 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.statistics {
+    background:#ffffff;
+
+    .statistic-item {
+
+        .icon-statistic-item {
+            width: 80px;
+            height:80px;
+        }
+        .label-statistic-item {
+            @include text-setting('sm');
+        }
+        .value-statistic-item {
+            @include text-setting('xxl');
+        }
+
+        .tickets {
+            color: theme-color('foreground', 'base');
+        }
+    
+        .events {
+            color: theme-color('accent-one', 'base');
+        }
+    
+        .users {
+            color: theme-color('primary', 'base');
+        }
+
+        .organizers {
+            color: theme-color('accent-two', 'base');
+        }
+
+    }
+}
