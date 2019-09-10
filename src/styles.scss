@@ -23,8 +23,13 @@ body:lang(en) {
     @include text-setting('lg');
 }
 
+.evento-section-title:lang(ar) {
+    text-align: right;
+}
+
+
 .evento-text-faded {
-    color:#777777;
+    color:theme-color('gray-medium', 'base');;
 }
 
 

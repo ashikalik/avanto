@@ -1,7 +1,5 @@
 @import '../../../../scss/themes/evento-light/evento-theme-light.scss';
-.latest-event-title {
-    @include text-setting('xl');
-}
+
 
 .view-all-button {
     @include text-setting('xs');
