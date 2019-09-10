@@ -1,6 +1,6 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
 .our-services {
-    background:#f2f2f2;
-
+    background:theme-color('background', 'light');
     .service {
 
         .icon-service {
@@ -8,8 +8,7 @@
             height:80px;
         }
         .txt-service {
-            //width:150px;
-            color:#777777;
+            color:theme-color('foreground', 'base');
         }
     }
 }

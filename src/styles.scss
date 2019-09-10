@@ -36,12 +36,12 @@ body:lang(en) {
     -moz-appearance: none;
     appearance: none;
 }
-
+/* Buttons */
 .evento-form-field {
     border-radius: calc(1.125rem + 1px);
     background: theme-color('background', 'light');
     border:1px solid;
-    border-color: gray-color('light', 'base');
+    border-color: theme-color('gray-light', 'base');
     padding: 0.375rem 1.25rem;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -49,8 +49,8 @@ body:lang(en) {
 }
 .evento-form-field:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.1rem gray-color('light', 'light');
-    border-color: gray-color('light', 'base');
+    box-shadow: 0 0 0 0.1rem theme-color('gray-light', 'light');
+    border-color: theme-color('gray-light', 'base');
 }
 
 /* Buttons */

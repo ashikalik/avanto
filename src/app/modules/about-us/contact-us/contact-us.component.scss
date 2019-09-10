@@ -1,5 +1,6 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
 .contact-us {
-    background:#ffffff;
+    background:theme-color('background', 'light');
 
     .contact {
         //width:200px;
@@ -9,7 +10,7 @@
             height:30px;
         }
         .txt-contact {
-            color:#777777;
+            color:theme-color('foreground', 'base');
         }
     }
 }

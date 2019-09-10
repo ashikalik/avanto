@@ -1,5 +1,7 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
 .join-us {
-    background:#f2f2f2;
+    background:theme-color('background', 'light');
 }
 
 .img-join-us{
