@@ -4,7 +4,9 @@ import { Injectable } from "@angular/core";
  * LanguageSettingService service class
  * Stores the current language in local storage
  */
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class LanguageSettingService {
   /** The key for language */
   private languageKey: string;

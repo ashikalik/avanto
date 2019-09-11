@@ -13,6 +13,7 @@ import {
 } from "@ngx-translate/core";
 
 import { GlobalModule } from "./global/global.module";
+import { CoreModule } from './core/core.module';
 
 export function createTranslateLoader(http: HttpClient) {
   console.log("a");
@@ -43,7 +44,8 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
         deps: [HttpClient]
       }
     }),
-    GlobalModule
+    GlobalModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
