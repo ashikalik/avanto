@@ -1,7 +1,7 @@
 <div class="event-tags d-flex flex-row-reverse mx-2 px-4">
-    <div class="tag tag-0 py-1">{{eventItem.type}}</div>
-    <div class="tag tag-1 py-1">Culture</div>
-    <div class="tag tag-2 py-1">Arts</div>
+    <div class="tag py-1" [ngClass]="tagClasses[eventIndex][0]">{{eventItem.type}}</div>
+    <!-- <div class="tag tag-1 py-1">Culture</div>
+    <div class="tag tag-2 py-1">Arts</div> -->
 </div>
 <div class="media event-item shadow-sm">
     <img class="event-thumb"
