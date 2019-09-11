@@ -4,7 +4,7 @@ import { environment } from "../../../environments/environment";
 import { NetworkConfig } from "../config/network.config";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { LatestEvent } from "../models/latest-event";
+import { LatestEvents } from "../models/latest-event";
 import { EventDetails } from "../models/event-details";
 import { SearchEvents } from "../models/search-events";
 
@@ -17,9 +17,9 @@ export class EventService {
     private dateTimeHelperService: DateTimeHelperService
   ) {}
 
-  public getLatestEvent(): Observable<LatestEvent> {
+  public getLatestEvent(): Observable<LatestEvents> {
     const url = environment.BASE_URL + NetworkConfig.LATEST_EVENTS;
-    return this.httpClient.get<LatestEvent>(url);
+    return this.httpClient.get<LatestEvents>(url);
   }
 
   public getEventDetail(eventKey: string): Observable<EventDetails> {

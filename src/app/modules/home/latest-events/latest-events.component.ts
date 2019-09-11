@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { LatestEvents } from "../../../core/models/latest-event";
 
 @Component({
   selector: 'app-latest-events',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./latest-events.component.scss']
 })
 export class LatestEventsComponent implements OnInit {
-  public events;
+  @Input('latestEvents') latestEvents: LatestEvents;
   constructor() {
-    this.events = [1,2,3,4]
+    
    }
 
   ngOnInit() {

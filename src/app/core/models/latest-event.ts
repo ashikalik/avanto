@@ -1,6 +1,6 @@
-export interface LatestEvent {
+export interface LatestEvents {
     meta: Meta;
-    data: latestEventObj[];
+    data: LatestEvent[];
 }
 
 export interface Query {
@@ -24,7 +24,7 @@ export interface Meta {
 
 
 
-export interface latestEventObj {
+export interface LatestEvent {
     event_id: number;
     name: string;
     details: string;

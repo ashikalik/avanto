@@ -28,13 +28,13 @@
 }
 
 .event-item {
-    height: 130px;
+    height: 150px;
     border: 1px solid theme-color('gray-lightest', 'base');
     background: theme-color('gray-lightest', 'light');
     border-radius: calc(1.125rem + 1px);
 
     .event-thumb {
-        width: 120px;
+        width: 150px;
         height: 100%;
         border-radius: calc(1.125rem + 1px) 0 0 calc(1.125rem + 1px);
     }
@@ -61,7 +61,7 @@
     }
 }
 .when {
-    font-size: text-scale('xxs');
+    font-size: text-scale('xs');
 }
 
 .event-item:lang(ar) {

@@ -3,21 +3,21 @@
     <div class="tag tag-1">Culture</div>
     <div class="tag tag-2">Arts</div>
 </div>
-<div class="media event-item">
+<div class="media event-item shadow-sm">
     <img class="event-thumb"
-         src="./assets/img/temp-event-thumb.png"
+         src="{{eventItem.img}}"
          alt="Generic placeholder image">
-    <div class="media-body px-2">
-        <h5 class="mt-1 event-title">Event heading</h5>
+    <div class="media-body px-3 py-2">
+        <h5 class="mt-1 event-title">{{eventItem.name}}</h5>
         <div class="event-description">
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            {{eventItem.details}}
         </div>
         <div class="event-location text-small mt-2">
             <div class="d-flex justify-content-between">
 
                 <div class="">
                     <span>&copy;&nbsp;</span>
-                    <span>Cras sit amet nibh libero</span>
+                    <span>{{eventItem.city}}</span>
                 </div>
 
                 <button type="button"
@@ -32,5 +32,5 @@
     </div>
 </div>
 <div class="when d-flex flex-row mx-3 evento-text-faded">
-    <div class="">07.12.2019 | 03:45 PM</div>
+    <div class="">{{eventItem.from_date}} | {{eventItem.from_time}}</div>
 </div>

@@ -2,9 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { EventService } from "../../../core/api-services/event.service";
 import { CommonService } from "../../../core/api-services/common.service";
 
-import {Region} from "../../../core/models/region";
-import {EventType} from "../../../core/models/event-type";
-import {LatestEvent} from "../../../core/models/latest-event";
+import { Region } from "../../../core/models/region";
+import { EventType } from "../../../core/models/event-type";
+import { LatestEvents } from "../../../core/models/latest-event";
+
+import { forkJoin } from "rxjs";
 
 @Component({
   selector: "app-home-page",
@@ -12,10 +14,9 @@ import {LatestEvent} from "../../../core/models/latest-event";
   styleUrls: ["./home-page.component.scss"]
 })
 export class HomePageComponent implements OnInit {
-
   public region: Region;
   public eventTypes: EventType;
-  public latestEvent: LatestEvent;
+  public latestEvents: LatestEvents;
 
   constructor(
     private eventService: EventService,
@@ -23,38 +24,24 @@ export class HomePageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getRegion();
-    this.getEventType();
-    this.getLatestEvent();
+    this.getData();
   }
 
-  getRegion(): void {
-    this.commonService.getRegion().subscribe(
-      res => {
-        this.region = res;
-        console.log(this.region)
-      },
-      err => {}
-    );
+  getData(): void {
+    forkJoin(
+      this.commonService.getRegion(),
+      this.commonService.getEventType(),
+      this.eventService.getLatestEvent()
+    ).subscribe(res => {
+      this.region = res[0];
+      this.eventTypes = res[1];
+      this.latestEvents = res[2];
+      console.log(this.region);
+      console.log(this.eventTypes);
+      console.log(this.latestEvents);
+    }, err => {
+      console.log(err);
+    });
   }
 
-  getEventType(): void {
-    this.commonService.getEventType().subscribe(
-      res => {
-        this.eventTypes = res;
-        console.log(this.eventTypes)
-      },
-      err => {}
-    );
-  }
-
-  getLatestEvent(): void {
-    this.eventService.getLatestEvent().subscribe(
-      res => {
-        this.latestEvent = res;
-        console.log(this.latestEvent);
-      },
-      err => {}
-    );
-  }
 }

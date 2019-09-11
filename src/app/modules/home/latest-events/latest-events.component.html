@@ -4,10 +4,10 @@
             <span>LATEST EVENTS</span>
         </div>
     </div>
-    <div class="row event-list">
+    <div class="row event-list" *ngIf="latestEvents">
         <div class="col col-sm-12 col-md-6 event mb-5 "
-             *ngFor="let event1 of events">
-            <app-event-list-item></app-event-list-item>
+             *ngFor="let eventItem of latestEvents.data">
+            <app-event-list-item [eventItem]="eventItem"></app-event-list-item>
         </div>
     </div>
     <div class="row mb-5">
