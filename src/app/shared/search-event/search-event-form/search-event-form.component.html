@@ -14,6 +14,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group">
                         <input type="text"
+                               [(ngModel)]="eventNameModel"
                                class="form-control evento-form-field"
                                placeholder="Event Name" />
                     </div>
@@ -21,13 +22,14 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
-                        <select class="form-control evento-form-field evento-select">
+                        <select class="form-control evento-form-field evento-select"
+                                [(ngModel)]="eventRegionModel">
                             <option value=""
                                     translate>Choose City</option>
                             <ng-container *ngIf="region">
-                                <option *ngFor="let region of region.data"
-                                        [value]="region.region_id">
-                                    {{ region.name }}
+                                <option *ngFor="let oneregion of region.data"
+                                        [value]="oneregion.region_id">
+                                    {{ oneregion.name }}
                                 </option>
                             </ng-container>
                         </select>
@@ -37,7 +39,8 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
-                        <select class="form-control evento-form-field evento-select">
+                        <select class="form-control evento-form-field evento-select"
+                                [(ngModel)]="eventTypeModel">
                             <option value=""
                                     translate>Choose Event Type</option>
                             <ng-container *ngIf="eventType">
@@ -58,7 +61,7 @@
                 <div class="mb-4 mx-2 text-center">
                     <button type="button"
                             class="btn evento-button evento-button-secondary"
-                            (click)="onSearch()"
+                            (click)="handleFindButtonClick()"
                             translate>
                         Find
                     </button>
@@ -66,7 +69,7 @@
                 <div class="mb-4 mx-2 text-center">
                     <button type="button"
                             class="btn evento-button evento-button-primary"
-                            (click)="onSearch()"
+                            (click)="handleSeeAllEventsButtonClick()"
                             translate>
                         See All Events
                     </button>
