@@ -1,7 +1,7 @@
-import { DateTimeHelperService } from "../helper/date-time-helper.service";
+import { DateTimeHelperService } from "../service/date-time-helper.service";
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
-import { NetworkConfig } from "../network.config";
+import { NetworkConfig } from "../config/network.config";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { EventOrganizer } from "../models/event-organizer";

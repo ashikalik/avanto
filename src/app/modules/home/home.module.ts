@@ -10,6 +10,8 @@ import { CreateEventComponent } from './create-event/create-event.component';
 import { SearchEventModule } from '../../shared/search-event/search-event.module';
 import { EventListModule } from '../../shared/event-list/event-list.module';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { CoreModule } from '../../core/core.module';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     FormsModule,
     HomeRoutingModule,
     SearchEventModule,
-    EventListModule
+    EventListModule,
+    CoreModule
   ]
 })
 export class HomeModule { }

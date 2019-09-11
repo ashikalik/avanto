@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { environment } from "../../../environments/environment";
-import { NetworkConfig } from "../network.config";
+import { NetworkConfig } from "../config/network.config";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { LoginBody, LoginResponse } from "../models/login";

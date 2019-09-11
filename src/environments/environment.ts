@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  BASE_URL                : 'https://www.evento.sa/api',
+  BASE_URL                : 'https://www.dev.evento.sa/api',
 };
 
 /*

@@ -2,14 +2,17 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
-import { NetworkConfig } from "../network.config";
+import { NetworkConfig } from "../config/network.config";
 import { City } from "../models/city";
 import { EventType } from "../models/event-type";
 import { Nationality } from "../models/nationality";
 import { Educations } from "../models/educations";
 import { Audiences } from "../models/audience";
 
-@Injectable()
+
+@Injectable({
+  providedIn: 'root',
+})
 export class CommonService {
   constructor(private httpClient: HttpClient) {}
 
