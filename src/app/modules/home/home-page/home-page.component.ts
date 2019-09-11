@@ -15,7 +15,7 @@ import { forkJoin } from "rxjs";
 })
 export class HomePageComponent implements OnInit {
   public region: Region;
-  public eventTypes: EventType;
+  public eventType: EventType;
   public latestEvents: LatestEvents;
 
   constructor(
@@ -34,10 +34,10 @@ export class HomePageComponent implements OnInit {
       this.eventService.getLatestEvent()
     ).subscribe(res => {
       this.region = res[0];
-      this.eventTypes = res[1];
+      this.eventType = res[1];
       this.latestEvents = res[2];
       console.log(this.region);
-      console.log(this.eventTypes);
+      console.log(this.eventType);
       console.log(this.latestEvents);
     }, err => {
       console.log(err);

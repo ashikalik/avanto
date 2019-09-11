@@ -14,14 +14,14 @@
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group">
                         <input type="text"
-                               class="form-control evento-input"
+                               class="form-control evento-form-field"
                                placeholder="Event Name" />
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
-                        <select class="form-control evento-input evento_select">
+                        <select class="form-control evento-form-field evento-select">
                             <option value=""
                                     translate>Choose City</option>
                             <ng-container *ngIf="region">
@@ -31,17 +31,17 @@
                                 </option>
                             </ng-container>
                         </select>
-                        <i class="fas fa-chevron-down embed"></i>
+                        <i class="fas fa-chevron-down" ></i>
                     </div>
                 </div>
 
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
-                        <select class="form-control evento-input evento_select">
+                        <select class="form-control evento-form-field evento-select">
                             <option value=""
                                     translate>Choose Event Type</option>
-                            <ng-container *ngIf="eventTypes">
-                                <option *ngFor="let type of eventTypes.data"
+                            <ng-container *ngIf="eventType">
+                                <option *ngFor="let type of eventType.data"
                                         [value]="type.id">
                                     {{ type.name }}
                                 </option>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Region } from "../../../core/models/region";
+import { EventType } from "../../../core/models/event-type";
 
 @Component({
   selector: 'app-search-create-event',
@@ -6,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-create-event.component.scss']
 })
 export class SearchCreateEventComponent implements OnInit {
+
+  @Input('region') region: Region;
+  @Input('eventType') eventType: EventType;
 
   constructor() { }
 
