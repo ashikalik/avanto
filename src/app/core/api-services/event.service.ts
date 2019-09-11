@@ -62,7 +62,7 @@ export class EventService {
     return this.httpClient.get<SearchEvents>(url);
   }
 
-  public getMyEvents(limit: number, page: number): Observable<LatestEvent> {
+  public getMyEvents(limit: number, page: number): Observable<LatestEvents> {
     const url =
       environment.BASE_URL +
       NetworkConfig.EVENT +
@@ -70,7 +70,7 @@ export class EventService {
       limit +
       "&page=" +
       page;
-    return this.httpClient.get<LatestEvent>(url);
+    return this.httpClient.get<LatestEvents>(url);
   }
 
   public submitRequest(event_key: string): any {
