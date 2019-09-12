@@ -4,7 +4,9 @@
         <div class="col-sm-12 col-md-7 search-event ">
             <app-search-event-form [regionList]="regionList"
                                    [eventTypeList]="eventTypeList"
-                                   [searchEventFormData]="searchEventFormData">
+                                   [searchEventFormData]="searchEventFormData"
+                                   (findButtonClick)="onFindButtonClick($event)"
+                                   (seeAllEventsButtonClick)="onSeeAllEventsButtonClick($event)">
             </app-search-event-form>
         </div>
         <!-- /SEARCH EVENT COLUMN-->

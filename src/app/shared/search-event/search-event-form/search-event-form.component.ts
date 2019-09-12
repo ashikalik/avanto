@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { RegionList } from "../../../core/model/common/region-list";
 import { EventTypeList } from "../../../core/model/event/event-type-list";
 import { SearchEventFormData } from "../../../core/model/search/search-event-form-data";
-import { Router } from "@angular/router";
+
 
 @Component({
   selector: "app-search-event-form",
@@ -12,24 +12,21 @@ import { Router } from "@angular/router";
 export class SearchEventFormComponent implements OnInit {
   @Input("regionList") regionList: RegionList;
   @Input("eventTypeList") eventTypeList: EventTypeList;
-  @Input("searchEventFormData") searchEventFormData: SearchEventFormData;  
+  @Input("searchEventFormData") searchEventFormData: SearchEventFormData;
+  @Output() findButtonClick: EventEmitter<any> = new EventEmitter();
+  @Output() seeAllEventsButtonClick: EventEmitter<any> = new EventEmitter();
 
-  constructor(private router: Router) {}
+  constructor() {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   handleFindButtonClick() {
-    console.log(this.searchEventFormData.event_region)
-    console.log(this.searchEventFormData.event_type)
-    console.log(this.searchEventFormData.event_name)
 
-    // this.router.navigate(["/search"], {
-    //   queryParams: { region: this.eventRegionModel, "event-type": this.eventTypeModel, name: this.eventNameModel }
-    // });
+    this.findButtonClick.emit(this.searchEventFormData);
+    
   }
   handleSeeAllEventsButtonClick() {
-    //this.router.navigate(["/search"]);
+    this.seeAllEventsButtonClick.emit();
+    
   }
 }
