@@ -77,17 +77,17 @@
                    type="text"
                    class="form-control evento-form-field"
                    placeholder="{{ 'Full Name' | translate }}">
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['name'].hasError('required') && !questionForm.controls['name'].pristine"
                  translate>
                 This field is required
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['name'].hasError('minlength') && !questionForm.controls['name'].pristine"
                  translate>
                 Name should be at least 2 characters
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['name'].hasError('maxlength') && !questionForm.controls['name'].pristine"
                  translate>
                 Name should be at most 20 characters
@@ -100,12 +100,12 @@
                    type="email"
                    class="form-control evento-form-field"
                    placeholder="{{ 'Your Email' | translate }}">
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['email'].hasError('required') && !questionForm.controls['email'].pristine"
                  translate>
                 This field is required
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['email'].hasError('email') && !questionForm.controls['email'].pristine"
                  translate>
                 Email format is not valid
@@ -118,12 +118,12 @@
                    type="text"
                    class="form-control evento-form-field"
                    placeholder="{{ 'Phone Number' | translate }}">
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['mobile'].hasError('required') && !questionForm.controls['mobile'].pristine"
                  translate>
                 This field is required
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['mobile'].hasError('pattern') && !questionForm.controls['mobile'].pristine"
                  translate>
                 Mobile number is invalid
@@ -134,17 +134,17 @@
                    type="text"
                    class="form-control evento-form-field"
                    placeholder="{{ 'Subject' | translate }}">
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['subject'].hasError('required') && !questionForm.controls['subject'].pristine"
                  translate>
                 This field is required
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['subject'].hasError('minlength') && !questionForm.controls['subject'].pristine"
                  translate>
                 Field should be at least 6 characters
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['subject'].hasError('maxlength') && !questionForm.controls['subject'].pristine"
                  translate>
                 Field should be at most 200 characters
@@ -155,17 +155,17 @@
                       rows="4"
                       class="form-control evento-form-field"
                       placeholder="{{ 'Your message' | translate }}"></textarea>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['message'].hasError('required') && !questionForm.controls['message'].pristine"
                  translate>
                 This field is required
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['message'].hasError('minlength') && !questionForm.controls['message'].pristine"
                  translate>
                 Field should be at least 6 characters
             </div>
-            <div class="error"
+            <div class="evento-form-error"
                  *ngIf="questionForm.controls['message'].hasError('maxlength') && !questionForm.controls['message'].pristine"
                  translate>
                 Field should be at most 400 characters

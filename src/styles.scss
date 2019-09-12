@@ -87,6 +87,12 @@ body:lang(en) {
     border-color: theme-color('gray-light', 'base');
 }
 
+.evento-form-error {
+    color:theme-color('primary', 'light');
+    @include text-setting('xs');
+    padding:2px 20px 0 20px;
+}
+
 /* Buttons */
 .evento-button {
     border-radius: calc(1.125rem + 1px);
