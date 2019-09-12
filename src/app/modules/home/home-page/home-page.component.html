@@ -1,4 +1,18 @@
-<app-search-create-event [regionList]="regionList" [eventTypeList]="eventTypeList"></app-search-create-event>
+<div class="container-fluid search-create-event">
+    <div class="row search-event-component pb-5">
+        <!-- SEARCH EVENT COLUMN-->
+        <div class="col-sm-12 col-md-7 search-event ">
+            <app-search-event-form [regionList]="regionList" [eventTypeList]="eventTypeList"></app-search-event-form>
+        </div>
+        <!-- /SEARCH EVENT COLUMN-->
+
+        <!-- PLAN EVENT COLUMN-->
+        <div class="col-sm-12 col-md-5 plan-event">
+            <app-create-event></app-create-event>
+        </div>
+        <!-- /PLAN EVENT COLUMN-->
+    </div>
+</div>
 <app-latest-events [latestEventList]="latestEventList"></app-latest-events>
 <app-partners></app-partners>
 <app-statistics></app-statistics>
