@@ -5,6 +5,7 @@ import { CommonService } from "../../../core/api-services/common.service";
 import { RegionList } from "../../../core/model/common/region-list";
 import { EventTypeList } from "../../../core/model/event/event-type-list";
 import { EventList } from "../../../core/model/event/event-list";
+import { SearchEventFormData } from "../../../core/model/search/search-event-form-data";
 
 import { forkJoin } from "rxjs";
 
@@ -17,11 +18,19 @@ export class HomePageComponent implements OnInit {
   public regionList: RegionList;
   public eventTypeList: EventTypeList;
   public latestEventList: EventList;
+  public searchEventFormData: SearchEventFormData;
 
   constructor(
     private eventService: EventService,
     private commonService: CommonService
-  ) {}
+  ) {
+
+    this.searchEventFormData = {} as  SearchEventFormData;
+
+    this.searchEventFormData.event_name = '';
+    this.searchEventFormData.event_region = 0;
+    this.searchEventFormData.event_type = 0;
+  }
 
   ngOnInit() {
     this.getData();
