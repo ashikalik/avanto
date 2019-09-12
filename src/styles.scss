@@ -69,7 +69,7 @@ body:lang(en) {
 }
 
 
-/* Buttons */
+/* Form Field */
 .evento-form-field {
     border-radius: calc(1.125rem + 1px);
     background: theme-color('background', 'light');
@@ -130,23 +130,27 @@ body:lang(en) {
 .evento-button-secondary {
     background-color: theme-color('secondary', 'base');
     color: theme-color('background', 'base');
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem transparent;
 }
 
 .evento-button-secondary:active {
     background-color: theme-color('secondary', 'dark');
     color: theme-color('background', 'dark');
+    box-shadow: 0 0 0 0.1rem transparent;
 }
 
 .evento-button-secondary:hover {
     background-color: theme-color('secondary', 'dark');
     color: theme-color('background', 'light');
+    box-shadow: 0 0 0 0.1rem transparent;
 }
 
 .evento-button-secondary:focus {
     background-color: theme-color('secondary', 'dark');
     color: theme-color('background', 'light');
     outline: 0;
-    box-shadow: 0 0 0 0.2rem theme-color('secondary', 'light');
+    box-shadow: 0 0 0 0.1rem theme-color('secondary', 'light');
 }
 
 //Outline Secondary Button
@@ -156,17 +160,17 @@ body:lang(en) {
     color: theme-color('foreground', 'base');
 }
 
-.evento-button-secondary:active {
+.evento-button-secondary-outline:active {
     border: 2px solid theme-color('foreground', 'base');
     color: theme-color('background', 'dark');
 }
 
-.evento-button-secondary:hover {
+.evento-button-secondary-outline:hover {
     border: 2px solid theme-color('foreground', 'base');
     color: theme-color('background', 'light');
 }
 
-.evento-button-secondary:focus {
+.evento-button-secondary-outline:focus {
     border: 2px solid theme-color('foreground', 'base');
     color: theme-color('foreground', 'dark');
     outline: 0;
