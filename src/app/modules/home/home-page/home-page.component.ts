@@ -7,7 +7,6 @@ import { EventList } from "../../../core/model/event/event-list";
 import { EventService } from "../../../core/api-services/event.service";
 import { CommonService } from "../../../core/api-services/common.service";
 
-
 import { forkJoin } from "rxjs";
 
 @Component({
@@ -20,14 +19,11 @@ export class HomePageComponent implements OnInit {
   public eventTypeList: EventTypeList;
   public latestEventList: EventList;
 
-
   constructor(
     private eventService: EventService,
     private commonService: CommonService,
     private router: Router
-  ) {
-
-  }
+  ) {}
 
   ngOnInit() {
     this.getData();
@@ -54,18 +50,10 @@ export class HomePageComponent implements OnInit {
   }
 
   onFindButtonClick($event) {
-    console.log($event);
     this.router.navigate(["/search"]);
-    // this.router.navigate(["/search"], {
-    //   queryParams: {
-    //     region: $event.event_region,
-    //     type: $event.event_type,
-    //     name: $event.event_name
-    //   }
-    // });
   }
+
   onSeeAllEventsButtonClick($event) {
-    console.log($event);
     this.router.navigate(["/search"]);
   }
 }

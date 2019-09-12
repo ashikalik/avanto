@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: 'contact-us',
     loadChildren: './modules/contact-us/contact-us.module#ContactUsModule',
-  },
+  }
 ];
 
 @NgModule({

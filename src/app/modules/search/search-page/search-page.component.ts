@@ -50,16 +50,9 @@ export class SearchPageComponent implements OnInit {
 
   onFindButtonClick($event) {
     this.search();
-    console.log($event);
-    // queryParams: {
-    //   region: $event.event_region,
-    //   type: $event.event_type,
-    //   name: $event.event_name
-    // }
   }
   onSeeAllEventsButtonClick($event) {
     this.searchAll();
-    console.log($event);
   }
 
   goToPage(n: number): void {
