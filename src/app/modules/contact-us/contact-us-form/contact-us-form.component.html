@@ -1,4 +1,4 @@
-<div class="">
+<!-- <div class="">
     <form>
         <div class="form-group">
 
@@ -59,5 +59,126 @@
 
         <button type="submit"
                 class="btn btn-primary">Submit</button>
+    </form>
+</div> -->
+
+<div>
+    <form [formGroup]="questionForm"
+          (ngSubmit)="sendQuestion(questionForm)">
+
+        <div class="form-group">
+            <input formControlName="name"
+                   type="text"
+                   class="form-control evento_input"
+                   placeholder="{{ 'Full Name' | translate }}">
+            <div class="error"
+                 *ngIf="questionForm.controls['name'].hasError('required') && !questionForm.controls['name'].pristine"
+                 translate>
+                This field is required
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['name'].hasError('minlength') && !questionForm.controls['name'].pristine"
+                 translate>
+                Name should be at least 2 characters
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['name'].hasError('maxlength') && !questionForm.controls['name'].pristine"
+                 translate>
+                Name should be at most 20 characters
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <input formControlName="email"
+                   type="email"
+                   class="form-control evento_input"
+                   placeholder="{{ 'Your Email' | translate }}">
+            <div class="error"
+                 *ngIf="questionForm.controls['email'].hasError('required') && !questionForm.controls['email'].pristine"
+                 translate>
+                This field is required
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['email'].hasError('email') && !questionForm.controls['email'].pristine"
+                 translate>
+                Email format is not valid
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <input formControlName="mobile"
+                   type="text"
+                   class="form-control evento_input"
+                   placeholder="{{ 'Phone Number' | translate }}">
+            <div class="error"
+                 *ngIf="questionForm.controls['mobile'].hasError('required') && !questionForm.controls['mobile'].pristine"
+                 translate>
+                This field is required
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['mobile'].hasError('pattern') && !questionForm.controls['mobile'].pristine"
+                 translate>
+                Mobile number is invalid
+            </div>
+        </div>
+        <div class="form-group">
+            <input formControlName="subject"
+                   type="text"
+                   class="form-control evento_input"
+                   placeholder="{{ 'Subject' | translate }}">
+            <div class="error"
+                 *ngIf="questionForm.controls['subject'].hasError('required') && !questionForm.controls['subject'].pristine"
+                 translate>
+                This field is required
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['subject'].hasError('minlength') && !questionForm.controls['subject'].pristine"
+                 translate>
+                Field should be at least 6 characters
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['subject'].hasError('maxlength') && !questionForm.controls['subject'].pristine"
+                 translate>
+                Field should be at most 200 characters
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea formControlName="message"
+                      rows="4"
+                      class="form-control evento_input"
+                      placeholder="{{ 'Your message' | translate }}"></textarea>
+            <div class="error"
+                 *ngIf="questionForm.controls['message'].hasError('required') && !questionForm.controls['message'].pristine"
+                 translate>
+                This field is required
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['message'].hasError('minlength') && !questionForm.controls['message'].pristine"
+                 translate>
+                Field should be at least 6 characters
+            </div>
+            <div class="error"
+                 *ngIf="questionForm.controls['message'].hasError('maxlength') && !questionForm.controls['message'].pristine"
+                 translate>
+                Field should be at most 400 characters
+            </div>
+        </div>
+        <div class="form-group">
+            <re-captcha #captchaRef
+                        formControlName="recaptcha"></re-captcha>
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-9 col-sm-12 form-group">
+                <button type="submit"
+                        class="btn btn-info"
+                        [disabled]="!questionForm.valid"
+                        translate>
+                    send
+                </button>
+            </div>
+        </div>
     </form>
 </div>

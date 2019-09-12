@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import {RECAPTCHA_SETTINGS, RecaptchaSettings, RECAPTCHA_LANGUAGE} from 'ng-recaptcha';
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
@@ -13,18 +14,12 @@ import {
 } from "@ngx-translate/core";
 
 import { GlobalModule } from "./global/global.module";
-import { CoreModule } from './core/core.module';
+import { CoreModule } from "./core/core.module";
 
 export function createTranslateLoader(http: HttpClient) {
-  console.log("a");
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
-export class MyMissingTranslationHandler implements MissingTranslationHandler {
-  handle(params: MissingTranslationHandlerParams) {
-    return "some value";
-  }
-}
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,10 +29,6 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
-      missingTranslationHandler: {
-        provide: MissingTranslationHandler,
-        useClass: MyMissingTranslationHandler
-      },
       loader: {
         provide: TranslateLoader,
         useFactory: createTranslateLoader,
@@ -47,7 +38,14 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     GlobalModule,
     CoreModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: RECAPTCHA_SETTINGS,
+      useValue: {
+        siteKey: "6LfoDokUAAAAABirpPJC2G6akcdZ6N9jwXPrYvid"
+      } as RecaptchaSettings
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
