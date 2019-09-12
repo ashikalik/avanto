@@ -8,6 +8,7 @@ import { ContactUsRoutingModule } from "./contact-us-routing.module";
 import { ContactUsPageComponent } from "./contact-us-page/contact-us-page.component";
 import { ContactUsFormComponent } from "./contact-us-form/contact-us-form.component";
 import { TranslationModule } from "../../shared/translation/translation.module";
+import { SharedModule } from 'src/app/shared/common/shared.module';
 
 @NgModule({
   declarations: [ContactUsPageComponent, ContactUsFormComponent],
@@ -18,7 +19,8 @@ import { TranslationModule } from "../../shared/translation/translation.module";
     ReactiveFormsModule,
     TranslationModule,
     RecaptchaModule,
-    RecaptchaFormsModule
+    RecaptchaFormsModule,
+    SharedModule
   ]
 })
 export class ContactUsModule {}

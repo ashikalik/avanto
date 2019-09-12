@@ -63,13 +63,19 @@
 </div> -->
 
 <div>
+    <!-- <app-errors [errors]="contactError"
+                *ngIf="contactError"></app-errors> -->
+    <app-error-message *ngIf="contactError"
+                       [serverError]="contactError">
+    </app-error-message>
+
     <form [formGroup]="questionForm"
           (ngSubmit)="sendQuestion(questionForm)">
 
         <div class="form-group">
             <input formControlName="name"
                    type="text"
-                   class="form-control evento_input"
+                   class="form-control evento-form-field"
                    placeholder="{{ 'Full Name' | translate }}">
             <div class="error"
                  *ngIf="questionForm.controls['name'].hasError('required') && !questionForm.controls['name'].pristine"
@@ -92,7 +98,7 @@
         <div class="form-group">
             <input formControlName="email"
                    type="email"
-                   class="form-control evento_input"
+                   class="form-control evento-form-field"
                    placeholder="{{ 'Your Email' | translate }}">
             <div class="error"
                  *ngIf="questionForm.controls['email'].hasError('required') && !questionForm.controls['email'].pristine"
@@ -110,7 +116,7 @@
         <div class="form-group">
             <input formControlName="mobile"
                    type="text"
-                   class="form-control evento_input"
+                   class="form-control evento-form-field"
                    placeholder="{{ 'Phone Number' | translate }}">
             <div class="error"
                  *ngIf="questionForm.controls['mobile'].hasError('required') && !questionForm.controls['mobile'].pristine"
@@ -126,7 +132,7 @@
         <div class="form-group">
             <input formControlName="subject"
                    type="text"
-                   class="form-control evento_input"
+                   class="form-control evento-form-field"
                    placeholder="{{ 'Subject' | translate }}">
             <div class="error"
                  *ngIf="questionForm.controls['subject'].hasError('required') && !questionForm.controls['subject'].pristine"
@@ -147,7 +153,7 @@
         <div class="form-group">
             <textarea formControlName="message"
                       rows="4"
-                      class="form-control evento_input"
+                      class="form-control evento-form-field"
                       placeholder="{{ 'Your message' | translate }}"></textarea>
             <div class="error"
                  *ngIf="questionForm.controls['message'].hasError('required') && !questionForm.controls['message'].pristine"
@@ -170,7 +176,7 @@
                         formControlName="recaptcha"></re-captcha>
 
         </div>
-        <div class="row justify-content-center">
+        <!-- <div class="row justify-content-center">
             <div class="col-lg-6 col-md-9 col-sm-12 form-group">
                 <button type="submit"
                         class="btn btn-info"
@@ -179,6 +185,16 @@
                     send
                 </button>
             </div>
+        </div> -->
+
+        <div class="col-sm-12 mb-4 text-center">
+            <button type="submit"
+                    class="btn evento-button evento-button-primary"
+                    [disabled]="!questionForm.valid"
+                    translate>
+                Send Message
+            </button>
         </div>
+
     </form>
 </div>

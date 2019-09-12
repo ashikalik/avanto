@@ -108,6 +108,10 @@ body:lang(en) {
     background-color: theme-color('primary', 'base');
     color: theme-color('background', 'base');
 }
+.evento-button-primary:disabled {
+    background-color: theme-color('primary', 'base');
+    color: theme-color('background', 'base');
+}
 
 .evento-button-primary:active {
     background-color: theme-color('primary', 'dark');

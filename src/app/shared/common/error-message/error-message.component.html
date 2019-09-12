@@ -1,0 +1,11 @@
+<div class="alert alert-danger">
+    {{ serverError.meta.message }}
+</div>
+
+
+<ng-container *ngIf="serverError.errors">
+    <div class="alert alert-warning"
+         *ngFor="let err of serverError.errors">
+        {{ err.msg }}
+    </div>
+</ng-container>
