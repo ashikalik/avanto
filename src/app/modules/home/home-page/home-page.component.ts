@@ -4,10 +4,9 @@ import { Router } from "@angular/router";
 import { RegionList } from "../../../core/model/common/region-list";
 import { EventTypeList } from "../../../core/model/event/event-type-list";
 import { EventList } from "../../../core/model/event/event-list";
-import { SearchEventFormData } from "../../../core/model/search/search-event-form-data";
-
 import { EventService } from "../../../core/api-services/event.service";
 import { CommonService } from "../../../core/api-services/common.service";
+
 
 import { forkJoin } from "rxjs";
 
@@ -20,18 +19,14 @@ export class HomePageComponent implements OnInit {
   public regionList: RegionList;
   public eventTypeList: EventTypeList;
   public latestEventList: EventList;
-  public searchEventFormData: SearchEventFormData;
+
 
   constructor(
     private eventService: EventService,
     private commonService: CommonService,
     private router: Router
   ) {
-    this.searchEventFormData = {} as SearchEventFormData;
 
-    this.searchEventFormData.event_name = "";
-    this.searchEventFormData.event_region = 0;
-    this.searchEventFormData.event_type = 0;
   }
 
   ngOnInit() {
@@ -60,13 +55,14 @@ export class HomePageComponent implements OnInit {
 
   onFindButtonClick($event) {
     console.log($event);
-    this.router.navigate(["/search"], {
-      queryParams: {
-        region: $event.event_region,
-        type: $event.event_type,
-        name: $event.event_name
-      }
-    });
+    this.router.navigate(["/search"]);
+    // this.router.navigate(["/search"], {
+    //   queryParams: {
+    //     region: $event.event_region,
+    //     type: $event.event_type,
+    //     name: $event.event_name
+    //   }
+    // });
   }
   onSeeAllEventsButtonClick($event) {
     console.log($event);

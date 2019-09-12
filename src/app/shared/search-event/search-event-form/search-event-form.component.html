@@ -14,7 +14,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group">
                         <input type="text"
-                               [(ngModel)]="searchEventFormData.event_name"
+                               [(ngModel)]="searchEventFormDataService.name"
                                class="form-control evento-form-field"
                                placeholder="Event Name" />
                     </div>
@@ -23,7 +23,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
                         <select class="form-control evento-form-field evento-select"
-                                [(ngModel)]="searchEventFormData.event_region">
+                                [(ngModel)]="searchEventFormDataService.region">
                             <option value="0"
                                     translate>Choose City</option>
                             <ng-container *ngIf="regionList">
@@ -40,7 +40,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-4 mb-2">
                     <div class="form-group position-relative">
                         <select class="form-control evento-form-field evento-select"
-                                [(ngModel)]="searchEventFormData.event_type">
+                                [(ngModel)]="searchEventFormDataService.type">
                             <option value="0"
                                     translate>Choose Event Type</option>
                             <ng-container *ngIf="eventTypeList">
