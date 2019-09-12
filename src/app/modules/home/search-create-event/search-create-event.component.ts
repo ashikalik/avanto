@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Region } from "../../../core/models/region";
-import { EventType } from "../../../core/models/event-type";
+import { RegionList } from "../../../core/model/common/region-list";
+import { EventTypeList } from "../../../core/model/event/event-type-list";
 
 @Component({
   selector: 'app-search-create-event',
@@ -9,8 +9,8 @@ import { EventType } from "../../../core/models/event-type";
 })
 export class SearchCreateEventComponent implements OnInit {
 
-  @Input('region') region: Region;
-  @Input('eventType') eventType: EventType;
+  @Input('regionList') regionList: RegionList;
+  @Input('eventTypeList') eventTypeList: EventTypeList;
 
   constructor() { }
 

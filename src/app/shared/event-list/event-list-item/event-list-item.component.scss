@@ -1,7 +1,7 @@
 @import '../../../../scss/themes/evento-light/evento-theme-light.scss';
 
 .event-tags {
-
+    min-height:28px;
 
     .tag {
         border-radius: calc(1.0rem + 1px) calc(1.0rem + 1px) 0 0;

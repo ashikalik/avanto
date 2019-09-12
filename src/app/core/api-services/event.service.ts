@@ -8,6 +8,8 @@ import { LatestEvents } from "../models/latest-event";
 import { EventDetails } from "../models/event-details";
 import { SearchEvents } from "../models/search-events";
 
+import { EventList } from "../model/event/event-list";
+
 @Injectable({
   providedIn: "root"
 })
@@ -17,9 +19,13 @@ export class EventService {
     private dateTimeHelperService: DateTimeHelperService
   ) {}
 
-  public getLatestEvent(): Observable<LatestEvents> {
+  /**
+   * Returns Observable of EventList by calling web service
+   * @returns Observable<EventList>
+   */
+  public getLatestEventList(): Observable<EventList> {
     const url = environment.BASE_URL + NetworkConfig.LATEST_EVENTS;
-    return this.httpClient.get<LatestEvents>(url);
+    return this.httpClient.get<EventList>(url);
   }
 
   public getEventDetail(eventKey: string): Observable<EventDetails> {

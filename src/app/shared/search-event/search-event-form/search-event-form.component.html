@@ -26,10 +26,10 @@
                                 [(ngModel)]="eventRegionModel">
                             <option value=""
                                     translate>Choose City</option>
-                            <ng-container *ngIf="region">
-                                <option *ngFor="let oneregion of region.data"
-                                        [value]="oneregion.region_id">
-                                    {{ oneregion.name }}
+                            <ng-container *ngIf="regionList">
+                                <option *ngFor="let region of regionList.data"
+                                        [value]="region.region_id">
+                                    {{ region.name }}
                                 </option>
                             </ng-container>
                         </select>
@@ -43,8 +43,8 @@
                                 [(ngModel)]="eventTypeModel">
                             <option value=""
                                     translate>Choose Event Type</option>
-                            <ng-container *ngIf="eventType">
-                                <option *ngFor="let type of eventType.data"
+                            <ng-container *ngIf="eventTypeList">
+                                <option *ngFor="let type of eventTypeList.data"
                                         [value]="type.id">
                                     {{ type.name }}
                                 </option>

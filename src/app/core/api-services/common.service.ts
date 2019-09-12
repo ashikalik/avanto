@@ -8,13 +8,34 @@ import { EventType } from "../models/event-type";
 import { Nationality } from "../models/nationality";
 import { Educations } from "../models/educations";
 import { Audiences } from "../models/audience";
-
+/******************************* */
+import { RegionList } from "../model/common/region-list";
+import { EventTypeList } from "../model/event/event-type-list";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root"
 })
 export class CommonService {
   constructor(private httpClient: HttpClient) {}
+
+  /**
+   * Returns Observable of RegionList by calling web service
+   * @returns Observable<RegionList>
+   */
+  getRegionList(): Observable<RegionList> {
+    const url = environment.BASE_URL + NetworkConfig.REGION_LIST;
+    return this.httpClient.get<RegionList>(url);
+  }
+
+  /**
+   * Returns Observable of EventTypeList by calling web service
+   * @returns Observable<EventTypeList>
+   */
+  getEventTypeList(): Observable<EventTypeList> {
+    const url = environment.BASE_URL + NetworkConfig.EVENT_TYPE;
+    return this.httpClient.get<EventTypeList>(url);
+  }
+
 
   getCity(): Observable<City> {
     const url = environment.BASE_URL + NetworkConfig.CITY_LIST;

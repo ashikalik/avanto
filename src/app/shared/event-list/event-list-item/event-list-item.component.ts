@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { LatestEvent } from "../../../core/models/latest-event";
+import { Event } from "../../../core/model/event/event";
 
 @Component({
   selector: "app-event-list-item",
@@ -7,7 +7,7 @@ import { LatestEvent } from "../../../core/models/latest-event";
   styleUrls: ["./event-list-item.component.scss"]
 })
 export class EventListItemComponent implements OnInit {
-  @Input("eventItem") eventItem: LatestEvent;
+  @Input("event") event: Event;
   @Input("eventIndex") eventIndex: number;
   public tagClasses = [
     ['tag-0','tag-1','tag-2','tag-3'],

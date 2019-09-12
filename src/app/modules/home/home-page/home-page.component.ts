@@ -2,9 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { EventService } from "../../../core/api-services/event.service";
 import { CommonService } from "../../../core/api-services/common.service";
 
-import { Region } from "../../../core/models/region";
-import { EventType } from "../../../core/models/event-type";
-import { LatestEvents } from "../../../core/models/latest-event";
+import { RegionList } from "../../../core/model/common/region-list";
+import { EventTypeList } from "../../../core/model/event/event-type-list";
+import { EventList } from "../../../core/model/event/event-list";
 
 import { forkJoin } from "rxjs";
 
@@ -14,9 +14,9 @@ import { forkJoin } from "rxjs";
   styleUrls: ["./home-page.component.scss"]
 })
 export class HomePageComponent implements OnInit {
-  public region: Region;
-  public eventType: EventType;
-  public latestEvents: LatestEvents;
+  public regionList: RegionList;
+  public eventTypeList: EventTypeList;
+  public latestEventList: EventList;
 
   constructor(
     private eventService: EventService,
@@ -29,16 +29,16 @@ export class HomePageComponent implements OnInit {
 
   getData(): void {
     forkJoin(
-      this.commonService.getRegion(),
-      this.commonService.getEventType(),
-      this.eventService.getLatestEvent()
+      this.commonService.getRegionList(),
+      this.commonService.getEventTypeList(),
+      this.eventService.getLatestEventList()
     ).subscribe(res => {
-      this.region = res[0];
-      this.eventType = res[1];
-      this.latestEvents = res[2];
-      console.log(this.region);
-      console.log(this.eventType);
-      console.log(this.latestEvents);
+      this.regionList = res[0];
+      this.eventTypeList = res[1];
+      this.latestEventList = res[2];
+      console.log(this.regionList);
+      console.log(this.eventTypeList);
+      console.log(this.latestEventList);
     }, err => {
       console.log(err);
     });

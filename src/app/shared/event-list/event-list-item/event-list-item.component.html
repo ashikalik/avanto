@@ -1,21 +1,21 @@
-<div class="event-tags d-flex flex-row-reverse mx-2 px-4" *ngIf="eventItem && eventIndex">
-    <div class="tag py-1" [ngClass]="tagClasses[eventIndex][0]">{{eventItem.type}}</div>
+<div class="event-tags d-flex flex-row-reverse mx-2 px-4" *ngIf="event">
+    <div class="tag py-1" [ngClass]="tagClasses[eventIndex][0]">{{event.type}}</div>
 </div>
-<div class="media event-item shadow-sm" *ngIf="eventItem">
+<div class="media event-item shadow-sm" *ngIf="event">
     <img class="event-thumb"
-         src="{{eventItem.img}}"
+         src="{{event.img}}"
          alt="Generic placeholder image">
     <div class="media-body px-3 py-2">
-        <h5 class="mt-1 event-title">{{eventItem.name}}</h5>
+        <h5 class="mt-1 event-title">{{event.name}}</h5>
         <div class="event-description">
-            {{eventItem.details}}
+            {{event.details}}
         </div>
         <div class="event-location text-small mt-2">
             <div class="d-flex justify-content-between">
 
                 <div class="">
                     <span>&copy;&nbsp;</span>
-                    <span>{{eventItem.city}}</span>
+                    <span>{{event.city}}</span>
                 </div>
 
                 <button type="button"
@@ -29,6 +29,6 @@
         </div>
     </div>
 </div>
-<div class="when d-flex flex-row mx-3 evento-text-faded" *ngIf="eventItem">
-    <div class="">{{eventItem.from_date}} | {{eventItem.from_time}}</div>
+<div class="when d-flex flex-row mx-3 evento-text-faded" *ngIf="event">
+    <div class="">{{event.from_date}} | {{event.from_time}}</div>
 </div>
