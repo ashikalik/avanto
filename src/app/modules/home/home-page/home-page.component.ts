@@ -6,6 +6,7 @@ import { EventTypeList } from "../../../core/model/event/event-type-list";
 import { EventList } from "../../../core/model/event/event-list";
 import { EventService } from "../../../core/api-services/event.service";
 import { CommonService } from "../../../core/api-services/common.service";
+import { SearchEventFormDataService } from "../../../core/service/search-event-form-data.service";
 
 import { forkJoin } from "rxjs";
 
@@ -22,6 +23,7 @@ export class HomePageComponent implements OnInit {
   constructor(
     private eventService: EventService,
     private commonService: CommonService,
+    private searchEventFormDataService: SearchEventFormDataService,
     private router: Router
   ) {}
 
@@ -54,6 +56,10 @@ export class HomePageComponent implements OnInit {
   }
 
   onSeeAllEventsButtonClick($event) {
+    this.searchEventFormDataService.name = "";
+    this.searchEventFormDataService.region = "";
+    this.searchEventFormDataService.type = "";
+    this.searchEventFormDataService.need_vol = "";
     this.router.navigate(["/search"]);
   }
 }

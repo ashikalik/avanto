@@ -29,6 +29,7 @@ export class SearchPageComponent implements OnInit {
   ngOnInit() {
     this.resetSearch();
     this.getData();
+    this.search();
   }
 
   getData(): void {
@@ -105,7 +106,7 @@ export class SearchPageComponent implements OnInit {
       .subscribe(
         res => {
           this.searchResultEventList = res;
-          console.log(this.searchResult);
+          console.log(this.searchResultEventList);
         },
         err => {}
       );
