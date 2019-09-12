@@ -18,7 +18,7 @@ export class SearchPageComponent implements OnInit {
   public latestEventList: EventList;
   public limit: number;
   public page: number;
-  public searchResult;
+  public searchResultEventList;
 
   constructor(
     private eventService: EventService,
@@ -104,7 +104,7 @@ export class SearchPageComponent implements OnInit {
       )
       .subscribe(
         res => {
-          this.searchResult = res;
+          this.searchResultEventList = res;
           console.log(this.searchResult);
         },
         err => {}

@@ -24,7 +24,7 @@
                     <div class="form-group position-relative">
                         <select class="form-control evento-form-field evento-select"
                                 [(ngModel)]="searchEventFormDataService.region">
-                            <option value="0"
+                            <option value=""
                                     translate>Choose City</option>
                             <ng-container *ngIf="regionList">
                                 <option *ngFor="let region of regionList.data"
@@ -41,7 +41,7 @@
                     <div class="form-group position-relative">
                         <select class="form-control evento-form-field evento-select"
                                 [(ngModel)]="searchEventFormDataService.type">
-                            <option value="0"
+                            <option value=""
                                     translate>Choose Event Type</option>
                             <ng-container *ngIf="eventTypeList">
                                 <option *ngFor="let type of eventTypeList.data"
