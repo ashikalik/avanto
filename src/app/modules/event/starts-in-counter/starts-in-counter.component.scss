@@ -1,0 +1,14 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.starts-in-counter {
+    .day, .hour, .minute {
+        //padding-right: 5px;
+    }
+    .label {
+        font-size: text-scale('sm');
+    }
+    .count {
+        margin-top:-10px;
+        font-size: text-scale('xxxl');
+    }
+}
