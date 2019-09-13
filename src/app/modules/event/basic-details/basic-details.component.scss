@@ -1,0 +1,27 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.when {
+
+    background:theme-color('gray-lighter', 'base');
+    color:theme-color('foreground', 'base');
+    border: 1px solid theme-color('gray-lighter', 'dark');
+    border-radius: calc(0.575rem + 1px);
+
+    .day {
+        font-size: text-scale('lg');
+    }
+    .month {
+        font-size: text-scale('sm');
+    }
+}
+
+.title {
+    font-size: text-scale('md');
+    padding-left:10px;
+}
+.title:lang(ar) {
+    padding-right:10px;
+}
+.price-range{
+    font-size: text-scale('md');
+}

@@ -39,6 +39,11 @@ $theme-colors: (
     'light': #fafafa,
     'dark': #e2e2e2
   ),
+  'gray-lighter': (
+    'base': #dddddd,
+    'light': #eeeeee,
+    'dark': #cccccc
+  ),
   'gray-light': (
     'base': #aaaaaa,
     'light': #bbbbbb,
@@ -53,6 +58,11 @@ $theme-colors: (
     'base': #444444,
     'light': #555555,
     'dark': #333333
+  ),
+  'gray-darker': (
+    'base': #222222,
+    'light': #333333,
+    'dark': #111111
   ),
   'gray-darkest': (
     'base': #1c1c1c,

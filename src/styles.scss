@@ -1,13 +1,25 @@
 @import './scss/themes/evento-light/evento-theme-light.scss';
 
+@media (max-width: 992px) {
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+ }
+
 body:lang(ar) {
     font-family: font-family('sky');
     font-weight: normal;
+    text-align: right;
 }
 
 body:lang(en) {
     font-family: font-family('bahnschrift');
     font-weight: lighter;
+    text-align: left;
 }
 
 .evento-nav-bar {
