@@ -1,17 +1,32 @@
 @import '../../../../scss/themes/evento-light/evento-theme-light.scss';
 
 .ticket {
+    position: relative;
     background:  theme-color('gray-lightest', 'light');
-    border: 1px solid theme-color('gray-lightest', 'base');
+    border: 1px solid theme-color('gray-lightest', 'dark');
     border-radius: calc(1.125rem + 1px);
-    max-height:100px;
+    
     overflow: hidden;
-    padding: 10px;
-    margin-bottom:10px;
+    padding: 15px;
+    margin-bottom:15px;
     .rate {
         color:  theme-color('primary', 'light');
     }
     .description {
         font-size: text-scale('xs');
+    }
+    .show-more-less {
+        position: absolute;
+        bottom: 0;
+        width:100%;
+        font-size: text-scale('xxs');
+        background: rgba($color: theme-color('gray-lightest', 'light'), $alpha: 0.7);
+        padding-bottom:5px;
+    }
+    &.full {
+        max-height: auto;
+    }
+    &.less {
+        max-height: 120px;
     }
 }
