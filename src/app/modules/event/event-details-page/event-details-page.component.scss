@@ -1,7 +1,29 @@
-
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
 
 .img-event-banner {
     border: 1px solid theme-color('gray-lightest', 'base');
     border-radius: calc(1.125rem + 1px);
     max-height:420px;
+}
+
+.title-underlined {
+    padding-bottom:5px;
+    border-bottom: 1px solid theme-color('gray-lighter', 'base');
+    font-size: text-scale('lg');
+}
+
+.event-date-time {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.rules {
+    padding: 0;
+    list-style-position: inside;
+    //margin: 0;
+}
+
+.calendar-icon {
+    font-size: text-scale('xxl');
+    color:theme-color('primary', 'base');
 }
