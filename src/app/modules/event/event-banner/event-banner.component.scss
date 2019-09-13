@@ -1,0 +1,7 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.img-event-banner {
+    border: 1px solid theme-color('gray-lightest', 'base');
+    border-radius: calc(1.125rem + 1px);
+    max-height:420px;
+}

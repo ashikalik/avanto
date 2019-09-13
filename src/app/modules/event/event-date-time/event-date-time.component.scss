@@ -1,0 +1,12 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.event-date-time {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.calendar-icon {
+    font-size: text-scale('xxl');
+    color:theme-color('primary', 'base');
+}

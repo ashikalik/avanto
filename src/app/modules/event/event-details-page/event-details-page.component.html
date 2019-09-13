@@ -1,85 +1,59 @@
 <div class="container">
     <div class="row">
         <div class=" col-lg-8 py-2">
-            <img class="img-fluid img-event-banner"
-                 src="assets/img/temp-event-banner.jpg"
-                 alt="" />
+            <app-event-banner></app-event-banner>
+
+
+            <h3 class="evento-section-title title-underlined">Description</h3>
+            <app-event-description></app-event-description>
+            <h3 class="evento-section-title title-underlined">Rules</h3>
+            <app-event-rules></app-event-rules>
+            <h3 class="evento-section-title title-underlined">Sponsers</h3>
+            <app-event-sponsors></app-event-sponsors>
+
         </div>
         <div class=" col-lg-4 py-2">
             <app-basic-details></app-basic-details>
+            <h3 class="evento-section-title title-underlined">Time and Date</h3>
+            <app-event-date-time></app-event-date-time>
+            <h3 class="evento-section-title title-underlined">Tickets</h3>
+            <div class=" mx-2">
+                <app-ticket-list-item></app-ticket-list-item>
+                <app-ticket-list-item></app-ticket-list-item>
+                <app-ticket-list-item></app-ticket-list-item>
+                <app-ticket-list-item></app-ticket-list-item>
+            </div>
         </div>
-        <div class=" col-lg-8 py-2">
-            <h3 class="title-underlined">Description</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt lacus vitae leo pulvinar ornare. Mauris condimentum laoreet nibh, id tincidunt ligula finibus a. Sed et eros rutrum, dapibus enim et, ullamcorper est.</p>
-            <p>Sed volutpat elit ac posuere aliquam. Cras eros augue, rhoncus nec sodales venenatis, ullamcorper in purus. Mauris vel dolor condimentum, hendrerit purus molestie, euismod mauris.</p>
-            <p>In leo erat, blandit at ex id, vulputate luctus velit. Etiam malesuada placerat mi, in viverra purus vehicula vitae. Proin rutrum facilisis lobortis.</p>
+        <!-- <div class=" col-lg-8 py-2">
+            <h3 class="evento-section-title title-underlined">Description</h3>
+            <app-event-description></app-event-description>
 
         </div>
 
         <div class="col-lg-4 py-2">
-            <h3 class="title-underlined">Time and Date</h3>
-            <div class="d-flex mb-3">
-                <div class="align-self-start p-2">
-                    <i class="fa fas fa-calendar-alt calendar-icon"></i>
-                </div>
-                <div class="flex-grow-1 mx-2">
-                    <ul class="event-date-time">
-                        <li>Mon 28, Jan 2019 16:00 22:00</li>
-                        <li>Mon 28, Jan 2019 16:00 22:00</li>
-                        <li>Mon 28, Jan 2019 16:00 22:00</li>
-                    </ul>
-                </div>
-            </div>
+            <h3 class="evento-section-title title-underlined">Time and Date</h3>
+            <app-event-date-time></app-event-date-time>
         </div>
 
         <div class=" col-lg-8 py-2">
-            <h3 class="title-underlined">Rules</h3>
+            <h3 class="evento-section-title title-underlined">Rules</h3>
+            <app-event-rules></app-event-rules>
+        </div>
+
+        <div class=" col-lg-8 py-2">
+            <h3 class="evento-section-title title-underlined">Sponsers</h3>
+            <app-event-sponsors></app-event-sponsors>
+        </div>
+
+        <div class=" col-lg-4 py-2">
+            <h3 class="evento-section-title title-underlined">Rules</h3>
             <div class=" mx-2">
-                <ul class="rules">
-                    <li>Admission is free</li>
-                    <li>For trade and industry professionals</li>
-                    <li>Visitors under age 18 will not be permitted</li>
-                </ul>
+                <app-ticket-list-item></app-ticket-list-item>
+                <app-ticket-list-item></app-ticket-list-item>
+                <app-ticket-list-item></app-ticket-list-item>
+                <app-ticket-list-item></app-ticket-list-item>
             </div>
-        </div>
-
-        <div class=" col-lg-8 py-2">
-            <h3 class="title-underlined">Sponsers</h3>
-            <div class="d-flex flex-column flex-md-row justify-content-start">
-                <div class="contact text-center mx-2">
-                    <img class="mx-2 my-2 icon-contact"
-                         src="./assets/img/partners/Logo1.png" />
-                    <div>
-
-                    </div>
-                </div>
-
-                <div class="contact text-center mx-2">
-                    <img class="mx-2 my-2 icon-contact"
-                         src="./assets/img/partners/Logo2.png" />
-                    <div>
-                    </div>
-                </div>
-
-                <div class="contact text-center mx-2">
-                    <img class="mx-2 my-2 icon-contact"
-                         src="./assets/img/partners/Logo3.png" />
-                    <div>
-
-                    </div>
-                </div>
-
-                <div class="contact text-center mx-2">
-                    <img class="mx-2 my-2 icon-contact"
-                         src="./assets/img/partners/Logo1.png" />
-                    <div>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
+        </div> -->
 
     </div>
 </div>
