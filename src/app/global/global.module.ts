@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
-import { TranslationModule } from '../shared/translation/translation.module';
+import { TranslationModule } from '../common/translation/translation.module';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
