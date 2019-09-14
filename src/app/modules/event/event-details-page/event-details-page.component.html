@@ -13,7 +13,7 @@
 
         </div>
         <div class=" col-lg-4 py-2">
-            <app-basic-details></app-basic-details>
+            <app-basic-details *ngIf="eventData" [eventDetails]="eventData.details"></app-basic-details>
             <h3 class="evento-section-title title-underlined mt-2">Time and Date</h3>
             <app-event-date-time></app-event-date-time>
             <h3 class="evento-section-title title-underlined mt-2">Tickets</h3>

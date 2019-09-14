@@ -1,9 +1,9 @@
 <div class="d-flex basic-details">
     <div class="when text-center align-self-start p-2">
-        <div class="day">6</div>
-        <div class="month">DEC</div>
+        <div class="day">{{startDay}}</div>
+        <div class="month">{{startMonth | uppercase}} </div>
     </div>
-    <div class="title flex-grow-1 mx-2">FM EXPO SAUDI - Facilities Management Solutions</div>
+    <div class="title flex-grow-1 mx-2">{{eventDetails.name}}</div>
 </div>
 
 <div class="d-flex flex-column basic-details pt-3 pb-2">
@@ -19,7 +19,7 @@
 
 <div class="d-flex flex-column">
     <div>Event will start in</div>
-    <app-starts-in-counter></app-starts-in-counter>
+    <app-starts-in-counter [startDate]="eventDetails.from_date" [startTime]="eventDetails.from_time" ></app-starts-in-counter>
     <button type="submit "
     class="btn evento-button-sm evento-button-primary align-self-start mb-2 px-4"
     translate>
