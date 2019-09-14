@@ -3,5 +3,6 @@
 .img-event-banner {
     border: 1px solid theme-color('gray-lightest', 'base');
     border-radius: calc(1.125rem + 1px);
+    width:100%;
     max-height:420px;
 }
