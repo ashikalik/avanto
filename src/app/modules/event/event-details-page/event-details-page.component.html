@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row">
         <div class=" col-lg-8 py-2">
-            <app-event-banner></app-event-banner>
+            <app-event-banner  *ngIf="eventData" [bannerImage]="eventData.details.img"></app-event-banner>
 
 
             <h3 class="evento-section-title title-underlined mt-2">Description</h3>
-            <app-event-description></app-event-description>
+            <app-event-description *ngIf="eventData" [description]="eventData.details.details"></app-event-description>
             <h3 class="evento-section-title title-underlined mt-2">Rules</h3>
             <app-event-rules></app-event-rules>
             <h3 class="evento-section-title title-underlined mt-2">Sponsers</h3>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-event-description',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-description.component.scss']
 })
 export class EventDescriptionComponent implements OnInit {
+  @Input('description') description : string;
 
   constructor() { }
 
