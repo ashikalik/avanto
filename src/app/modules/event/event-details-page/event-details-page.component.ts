@@ -13,8 +13,8 @@ import { EventoError } from "../../../core/models/error";
 export class EventDetailsPageComponent implements OnInit {
   public eventKey: string;
   public eventData: EventDetailsResponseData;
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  public lat: number = 51.678418;
+  public lng: number = 7.809007;
 
   public errorSubmitRequest: EventoError;
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 
 import { EventRoutingModule } from './event-routing.module';
 import { EventDetailsPageComponent } from './event-details-page/event-details-page.component';
@@ -11,12 +12,14 @@ import { EventDescriptionComponent } from './event-description/event-description
 import { EventDateTimeComponent } from './event-date-time/event-date-time.component';
 import { EventSponsorsComponent } from './event-sponsors/event-sponsors.component';
 import { EventBannerComponent } from './event-banner/event-banner.component';
+import { EventMapComponent } from './event-map/event-map.component';
 
 
 @NgModule({
-  declarations: [EventDetailsPageComponent, BasicDetailsComponent, StartsInCounterComponent, TicketListItemComponent, EventRulesComponent, EventDescriptionComponent, EventDateTimeComponent, EventSponsorsComponent, EventBannerComponent],
+  declarations: [EventDetailsPageComponent, BasicDetailsComponent, StartsInCounterComponent, TicketListItemComponent, EventRulesComponent, EventDescriptionComponent, EventDateTimeComponent, EventSponsorsComponent, EventBannerComponent, EventMapComponent],
   imports: [
     CommonModule,
+    AgmCoreModule,
     EventRoutingModule
   ]
 })
