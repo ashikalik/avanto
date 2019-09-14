@@ -12,9 +12,13 @@
 .subscribe-title:lang(ar) {
     text-align: right;
 }
-
+.subscribe-email-wrapper {
+    max-width: 500px;
+}
 .subscribe-email {
     flex: 1;
+    
+    
 }
 
 .links {
