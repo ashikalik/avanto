@@ -9,10 +9,31 @@
 }
 
 .contact-us-form-wrapper {
-    margin: 0 100px;
+    //margin: 0 100px;
     background: theme-color('background', 'base');
     border-radius: calc(1.125rem + 1px);
+    padding: 20px;
 }
+@media (min-width: 768px) { 
+    .contact-us-form-wrapper {
+        margin: 0 100px;
+        padding: 30px;
+    }
+ }
+
+@media (min-width: 992px) { 
+    .contact-us-form-wrapper {
+        margin: 0 150px;
+        padding: 50px;
+    }
+ }
+
+@media (min-width: 1200px) { 
+    .contact-us-form-wrapper {
+        margin: 0 200px;
+        padding: 100px;
+    }
+ }
 
 .img-get-in-touch {
     margin-top:-100px;
