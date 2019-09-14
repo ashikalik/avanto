@@ -8,6 +8,7 @@ import * as moment from "moment";
 })
 export class DateTimeHelperService {
   private dateFormat = "YYYY-MM-DDTHH:mm:ss";
+  private displayDateFormat = "ddd DD, MMM YYYY";
 
   constructor() {}
 
@@ -55,6 +56,20 @@ export class DateTimeHelperService {
 
     return startsInStr;
   }
+
+  public enumerateDaysBetweenDates (startDate, endDate) : any{
+
+    var dates = [];
+
+    var currDate = moment(startDate, this.dateFormat).startOf('day');
+    var lastDate = moment(endDate, this.dateFormat).startOf('day');
+
+    while(currDate.add(1, 'days').diff(lastDate) < 0) {
+        dates.push(currDate.clone().format(this.displayDateFormat));
+    }
+
+    return dates;
+};
 
   public getMomentDate(date: string, time: string): any {
     let momentDate = moment(date + "T" + time, this.dateFormat).format(

@@ -4,9 +4,7 @@
     </div>
     <div class="flex-grow-1 mx-2">
         <ul class="event-date-time">
-            <li>Mon 28, Jan 2019 16:00 22:00</li>
-            <li>Mon 28, Jan 2019 16:00 22:00</li>
-            <li>Mon 28, Jan 2019 16:00 22:00</li>
+                <li *ngFor="let timing of eventTiming" >{{timing}} {{eventDetails.from_time}} {{eventDetails.end_time}}</li>
         </ul>
     </div>
 </div>
