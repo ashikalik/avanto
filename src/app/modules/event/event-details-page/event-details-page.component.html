@@ -36,39 +36,11 @@
                 <button type="button"
                         class="btn evento-button evento-button-primary align-self-center"
                         (click)="handleBuyTicketButtonClick();"
+                        *ngIf="eventData.details.ticket_payment == 1"
                         translate>Buy Now</button>
             </div>
         </div>
-        <!-- <div class=" col-lg-8 py-2">
-            <h3 class="evento-section-title title-underlined">Description</h3>
-            <app-event-description></app-event-description>
-
-        </div>
-
-        <div class="col-lg-4 py-2">
-            <h3 class="evento-section-title title-underlined">Time and Date</h3>
-            <app-event-date-time></app-event-date-time>
-        </div>
-
-        <div class=" col-lg-8 py-2">
-            <h3 class="evento-section-title title-underlined">Rules</h3>
-            <app-event-rules></app-event-rules>
-        </div>
-
-        <div class=" col-lg-8 py-2">
-            <h3 class="evento-section-title title-underlined">Sponsers</h3>
-            <app-event-sponsors></app-event-sponsors>
-        </div>
-
-        <div class=" col-lg-4 py-2">
-            <h3 class="evento-section-title title-underlined">Rules</h3>
-            <div class=" mx-2">
-                <app-ticket-list-item></app-ticket-list-item>
-                <app-ticket-list-item></app-ticket-list-item>
-                <app-ticket-list-item></app-ticket-list-item>
-                <app-ticket-list-item></app-ticket-list-item>
-            </div>
-        </div> -->
+       
 
     </div>
 </div>

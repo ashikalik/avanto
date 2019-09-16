@@ -1,18 +1,26 @@
 <div class="ticket shadow-sm less">
     <div>{{package.name}}</div>
-    <div class="rate"><span>{{package.price}}</span> SAR</div>
+    <div class="rate"
+         *ngIf="package.price > 0"><span>{{package.price}}</span> SAR</div>
+    <div class="rate"
+         *ngIf="package.price === 0">FREE</div>
     <div class="description">{{package.description}}</div>
     <div *ngIf="showComplete">
-            {{ package.audience_name }}
+        Ticket for {{ package.audience_name }}
         <!-- {{ 'Ticket for'  | translate }} {{ package.audience_name }} -->
     </div>
     <div class="show-more-less text-center"
          [ngClass]="{'full': showComplete, 'less': !showComplete}"
          (click)="handleshowMoreLessClick()">
-        <div *ngIf="!showComplete">Show More <i class="fas fa-chevron-down" ></i></div>
 
-        <!-- <span class="text-center" (click)="handleshowMoreLessClick()" translate *ngIf="!showComplete">SHOW MORE&nbsp;<i class="fas fa-chevron-down"></i></span>
-        <span class="text-center" (click)="handleshowMoreLessClick()" translate *ngIf="showComplete">SHOW LESS&nbsp;<i class="fas fa-chevron-up"></i></span> -->
+        <div class="text-center"
+            
+             translate
+             *ngIf="!showComplete">SHOW MORE&nbsp;<i class="fas fa-chevron-down"></i></div>
+        <div class="text-center"
+             
+             translate
+             *ngIf="showComplete">SHOW LESS&nbsp;<i class="fas fa-chevron-up"></i></div>
 
     </div>
 </div>
