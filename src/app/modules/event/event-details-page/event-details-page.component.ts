@@ -53,7 +53,7 @@ export class EventDetailsPageComponent implements OnInit {
     );
   }
 
-  public buyTicket() {
+  public handleBuyTicketButtonClick() {
     if (this.eventKey != "214611584") {
       this.router.navigate(["/buy-ticket/" + this.eventKey]);
     } else {

@@ -29,9 +29,14 @@
             <app-event-date-time *ngIf="eventData"
                                  [eventDetails]="eventData.details"></app-event-date-time>
             <h3 class="evento-section-title title-underlined mt-2" *ngIf="eventData && eventData.packages">Tickets</h3>
-            <div class="" *ngIf="eventData && eventData.packages" >
-                <app-ticket-list-item *ngFor="let package of eventData.packages" [package]="package" ></app-ticket-list-item>
-               
+            <div class="d-flex flex-column"
+                 *ngIf="eventData && eventData.packages">
+                <app-ticket-list-item *ngFor="let package of eventData.packages"
+                                      [package]="package"></app-ticket-list-item>
+                <button type="button"
+                        class="btn evento-button evento-button-primary align-self-center"
+                        (click)="handleBuyTicketButtonClick();"
+                        translate>Buy Now</button>
             </div>
         </div>
         <!-- <div class=" col-lg-8 py-2">

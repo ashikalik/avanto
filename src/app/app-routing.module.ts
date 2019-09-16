@@ -1,32 +1,35 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: "",
+    redirectTo: "home",
+    pathMatch: "full"
   },
   {
-    path: 'home',
-    loadChildren: './modules/home/home.module#HomeModule',
+    path: "home",
+    loadChildren: "./modules/home/home.module#HomeModule"
   },
   {
-    path: 'search',
-    loadChildren: './modules/search/search.module#SearchModule',
+    path: "search",
+    loadChildren: "./modules/search/search.module#SearchModule"
   },
   {
-    path: 'about-us',
-    loadChildren: './modules/about-us/about-us.module#AboutUsModule',
+    path: "about-us",
+    loadChildren: "./modules/about-us/about-us.module#AboutUsModule"
   },
   {
-    path: 'contact-us',
-    loadChildren: './modules/contact-us/contact-us.module#ContactUsModule',
+    path: "contact-us",
+    loadChildren: "./modules/contact-us/contact-us.module#ContactUsModule"
   },
   {
-    path: 'event',
-    loadChildren: './modules/event/event.module#EventModule',
+    path: "event",
+    loadChildren: "./modules/event/event.module#EventModule"
+  },
+  {
+    path: "buy-ticket",
+    loadChildren: "./modules/buy-ticket/buy-ticket.module#BuyTicketModule"
   }
 ];
 
@@ -34,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
