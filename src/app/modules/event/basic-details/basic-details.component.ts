@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { EventDetails } from "../../../core/model/event/event-details";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DateTimeHelperService } from '../../../core/service/date-time-helper.service';
 import { Duration } from '../../../core/model/common/duration';
+import { EventData } from 'src/app/core/model/event/event-data';
 
 @Component({
   selector: 'app-basic-details',
@@ -9,7 +9,9 @@ import { Duration } from '../../../core/model/common/duration';
   styleUrls: ['./basic-details.component.scss']
 })
 export class BasicDetailsComponent implements OnInit {
-  @Input('eventDetails') eventDetails: EventDetails;
+  @Input('eventData') eventData: EventData;
+  @Output() registerOrganizerClick: EventEmitter<any> = new EventEmitter();
+
   public startDay = '';
   public startMonth = '';
   public startsIn:Duration;
@@ -22,12 +24,16 @@ export class BasicDetailsComponent implements OnInit {
   }
 
   private formatEventStartData() : void {
-    this.startDay = this.dateTimeHelperService.getDay(this.eventDetails.from_date);
-    this.startMonth = this.dateTimeHelperService.getMonth(this.eventDetails.from_date);
+    this.startDay = this.dateTimeHelperService.getDay(this.eventData.details.from_date);
+    this.startMonth = this.dateTimeHelperService.getMonth(this.eventData.details.from_date);
 
     //console.log(startin);
     // let startDate = moment(this.eventDetails.from_date + "T" + this.eventDetails.from_time).format('YYYY-MM-DDTHH:mm:ss');
     // console.log(startDate);
+  }
+
+  public handleApplyOrganizerClick() {
+    this.registerOrganizerClick.emit();
   }
 
 }

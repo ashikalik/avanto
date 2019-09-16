@@ -24,7 +24,9 @@
         </div>
         <div class=" col-lg-4 py-2">
             <app-basic-details *ngIf="eventData"
-                               [eventDetails]="eventData.details"></app-basic-details>
+                               [eventData]="eventData"
+                               (registerOrganizerClick)="onRegisterOrganizerClick($event)"
+                               ></app-basic-details>
             <h3 class="evento-section-title title-underlined mt-2">Time and Date</h3>
             <app-event-date-time *ngIf="eventData"
                                  [eventDetails]="eventData.details"></app-event-date-time>

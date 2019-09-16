@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { EventService } from "../../../core/api-services/event.service";
 import { ActivatedRoute, Router } from "@angular/router";
-import { EventDetailsResponseData } from "../../../core/model/event/event-details-reponse";
+import { EventData } from "../../../core/model/event/event-data";
 import { Meta, Title } from "@angular/platform-browser";
 import { EventoError } from "../../../core/models/error";
 
@@ -12,7 +12,7 @@ import { EventoError } from "../../../core/models/error";
 })
 export class EventDetailsPageComponent implements OnInit {
   public eventKey: string;
-  public eventData: EventDetailsResponseData;
+  public eventData: EventData;
   public lat: number = 51.678418;
   public lng: number = 7.809007;
 
@@ -61,7 +61,7 @@ export class EventDetailsPageComponent implements OnInit {
     }
   }
 
-  public submitRequest() {
+  public onRegisterOrganizerClick() {
     this.errorSubmitRequest = null;
     this.eventService.submitRequest(this.eventKey).subscribe(
       res => {
