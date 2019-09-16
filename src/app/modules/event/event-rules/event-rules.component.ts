@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Policy } from 'src/app/core/model/common/policy';
 
 @Component({
   selector: 'app-event-rules',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-rules.component.scss']
 })
 export class EventRulesComponent implements OnInit {
-
+  @Input('rules') rules:Policy[];
   constructor() { }
 
   ngOnInit() {

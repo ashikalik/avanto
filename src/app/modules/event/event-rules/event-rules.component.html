@@ -1,7 +1,5 @@
 <div class=" mx-2">
     <ul class="rules">
-        <li>Admission is free</li>
-        <li>For trade and industry professionals</li>
-        <li>Visitors under age 18 will not be permitted</li>
+        <li *ngFor="let rule of rules" >{{rule.policy}}</li>
     </ul>
 </div>
