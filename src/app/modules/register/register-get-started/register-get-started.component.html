@@ -1,0 +1,58 @@
+<div class="text-center">
+    <h3>Let us get started</h3>
+    <div class="evento-text-faded mb-4">
+        <span>Already a member ?&nbsp;</span>
+        <span> <a [routerLink]="['/login']" class="evento-text-primary" translate>Sign in</a></span>
+
+    </div>
+    <div class="mb-4">I want to join as</div>
+
+    <form [formGroup]="registerAsForm">
+        <div class="radio-toolbar">
+            <div>
+                <input type="radio"
+                       class="radio-as-button"
+                       id="member"
+                       formControlName="registerAs"
+                       name="registerAs"
+                       value="member"
+                       (change)="handleRegisterAsValueChange()">
+                <label for="member"
+                       class="evento-button">Member</label>
+            </div>
+            <div>
+
+                <input type="radio"
+                       class="radio-as-button"
+                       id="organizer"
+                       formControlName="registerAs"
+                       name="registerAs"
+                       value="organizer"
+                       (change)="handleRegisterAsValueChange()">
+                <label for="organizer"
+                       class="evento-button">Organizer</label>
+            </div>
+            <div>
+
+                <input type="radio"
+                       class="radio-as-button"
+                       id="organization"
+                       formControlName="registerAs"
+                       name="registerAs"
+                       value="organization"
+                       (change)="handleRegisterAsValueChange()">
+                <label for="organization"
+                       class="evento-button">Organization</label>
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <input type="button"
+               (click)="handleNextButtonClick()"
+               class="btn evento-button evento-button-primary mt-3 mr-2 ml-2"
+               value="{{ 'Next' | translate }}" />
+    </div>
+
+
+</div>

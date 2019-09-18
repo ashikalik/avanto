@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: "buy-ticket",
     loadChildren: "./modules/buy-ticket/buy-ticket.module#BuyTicketModule"
+  },
+  {
+    path: "register",
+    loadChildren: "./modules/register/register.module#RegisterModule"
   }
 ];
 

@@ -1,0 +1,10 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.register-banner {
+    border-left:1px solid transparent;
+    border-right:1px solid theme-color('gray-lighter', 'base');
+}
+.register-banner:lang(ar) {
+    border-left:1px solid theme-color('gray-lighter', 'base');
+    border-right:1px solid transparent;
+}

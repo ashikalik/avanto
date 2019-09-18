@@ -1,0 +1,37 @@
+<div [ngSwitch]="bannerFor">
+    <div *ngSwitchCase="'member'"
+         class="text-center ">
+        <img class="img-fluid mx-auto d-block evento-img-featured mb-4"
+             src="assets/img/illustration-member-313x249.svg"
+             alt="" />
+        <div class="text-center evento-text-faded mb-4"
+             translate>Join us as a member and enjoy the latest
+            events
+        </div>
+    </div>
+
+
+
+    <div *ngSwitchCase="'organizer'"
+         class="text-center ">
+        <img class="img-fluid mx-auto d-block evento-img-featured mb-4"
+             src="assets/img/illustration-organizers-349x249.svg"
+             alt="" />
+        <div class="text-center evento-text-faded mb-4"
+             translate>Join us as an organizer and become part of
+            the most fun job experience
+        </div>
+    </div>
+
+    <div *ngSwitchCase="'organization'"
+         class="text-center">
+        <img class="img-fluid mx-auto d-block evento-img-featured mb-4"
+             src="assets/img/illustration-organization-289x259.svg"
+             alt="" />
+        <div class="text-center evento-text-faded mb-4"
+             translate>Are you an events organizing company?<br>Just
+            join us and let us make yourjob easier
+        </div>
+    </div>
+
+</div>

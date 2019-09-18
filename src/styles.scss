@@ -32,6 +32,10 @@ body:lang(en) {
     }
 }
 
+.evento-img-featured {
+    max-width:300px;
+}
+
 .evento-section-title {
     color: theme-color('foreground', 'base');
     @include text-setting('lg');
@@ -49,6 +53,10 @@ body:lang(en) {
 
 .evento-text-faded {
     color: theme-color('gray-medium', 'base');
+}
+
+.evento-text-primary, .evento-text-primary:hover {
+    color: theme-color('primary', 'base');
 }
 
 
