@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class RegisterGetStartedComponent implements OnInit {
 
   @Output() registerAsValueChange:EventEmitter<any> = new EventEmitter();
+  @Output() nextButtonClick:EventEmitter<any> = new EventEmitter();
 
   private registerAs:string = 'member';
   registerAsForm: FormGroup;
@@ -21,7 +22,6 @@ export class RegisterGetStartedComponent implements OnInit {
 
   ngOnInit() {
     this.registerAsValueChange.emit({  registerAs: this.registerAsForm.value.registerAs });
-
   }
 
   handleRegisterAsValueChange() {
@@ -29,6 +29,7 @@ export class RegisterGetStartedComponent implements OnInit {
   }
 
   handleNextButtonClick() {
-    console.log(this.registerAsForm.value.registerAs);
+    this.nextButtonClick.emit({  registerAs: this.registerAsForm.value.registerAs });
+
   }
 }
