@@ -11,11 +11,11 @@ import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
-  selector: "app-member-form",
-  templateUrl: "./member-form.component.html",
-  styleUrls: ["./member-form.component.scss"]
+  selector: 'app-register-member-form',
+  templateUrl: './register-member-form.component.html',
+  styleUrls: ['./register-member-form.component.scss']
 })
-export class MemberFormComponent implements OnInit {
+export class RegisterMemberFormComponent implements OnInit {
   public signupForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder, private location: Location) {
@@ -111,3 +111,5 @@ export class MemberFormComponent implements OnInit {
     }
   }
 }
+
+
