@@ -6,6 +6,9 @@ import {
   Validators
 } from "@angular/forms";
 import {Location} from '@angular/common';
+import { AuthService } from "../../../core/api-services/auth.service";
+
+import {EventoError} from "../../../core/models/error";
 
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
@@ -17,8 +20,12 @@ import { Meta, Title } from "@angular/platform-browser";
 })
 export class RegisterMemberFormComponent implements OnInit {
   public signupForm: FormGroup;
-
-  constructor(public formBuilder: FormBuilder, private location: Location) {
+  public registrationError:EventoError;
+  constructor(public formBuilder: FormBuilder,
+     private location: Location,
+          private authService:AuthService,
+          private router:Router
+    ) {
     this.initMemberForm();
   }
 
@@ -42,7 +49,23 @@ export class RegisterMemberFormComponent implements OnInit {
     };
     console.log(body);
     //this.registerClick.emit(body);
+    this.signup(body);
   }
+
+  public signup(form: any) {
+    this.registrationError = null;
+    this.authService.signup(form).subscribe(
+      res => {
+        //this.isSignupCompleted = true;
+         this.router.navigate(['/home']);
+      },
+      err => {
+        this.signupForm.get("recaptcha").setValue(null);
+        this.registrationError = err.value.error;
+      }
+    );
+  }
+
 
   public initMemberForm() {
     this.signupForm = this.formBuilder.group(

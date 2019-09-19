@@ -7,9 +7,11 @@ import {
 } from "@angular/forms";
 import { Location } from "@angular/common";
 import { CommonService } from "../../../core/api-services/common.service";
+import { AuthService } from "../../../core/api-services/auth.service";
 import { RegionList } from "../../../core/model/common/region-list";
 import { CityList } from "../../../core/model/common/city-list";
 import { City } from "../../../core/model/common/city";
+import {EventoError} from "../../../core/models/error";
 
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
@@ -23,12 +25,14 @@ export class RegisterOrganizerFormComponent implements OnInit {
   public signupForm: FormGroup;
   public cityList: CityList;
   public regionList: RegionList;
-  public updatedCityList:City[];
-
+  public updatedCityList: City[];
+public registrationError:EventoError;
   constructor(
     public formBuilder: FormBuilder,
     private location: Location,
-    private commonService: CommonService
+    private commonService: CommonService,
+    private authService:AuthService,
+    private router:Router
   ) {
     this.initOrganizerForm();
     this.getCityList();
@@ -55,8 +59,24 @@ export class RegisterOrganizerFormComponent implements OnInit {
       recaptcha: form.value.recaptcha
     };
     console.log(body);
-    //this.registerClick.emit(body);
+ 
+    this.signup(body)
   }
+
+  public signup(form: any) {
+    this.registrationError = null;
+    this.authService.signup(form).subscribe(
+      res => {
+        //this.isSignupCompleted = true;
+         this.router.navigate(['/home']);
+      },
+      err => {
+        this.signupForm.get("recaptcha").setValue(null);
+        this.registrationError = err.value.error;
+      }
+    );
+  }
+
 
   public initOrganizerForm() {
     this.signupForm = this.formBuilder.group(
