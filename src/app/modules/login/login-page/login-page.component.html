@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row login-page">
+        <!-- <div class="col-sm-12">
+            <img class="img-fluid mx-auto d-block evento-img-featured mb-4"
+                 src="assets/img/illustration-member-313x249.svg"
+                 alt="" />
+        </div> -->
+        <div class="col-sm-12 text-center">
+            <h3 translate>Sign In</h3>
+            <div translate
+                 class="evento-text-faded">
+                Don't have an account yet?
+                <a [routerLink]="['/register']" class="text-danger" translate>Sign up</a>
+            </div>
+
+        </div>
+        <div class="col-sm-12 col-md-4 offset-md-4 text-center">
+            <form [formGroup]="loginForm"
+                  (ngSubmit)="onlogin(loginForm)">
+
+                <div class="form-group">
+                    <input formControlName="username"
+                           type="input"
+                           class="form-control evento-form-field  mt-3"
+                           placeholder="{{ 'Email Address' | translate}}" />
+                </div>
+                <div class="form-group">
+                    <input formControlName="password"
+                           type="password"
+                           class="form-control evento-form-field  mt-3"
+                           placeholder="{{ 'Password' | translate}}" />
+                </div>
+
+
+                <input type="submit"
+                       class="btn btn-block evento-button evento-button-primary mt-3 mb-2 mr-2 ml-2"
+                       value="{{ 'Login' | translate }}"
+                       [disabled]="!loginForm.valid" />
+            </form>
+            <a [routerLink]="['/auth/forget-password']" translate>Forgot Your Password?</a>
+            <p class="mt-2">
+                <a [routerLink]="['/auth/reactivation']" translate>Resend Activation Link</a>
+            </p>
+
+        </div>
+    </div>
+</div>
