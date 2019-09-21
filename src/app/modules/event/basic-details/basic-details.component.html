@@ -6,15 +6,18 @@
     <div class="title flex-grow-1 mx-2">{{eventData.details.name}}</div>
 </div>
 
-<div class="d-flex flex-column basic-details py-2" *ngIf="packageRateRange">
-    <div class="price-range align-self-start mb-2">
-        <span>{{packageRateRange.min}}</span> 
-        <span>&nbsp;</span> 
-        <span>SAR</span>
-        <span>&nbsp;-&nbsp;</span>
-        <span>{{packageRateRange.max}}</span>
-        <span>&nbsp;</span> 
-        <span>SAR</span>
+<div class="d-flex flex-column basic-details py-2"
+     *ngIf="packageRateRange">
+    <div class="price-range align-self-start mb-2 d-flex justify-content-start">
+        <div>
+            {{packageRateRange.min}}&nbsp;<span translate>SAR</span>
+        </div>
+        <div>&nbsp;-&nbsp;</div>
+        <div>
+            {{packageRateRange.max}}&nbsp;<span translate>SAR</span>
+        </div>
+
+
     </div>
     <button type="submit "
             class="btn evento-button-sm evento-button-accent-one align-self-start mb-2 px-4"
