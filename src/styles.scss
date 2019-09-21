@@ -70,27 +70,28 @@ body:lang(en) {
 }
 /* Select */
 
-.evento-select {
+.evento-select:lang(en) {
     padding-right: 20px;
+    + i.fas {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        pointer-events: none;
+    }
 }
 
 .evento-select:lang(ar) {
     padding-left: 20px;
+
+    + i.fas {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        pointer-events: none;
+    }
 }
 
-.evento-select+i.fas {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    pointer-events: none;
-}
 
-.evento-select+i.fas:lang(ar) {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    pointer-events: none;
-}
 
 
 /* Form Field */

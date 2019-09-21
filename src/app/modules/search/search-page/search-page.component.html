@@ -26,4 +26,7 @@
                                  [eventIndex]="i"></app-event-list-item>
         </div>
     </div>
+    <h3 class="no-result py-3 text-center"
+        *ngIf="searchResultEventList && searchResultEventList.data.length===0" translate>No Search Result</h3>
+
 </div>
