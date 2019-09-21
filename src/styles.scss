@@ -91,7 +91,20 @@ body:lang(en) {
     }
 }
 
+/* Radio */
+input[type="radio"]:lang(en) {
+    + label {
+        margin-left : 0px;
+        margin-right : 0px;
+    }
+}
 
+input[type="radio"]:lang(ar) {
+    + label {
+        margin-left : 0px;
+        margin-right : 20px;
+    }
+}
 
 
 /* Form Field */
