@@ -6,7 +6,7 @@
                  alt="" />
         </div> -->
         <div class="col-sm-12 text-center">
-            <h3 translate>Sign In</h3>
+            <h3 translate>Signin</h3>
             <div translate
                  class="evento-text-faded">
                 Don't have an account yet?
@@ -14,7 +14,13 @@
             </div>
 
         </div>
-        <div class="col-sm-12 col-md-4 offset-md-4">
+        <div class="col-sm-12 col-md-4"></div>
+        <div class="col-sm-12 col-md-4">
+
+            <app-error-message *ngIf="loginError"
+                               [serverError]="loginError">
+            </app-error-message>
+
             <form [formGroup]="loginForm"
                   (ngSubmit)="onlogin(loginForm)">
 
