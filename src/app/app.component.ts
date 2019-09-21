@@ -17,8 +17,8 @@ export class AppComponent {
 
   constructor(dir: Directionality, translateService: TranslateService, @Inject(DOCUMENT) private document: Document) {
     this.translate = translateService;
-    this.translate.setDefaultLang('en');
-    this.onLanguageChanged('en');
+    this.translate.setDefaultLang('ar');
+    this.onLanguageChanged('ar');
   }
 
   onLanguageChanged(newLanguage: string) {

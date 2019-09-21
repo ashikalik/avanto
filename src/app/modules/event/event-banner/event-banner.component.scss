@@ -3,14 +3,14 @@
 .banner-container {
     width:100%;
     min-height:320px;
-    background: url(/assets/img/evento-logo-en.png);
-    background-size: contain;
-    background-repeat:no-repeat;
+    // background: url(/assets/img/evento-logo-en.png);
+    // background-size: contain;
+    // background-repeat:no-repeat;
 }
 .banner-container:lang(ar) {
-    background: url(/assets/img/evento-logo-ar.png);
-    background-size: contain;
-    background-repeat:no-repeat;
+    // background: url(/assets/img/evento-logo-ar.png);
+    // background-size: contain;
+    // background-repeat:no-repeat;
 }
 .img-event-banner {
     border: 1px solid theme-color('gray-lightest', 'base');

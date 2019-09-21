@@ -13,7 +13,7 @@ import { EventDateTimeComponent } from "./event-date-time/event-date-time.compon
 import { EventSponsorsComponent } from "./event-sponsors/event-sponsors.component";
 import { EventBannerComponent } from "./event-banner/event-banner.component";
 import { EventMapComponent } from "./event-map/event-map.component";
-
+import { SharedModule } from "../../common/shared/shared.module";
 import { EventDisplayHelperService } from "./event-display-helper.service";
 
 @NgModule({
@@ -29,7 +29,7 @@ import { EventDisplayHelperService } from "./event-display-helper.service";
     EventBannerComponent,
     EventMapComponent
   ],
-  imports: [CommonModule, AgmCoreModule, EventRoutingModule],
+  imports: [CommonModule, AgmCoreModule, EventRoutingModule, SharedModule],
   providers: [EventDisplayHelperService]
 })
 export class EventModule {}

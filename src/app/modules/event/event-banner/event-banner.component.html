@@ -1,5 +1,8 @@
 <div class="banner-container">
-    <img *ngIf="bannerImage" class="img-fluid img-event-banner"
-         src="{{bannerImage}}"
-         alt="" />
+
+    <img defaultImage
+         class="img-fluid img-event-banner"
+         [src]="bannerImage"
+         [alt]="Evento">
+
 </div>
