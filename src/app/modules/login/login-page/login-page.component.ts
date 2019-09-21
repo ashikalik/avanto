@@ -13,6 +13,8 @@
 
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { LoginBody, LoginResponse } from "../../../core/models/login";
+
 // import { Router } from "@angular/router";
 // import { AuthService } from "../../api-services/auth.service";
 // import { UserAuthService } from "../../core/user-auth.service";
@@ -54,17 +56,19 @@ export class LoginPageComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       username: [
         "",
-        Validators.compose([Validators.required, Validators.minLength(3)])
+        Validators.compose([Validators.required,Validators.email, Validators.minLength(3)])
       ],
       password: ["", Validators.compose([Validators.required])]
     });
   }
 
   public onlogin(form: any) {
-    // const body: LoginBody = {
-    //   username: form.value.username,
-    //   password: form.value.password
-    // };
+    const body: LoginBody = {
+      username: form.value.username,
+      password: form.value.password
+    };
+
+    console.log(body);
 
     // this.authService.login(body).subscribe(
     //   res => {
