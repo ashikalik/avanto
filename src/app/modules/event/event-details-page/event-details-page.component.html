@@ -5,12 +5,14 @@
                               [bannerImage]="eventData.details.img">
             </app-event-banner>
         </div>
+        <div class="clearfix visible-md"></div>
         <div class=" col-lg-4 py-2">
             <app-basic-details *ngIf="eventData"
                                [eventData]="eventData"
                                (registerOrganizerClick)="onRegisterOrganizerClick($event)">
             </app-basic-details>
         </div>
+        
         <div class=" col-lg-8 py-2">
             <h3 class="evento-section-title title-underlined mt-2">Description</h3>
             <app-event-description *ngIf="eventData"

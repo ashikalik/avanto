@@ -1,4 +1,4 @@
-<div class="d-flex basic-details">
+<div class="d-flex basic-details pb-2">
     <div class="when text-center align-self-start p-2">
         <div class="day">{{startDay}}</div>
         <div class="month">{{startMonth | uppercase}} </div>
@@ -6,7 +6,7 @@
     <div class="title flex-grow-1 mx-2">{{eventData.details.name}}</div>
 </div>
 
-<div class="d-flex flex-column basic-details pt-3 pb-2" *ngIf="packageRateRange">
+<div class="d-flex flex-column basic-details py-2" *ngIf="packageRateRange">
     <div class="price-range align-self-start mb-2">
         <span>{{packageRateRange.min}}</span> 
         <span>&nbsp;</span> 
@@ -24,7 +24,7 @@
 </div>
 
 <!-- *ngIf="userType == 1 && eventData.eligibleToJoin && eventData.details.joining_status == 1" -->
-<div class="d-flex flex-column">
+<div class="d-flex flex-column py-2">
     <div *ngIf="!eventStarted">Event will start in</div>
     <app-starts-in-counter *ngIf="!eventStarted"
                            [startDate]="eventData.details.from_date"
