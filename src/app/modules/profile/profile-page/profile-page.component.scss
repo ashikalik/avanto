@@ -1,0 +1,20 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.profile-page {}
+
+.profile-page-header {
+    padding-top: 150px;
+    background-image: url(/assets/img/crowd-bg-blue.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 400px;
+}
+
+.img-profile-picture {
+    margin-top:-50px;
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    border:1px solid theme-color('gray-medium', 'base');
+    background:theme-color('background', 'base');
+}

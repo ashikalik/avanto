@@ -1,0 +1,91 @@
+<app-error-message *ngIf="personalInfoError"
+[serverError]="personalInfoError">
+</app-error-message>
+
+<form [formGroup]="personalInfoForm"
+      (ngSubmit)="updateInfo(personalInfoForm)">
+
+   
+
+    <div class="alert alert-success"
+         *ngIf="successInfo"
+         translate>
+        Your information has been updated successfully
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <p class="grey-color"
+           translate>PERSONAL INFORMATION</p>
+        <div class="position-relative">
+            <input type="text"
+                   class="form-control evento-form-field grey-color mt-2"
+                   formControlName="first_name"
+                   placeholder="{{ 'First Name' | translate }}">
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['first_name'].hasError('required') && !personalInfoForm.controls['first_name'].pristine"
+                 translate>This field is required
+            </div>
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['first_name'].hasError('minlength') && !personalInfoForm.controls['first_name'].pristine"
+                 translate>
+                This field should be at least 3 characters
+            </div>
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['first_name'].hasError('maxlength') && !personalInfoForm.controls['first_name'].pristine"
+                 translate>
+                This filed should be at most 40 characters
+            </div>
+
+        </div>
+        <div class="position-relative">
+            <input type="text"
+                   class="form-control evento-form-field grey-color mt-2"
+                   formControlName="last_name"
+                   placeholder="{{ 'Last Name' | translate }}">
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['last_name'].hasError('required') && !personalInfoForm.controls['last_name'].pristine"
+                 translate>This field is required
+            </div>
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['last_name'].hasError('minlength') && !personalInfoForm.controls['last_name'].pristine"
+                 translate>
+                This field should be at least 3 characters
+            </div>
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['last_name'].hasError('maxlength') && !personalInfoForm.controls['last_name'].pristine"
+                 translate>
+                This filed should be at most 40 characters
+            </div>
+
+        </div>
+        <div class="position-relative">
+            <input type="email"
+                   class="form-control evento-form-field grey-color mt-2"
+                   formControlName="email"
+                   placeholder="{{ 'Email' | translate }}">
+        </div>
+        <div class="position-relative">
+            <input type="text"
+                   class="form-control evento-form-field grey-color mt-2"
+                   formControlName="mobile"
+                   placeholder="{{ 'Phone Number' | translate }}">
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['mobile'].hasError('required') && !personalInfoForm.controls['mobile'].pristine"
+                 translate>
+                This field is required
+            </div>
+            <div class="evento-form-error"
+                 *ngIf="personalInfoForm.controls['mobile'].hasError('pattern') && !personalInfoForm.controls['mobile'].pristine"
+                 translate>
+                Mobile number is invalid
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-12 mt-4 d-flex justify-content-end">
+        <button type="submit"
+                class="btn evento-button evento-button-primary"
+                translate
+                [disabled]="personalInfoForm.invalid">EDIT</button>
+    </div>
+</form>
