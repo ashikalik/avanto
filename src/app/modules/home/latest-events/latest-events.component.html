@@ -10,7 +10,11 @@
             <app-event-list-item [event]="event" [eventIndex]="i"></app-event-list-item>
         </div>
     </div>
-    <div class="row mb-5">
+
+    <h3 class="no-result py-3 text-center"
+    *ngIf="latestEventList && latestEventList.data.length===0" translate>No Search Result</h3>
+
+    <div class="row mb-5" *ngIf="latestEventList && latestEventList.data.length>0">
         <div class="col text-center">
             <button type="button"
                     class="btn evento-button-xs evento-button-secondary-outline view-all-button"

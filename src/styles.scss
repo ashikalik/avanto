@@ -105,6 +105,20 @@ input[type="radio"]:lang(ar) {
         margin-right : 20px;
     }
 }
+/* Checkbox */
+input[type="checkbox"]:lang(en) {
+    + label {
+        margin-left : 0px;
+        margin-right : 0px;
+    }
+}
+
+input[type="checkbox"]:lang(ar) {
+    + label {
+        margin-left : 0px;
+        margin-right : 20px;
+    }
+}
 
 
 /* Form Field */
