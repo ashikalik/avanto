@@ -17,10 +17,14 @@ export class EventDateTimeComponent implements OnInit {
   }
 
   private formatEventTiming() {
-    this.eventTiming = this.dateTimeHelperService.enumerateDaysBetweenDates(
+    this.eventTiming = this.dateTimeHelperService.getEventTiming(
       this.eventDetails.from_date,
-      this.eventDetails.end_date
+      this.eventDetails.end_date,
+      this.eventDetails.from_time,
+      this.eventDetails.end_time
     );
+    //let start = this.eventDetails.from_date 
+    //this.eventTiming.push()
     // this.eventTiming.forEach(aDateString => {
     //   aDateString =
     //     aDateString +

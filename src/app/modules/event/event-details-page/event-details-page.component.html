@@ -1,40 +1,54 @@
 <div class="container">
     <div class="row">
-        <div class=" col-lg-8 py-2"
-             style="display: block !important;">
+        <div class=" col-lg-8 py-2">
             <app-event-banner *ngIf="eventData"
-                              [bannerImage]="eventData.details.img"></app-event-banner>
-
+                              [bannerImage]="eventData.details.img">
+            </app-event-banner>
+        </div>
+        <div class=" col-lg-4 py-2">
+            <app-basic-details *ngIf="eventData"
+                               [eventData]="eventData"
+                               (registerOrganizerClick)="onRegisterOrganizerClick($event)">
+            </app-basic-details>
+        </div>
+        <div class=" col-lg-8 py-2">
             <h3 class="evento-section-title title-underlined mt-2">Description</h3>
             <app-event-description *ngIf="eventData"
-                                   [description]="eventData.details.details"></app-event-description>
+                                   [description]="eventData.details.details">
+            </app-event-description>
+
+        </div>
+        <div class=" col-lg-4 py-2">
+            <h3 class="evento-section-title title-underlined mt-2">Time and Date</h3>
+            <app-event-date-time *ngIf="eventData"
+                                 [eventDetails]="eventData.details">
+            </app-event-date-time>
+        </div>
+        <div class=" col-lg-8 py-2">
             <h3 class="evento-section-title title-underlined mt-2"
                              *ngIf="eventData && eventData.policy"
                              >
                             Rules
                         </h3>
             <app-event-rules *ngIf="eventData && eventData.policy"
-                             [rules]="eventData.policy"></app-event-rules>
+                             [rules]="eventData.policy">
+            </app-event-rules>
             <h3 class="evento-section-title title-underlined mt-2">Sponsers</h3>
             <app-event-sponsors></app-event-sponsors>
             <h3 class="evento-section-title title-underlined mt-2">Maps</h3>
             <app-event-map *ngIf="eventData"
                            [latitude]="eventData.details.lat"
-                           [longitude]="eventData.details.lng"></app-event-map>
+                           [longitude]="eventData.details.lng">
+            </app-event-map>
         </div>
+       
         <div class=" col-lg-4 py-2">
-            <app-basic-details *ngIf="eventData"
-                               [eventData]="eventData"
-                               (registerOrganizerClick)="onRegisterOrganizerClick($event)"
-                               ></app-basic-details>
-            <h3 class="evento-section-title title-underlined mt-2">Time and Date</h3>
-            <app-event-date-time *ngIf="eventData"
-                                 [eventDetails]="eventData.details"></app-event-date-time>
             <h3 class="evento-section-title title-underlined mt-2" *ngIf="eventData && eventData.packages">Tickets</h3>
             <div class="d-flex flex-column"
                  *ngIf="eventData && eventData.packages">
                 <app-ticket-list-item *ngFor="let package of eventData.packages"
-                                      [package]="package"></app-ticket-list-item>
+                                      [package]="package">
+                </app-ticket-list-item>
                 <button type="button"
                         class="btn evento-button evento-button-primary align-self-center"
                         (click)="handleBuyTicketButtonClick();"
@@ -42,7 +56,7 @@
                         translate>Buy Now</button>
             </div>
         </div>
-       
+
 
     </div>
 </div>

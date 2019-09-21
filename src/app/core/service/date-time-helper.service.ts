@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Duration } from '../model/common/duration';
+import { Duration } from "../model/common/duration";
 
 import * as moment from "moment";
 
@@ -23,7 +23,6 @@ export class DateTimeHelperService {
   }
 
   public getStartsIn(date: string, time: string): Duration {
-
     var now = moment();
     var end = moment(date + "T" + time, this.dateFormat);
 
@@ -47,35 +46,59 @@ export class DateTimeHelperService {
       seconds: seconds > 0 ? seconds : 0
     };
 
-    let startsInStr  = {
-      days: startsIn.days > 9 ? ""+startsIn.days : "0"+startsIn.days,
-      hours: startsIn.hours > 9 ? ""+startsIn.hours : "0"+startsIn.hours,
-      minutes: startsIn.minutes > 9 ? ""+startsIn.minutes : "0"+startsIn.minutes,
-      seconds: startsIn.seconds > 9 ? ""+startsIn.seconds : "0"+startsIn.seconds
+    let startsInStr = {
+      days: startsIn.days > 9 ? "" + startsIn.days : "0" + startsIn.days,
+      hours: startsIn.hours > 9 ? "" + startsIn.hours : "0" + startsIn.hours,
+      minutes:
+        startsIn.minutes > 9 ? "" + startsIn.minutes : "0" + startsIn.minutes,
+      seconds:
+        startsIn.seconds > 9 ? "" + startsIn.seconds : "0" + startsIn.seconds
     } as Duration;
 
     return startsInStr;
   }
 
-  public enumerateDaysBetweenDates (startDate, endDate) : any{
-
+  public enumerateDaysBetweenDates(startDate, endDate): any {
     var dates = [];
 
-    var currDate = moment(startDate, this.dateFormat).startOf('day');
-    var lastDate = moment(endDate, this.dateFormat).startOf('day');
+    var currDate = moment(startDate, this.dateFormat).startOf("day");
+    var lastDate = moment(endDate, this.dateFormat).startOf("day");
 
-    while(currDate.add(1, 'days').diff(lastDate) < 0) {
-        dates.push(currDate.clone().format(this.displayDateFormat));
+    while (currDate.add(1, "days").diff(lastDate) < 0) {
+      dates.push(currDate.clone().format(this.displayDateFormat));
     }
 
     return dates;
-};
+  }
 
   public getMomentDate(date: string, time: string): any {
     let momentDate = moment(date + "T" + time, this.dateFormat).format(
       "YYYY-MM-DDTHH:mm:ss"
     );
     return momentDate;
+  }
+
+  public getEventTiming(
+    startDate: string,
+    endDate: string,
+    startTime: string,
+    endTime: string
+  ): any {
+    var start = moment(startDate, this.dateFormat).format(
+      this.displayDateFormat
+    );
+    var end = moment(endDate, this.dateFormat).format(this.displayDateFormat);
+    start = start + " " + startTime + " " + endTime;
+    end = end + " " + startTime + " " + endTime;
+    return [start, end];
+  }
+
+  public isEventStarted(startDate: string, startTime: string): any {
+    var now = moment();
+    var end = moment(startDate + "T" + startTime, this.dateFormat);
+    let diff = end.diff(now);
+    if (diff > 0) return false;
+    return true;
   }
 
   public getAmPm(time: any): any {
