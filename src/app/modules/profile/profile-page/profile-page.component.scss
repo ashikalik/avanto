@@ -3,7 +3,7 @@
 .profile-page {}
 
 .profile-page-header {
-    padding-top: 150px;
+    padding-top: 50px;
     background-image: url(/assets/img/crowd-bg-blue.png);
     background-repeat: no-repeat;
     background-position: center top;
@@ -11,10 +11,31 @@
 }
 
 .img-profile-picture {
-    margin-top:-50px;
-    width:100px;
-    height:100px;
+    margin-top: -30px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border:1px solid theme-color('gray-medium', 'base');
-    background:theme-color('background', 'base');
+    border: 1px solid theme-color('gray-medium', 'base');
+    background: theme-color('background', 'base');
+}
+
+@media (min-width: 768px) {
+    .profile-page-header {
+        padding-top: 100px;
+    }
+    .img-profile-picture {
+        margin-top: -40px;
+        width: 80px;
+        height: 80px;
+    }
+}
+@media (min-width: 992px) {
+    .profile-page-header {
+        padding-top: 150px;
+    }
+    .img-profile-picture {
+        margin-top: -50px;
+        width: 100px;
+        height: 100px;
+    }
 }
