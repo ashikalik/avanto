@@ -11,10 +11,10 @@ import { AuthService } from "../../../core/api-services/auth.service";
 import { RegionList } from "../../../core/model/common/region-list";
 import { CityList } from "../../../core/model/common/city-list";
 import { City } from "../../../core/model/common/city";
-import {EventoError} from "../../../core/models/error";
 
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
+import { ServerError } from 'src/app/core/model/common/server-error';
 
 @Component({
   selector: "app-register-organizer-form",
@@ -26,7 +26,7 @@ export class RegisterOrganizerFormComponent implements OnInit {
   public cityList: CityList;
   public regionList: RegionList;
   public updatedCityList: City[];
-public registrationError:EventoError;
+  public registrationError:ServerError;
   constructor(
     public formBuilder: FormBuilder,
     private location: Location,
@@ -166,29 +166,7 @@ public registrationError:EventoError;
     this.signupForm.get("city_id").setValue("");
   }
 
-  //   public initCompanyForm() {
-  //     this.signupForm = this.formBuilder.group(
-  //         {
-  //             'first_name': ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(40)])],
-  //             'last_name': ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(40)])],
-  //             'company_name': ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(40)])],
-  //             'address': ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(40)])],
-  //             'region_id': ['', Validators.compose([Validators.required])],
-  //             'city_id': ['', Validators.compose([Validators.required])],
-  //             'gender': ['', Validators.compose([Validators.required])],
-  //             'email': ['', Validators.compose([Validators.required, Validators.email, Validators.minLength(3)])],
-  //             'confirm_email': ['', Validators.compose([Validators.required, Validators.email, Validators.minLength(3)])],
-  //             'mobile': ['', Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(10)])],
-  //             'password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-  //             'confirm_password': ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-  //             'agreementChecked': [false, Validators.pattern('true')],
-  //             'recaptcha': ['', Validators.compose([Validators.required])],
-
-  //         },
-  //         {
-  //             validator: [this.confirmPasswordValidator, this.confirmEmailValidator]
-  //         });
-  // }
+  
 
   public confirmPasswordValidator(AC: AbstractControl): { invalid: boolean } {
     if (AC.get("password").value !== AC.get("confirm_password").value) {

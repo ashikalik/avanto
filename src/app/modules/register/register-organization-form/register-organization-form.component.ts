@@ -11,10 +11,10 @@ import { AuthService } from "../../../core/api-services/auth.service";
 import { RegionList } from "../../../core/model/common/region-list";
 import { CityList } from "../../../core/model/common/city-list";
 import { City } from "../../../core/model/common/city";
-import {EventoError} from "../../../core/models/error";
 
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
+import { ServerError } from 'src/app/core/model/common/server-error';
 
 @Component({
   selector: "app-register-organization-form",
@@ -26,7 +26,7 @@ export class RegisterOrganizationFormComponent implements OnInit {
   public cityList: CityList;
   public regionList: RegionList;
   public updatedCityList: City[];
-  public registrationError:EventoError;
+  public registrationError:ServerError;
 
   constructor(
     public formBuilder: FormBuilder,

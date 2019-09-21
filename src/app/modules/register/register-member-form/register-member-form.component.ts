@@ -7,11 +7,9 @@ import {
 } from "@angular/forms";
 import {Location} from '@angular/common';
 import { AuthService } from "../../../core/api-services/auth.service";
-
-import {EventoError} from "../../../core/models/error";
-
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
+import { ServerError } from 'src/app/core/model/common/server-error';
 
 @Component({
   selector: 'app-register-member-form',
@@ -20,7 +18,7 @@ import { Meta, Title } from "@angular/platform-browser";
 })
 export class RegisterMemberFormComponent implements OnInit {
   public signupForm: FormGroup;
-  public registrationError:EventoError;
+  public registrationError:ServerError;
   constructor(public formBuilder: FormBuilder,
      private location: Location,
           private authService:AuthService,
