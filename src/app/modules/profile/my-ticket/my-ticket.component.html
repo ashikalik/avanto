@@ -1,0 +1,27 @@
+<div class="my-ticket">
+    <div class=""
+         id="heading{{ticket}}">
+        <a href="#"
+           class=""
+           data-toggle="collapse"
+           attr.data-target="#collapse{{ticket}}"
+           aria-expanded="false"
+           aria-controls="collapseOne">
+            <app-ticket-header></app-ticket-header>
+        </a>
+
+    </div>
+
+    <div id="collapse{{ticket}}"
+         class="collapse"
+         attr.aria-labelledby="heading{{ticket}}"
+         data-parent="#accordion">
+        <div class="ticket-body">
+            <h6 class="title-underlined mt-2">Order Info</h6>
+            <app-order-info></app-order-info>
+            <h6 class="title-underlined mt-2">Ticket Info</h6>
+            <app-ticket-info *ngFor="let ticket of [1,2,3]"
+                             [ticket]="ticket"></app-ticket-info>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.my-ticket {
+    margin-bottom: 10px;
+    a {
+        color: theme-color('foreground', 'base');
+        text-decoration: none;
+    }
+
+}
+
+.ticket-body {
+    padding: 10px;
+    font-size: text-scale('sm');
+    border: 1px solid theme-color('gray-lighter', 'base');
+    border-top: 1px solid transparent;
+    border-radius:15px;
+}

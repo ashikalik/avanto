@@ -1,0 +1,28 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.ticket-header {
+    padding:0;
+    background: theme-color('gray-lightest', 'light');
+    border: 1px solid theme-color('gray-lightest', 'dark');
+    border-radius: 15px;
+    img {
+        border-radius: 15px;
+        width:90px;
+        height:90px;
+    }
+}
+
+.ticket-header-content{
+    padding:10px;
+    font-size: text-scale('sm');
+    .status {
+        color: theme-color('accent-one', 'light');
+    }
+    .rate, .currency {
+        color: theme-color('primary', 'light');
+        font-size: text-scale('md');
+    }
+    .rate::after {
+        content: ' '
+    }
+}

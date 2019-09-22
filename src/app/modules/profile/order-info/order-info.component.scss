@@ -1,0 +1,12 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.label-value {
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.label {
+    color:theme-color('gray-medium', 'base');
+    &::after {
+        content: ': ';
+    }
+}

@@ -1,0 +1,45 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.ticket-info {
+    margin: 5px 0px;
+}
+
+.ticket-info-header {
+
+
+    a {
+        color: theme-color('foreground', 'base');
+        text-decoration: none;
+        border-radius: 15px 15px 15px 15px;
+    }
+
+    .ticket-row {
+        background: theme-color('gray-lightest', 'base');
+        border-radius: 15px 15px 15px 15px;
+        padding: 10px 20px;
+        .arrow {
+            border: 1px solid theme-color('gray-lighter', 'dark');
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            
+            text-align: center;
+        }
+    }
+
+    a[aria-expanded="true"] .ticket-row{
+        border-radius: 15px 15px 0 0;
+    }
+    a[aria-expanded="false"] .ticket-row{
+        border-radius: 15px 15px 15px 15px;
+    }
+}
+
+.ticket-info-body {
+    margin-top:-10px;
+    padding: 10px;
+    padding-top: 20px;
+    font-size: text-scale('sm');
+    background: theme-color('gray-lightest', 'base');
+    border-radius: 0 0 15px 15px;
+}
