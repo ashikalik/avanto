@@ -2,20 +2,148 @@
 
 .buy-ticket-pill {
     display: block;
-    width:70px;
-    height:70px;
+    width: 70px;
+    height: 70px;
+    color: theme-color('gray-medium', 'light');
+    font-size:text-scale('sm');
+    text-decoration:none;
     background: theme-color('gray-lightest', 'light');
     border: 1px solid theme-color('gray-lightest', 'base');
-    border-radius:15px;
+    border-radius: 15px;
+    margin:5px;
 
-    .icon {
-        width:20px;
-        height:20px;
-        margin:3px;
-        &.icon-select-ticket {
-            background:url(/assets/img/buy-ticket/check-icon-green-32x31.svg)
-        }
+    .sub-title {
+        font-size:text-scale('xxs');
     }
 
+    .icon {
+        width: 32px;
+        height: 32px;
+        margin: 5px;
+        background-size: contain;
+    }
+    &.active {
+        color: theme-color('accent-two', 'light');
+    }
+    &.completed {
+        color: theme-color('accent-one', 'light');
+    }
     
+
+}
+
+.select-ticket {
+    color: theme-color('gray-medium', 'light');
+    .icon {
+        width: 21px;
+        height: 16px;
+        background: url(/assets/img/buy-ticket/ticket-icon-grey-42x24.svg);
+        background-size: contain;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    &.active {
+        .icon {
+            width: 21px;
+            height: 16px;
+            background: url(/assets/img/buy-ticket/ticket-icon-orange-42x24.svg);
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+    }
+    &.completed {
+        .icon {
+            width: 21px;
+            height: 16px;
+            background: url(/assets/img/buy-ticket/ticket-icon-green-42x24.png);
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+    }
+}
+
+.personal-info {
+    
+    .icon {
+        width: 16px;
+        height: 16px;
+        background: url(/assets/img/buy-ticket/user-icon-grey-32x31.svg);
+        background-size: contain;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    &.active {
+        .icon {
+            width: 16px;
+            height: 16px;
+            background: url(/assets/img/buy-ticket/user-icon-orange-32x31.svg);
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+    }
+    &.completed {
+        .icon {
+            width: 16px;
+            height: 16px;
+            background: url(/assets/img/buy-ticket/user-icon-green-32x31.svg);
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+    }
+}
+
+.payment-info {
+    .icon {
+        width: 15px;
+        height: 16px;
+        background: url(/assets/img/buy-ticket/payment-icon-grey-30x32.png);
+        background-size: contain;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    &.active {
+        .icon {
+            width: 15px;
+            height: 16px;
+            background: url(/assets/img/buy-ticket/payment-icon-orange-30x32.svg);
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+    }
+    &.completed {
+        .icon {
+            width: 15px;
+            height: 16px;
+            background: url(/assets/img/buy-ticket/payment-icon-green-30x32.svg);
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+    }
+}
+
+.confirmation {
+    .icon {
+        width: 16px;
+        height: 16px;
+        background: url(/assets/img/buy-ticket/check-icon-grey-32x31.svg);
+        background-size: contain;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    &.completed {
+        .icon {
+            width: 16px;
+            height: 16px;
+            background: url(/assets/img/buy-ticket/check-icon-green-32x31.svg);
+            background-size: contain;
+            background-repeat:no-repeat;
+            background-position:center;
+        }
+    }
 }
