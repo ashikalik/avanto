@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Invoice} from "../../../core/model/invoice/invoice";
+import {ProfileService} from "../../../core/api-services/profile.service";
+import { TicketResponse } from "../../../core/model/ticket/ticket-response";
 
 @Component({
   selector: 'app-invoice',
@@ -6,10 +9,31 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./invoice.component.scss']
 })
 export class InvoiceComponent implements OnInit {
-@Input('ticket') ticket:number;
-  constructor() { }
+
+  @Input() invoice: Invoice;
+  public showMore: boolean;
+  public ticketResponse: TicketResponse;
+
+  constructor(public profileService: ProfileService) {
+    this.showMore = false;
+  }
 
   ngOnInit() {
   }
 
+  public onShow() {
+    if(!this.showMore) {
+      let body = {
+        invoice_id: this.invoice.invoice_id
+      }
+      this.profileService.getTickets(body).subscribe(res => {
+        this.ticketResponse = res;
+      }, err => {
+
+      })
+    }
+    this.showMore = !this.showMore;
+  }
+
 }
+

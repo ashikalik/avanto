@@ -8,10 +8,12 @@
            aria-expanded="false"
            attr.aria-controls="collapse{{ticket}}">
             <div class="media invoice-header">
-                <img class=""
-                     src="/assets/img/temp-event-thumb.png"
-                     alt="">
-                <app-invoice-header style="width:100%"></app-invoice-header>
+                <img defaultImage
+                     class=""
+                     [src]="invoice.img"
+                     [alt]="">
+                <app-invoice-header [invoice]="invoice"
+                                    style="width:100%"></app-invoice-header>
             </div>
         </a>
 
@@ -23,10 +25,12 @@
          data-parent="#accordion">
         <div class="invoice-body">
             <h6 class="title-underlined mt-2">Order Info</h6>
-            <app-order-info></app-order-info>
-            <h6 class="title-underlined mt-2">Ticket Info</h6>
-            <app-ticket *ngFor="let ticket of [1,2,3]"
-                             [ticket]="ticket"></app-ticket>
+            <app-order-info [invoice]="invoice"></app-order-info>
+            <div *ngIf="ticketResponse && ticketResponse.data && ticketResponse.data.length > 0">
+                <h6 class="title-underlined mt-2">Ticket Info</h6>
+                <app-ticket *ngFor="let ticket of ticketResponse.data"
+                            [ticket]="ticket"></app-ticket>
+            </div>
         </div>
     </div>
 </div>

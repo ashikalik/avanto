@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserProfileData } from 'src/app/core/model/user/user-profile-data';
 import { UserProfile } from 'src/app/core/model/user/user-profile';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-page',
@@ -11,7 +12,7 @@ export class ProfilePageComponent implements OnInit {
 
   public userProfileData : UserProfileData;
 
-  constructor() { 
+  constructor(private router:Router) { 
 
     this.userProfileData = {} as UserProfileData;
     this.userProfileData.data = {} as UserProfile;
@@ -22,6 +23,11 @@ export class ProfilePageComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  public handleViewCVClick() {
+
+    this.router.navigate(['/my-profile/cv'])
   }
 
 }

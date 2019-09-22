@@ -1,16 +1,22 @@
 
     <div class="d-flex flex-column invoice-header-content">
         <div class="d-flex justify-content-between">
-            <div>GOLDEN CLASS TICKETS</div>
+            <div>{{invoice.event_name}}</div>
             <div class="status">Delivered</div>
         </div>
         <div>
-            <span class="rate">50</span>
-            <span class="currency">SAR</span>
+            <span class="rate">{{ invoice.total_with_vat }}</span>
+            <span class="currency">{{ 'SR' | translate }}</span>
         </div>
         <div class="d-flex justify-content-between">
-                <div>QTY</div>
-                <div class="status">PRICE</div>
+                <div>
+                    {{ 'QTY' | translate }}         
+                    <button type="button" class="evento-button-xs">{{ invoice.num_ticket }}</button>
+                </div>
+                <div class="status">
+                    {{ 'Price' | translate }}
+                    <button type="button" class="evento-button-xs">{{ invoice.total_with_vat }} {{ 'SR' | translate }}</button>
+                </div>
                 <div class="status">
                     <button class="evento-button-xs evento-button-primary">More</button>
                 </div>

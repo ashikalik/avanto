@@ -7,9 +7,9 @@
            aria-expanded="false"
            aria-controls="collapseExample">
             <div class="d-flex justify-content-between ticket-row">
-                <div>1</div>
-                <div>Noor</div>
-                <div>Omrany</div>
+                <div>{{ 'Ticket' | translate }}  {{ index +1 }}</div>
+                <div><span>{{ 'First Name' | translate }}</span><span>{{ ticket.first_name }}</span></div>
+                <div><span>{{ 'Last Name' | translate }}</span><span>{{ ticket.last_name }}</span></div>
                 <div class="arrow">
                     <i class="fas fa-chevron-down" ></i>
                 </div>
@@ -20,11 +20,11 @@
          id="collapseExample{{ticket}}">
 
         <div class="d-flex justify-content-between">
-            <div class="">Ticket Bar Code</div>
+            <div class="">{{ 'TICKET BARCODE' | translate }}</div>
             <div class="">BARCODE</div>
             <div class="">
-                <button class="evento-button-xs evento-button-secondary-outline">
-                    Download invoice
+                <button class="evento-button-xs evento-button-secondary-outline" translate>
+                        DOWNLOAD TICKET
                 </button>
             </div>
         </div>
