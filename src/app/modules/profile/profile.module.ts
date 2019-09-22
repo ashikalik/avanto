@@ -7,14 +7,14 @@ import { UpdatePasswordComponent } from './update-password/update-password.compo
 import { TranslationModule } from 'src/app/common/translation/translation.module';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from 'src/app/common/shared/shared.module';
-import { MyTicketComponent } from './my-ticket/my-ticket.component';
-import { MyTicketListComponent } from './my-ticket-list/my-ticket-list.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { OrderInfoComponent } from './order-info/order-info.component';
-import { TicketInfoComponent } from './ticket-info/ticket-info.component';
-import { TicketHeaderComponent } from './ticket-header/ticket-header.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { TicketHeaderComponent } from './invoice-header/invoice-header.component';
 
 @NgModule({
-  declarations: [ProfilePageComponent, PersonalInfoComponent, UpdatePasswordComponent, MyTicketComponent, MyTicketListComponent, OrderInfoComponent, TicketInfoComponent, TicketHeaderComponent],
+  declarations: [ProfilePageComponent, PersonalInfoComponent, UpdatePasswordComponent, InvoiceComponent, InvoiceListComponent, OrderInfoComponent, TicketComponent, TicketHeaderComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule,

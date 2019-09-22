@@ -1,17 +1,17 @@
-<div class="my-ticket">
+<div class="invoice">
     <div class=""
          id="heading{{ticket}}">
         <a href="#"
-           class="my-ticket-toggle"
+           class="invoice-toggle"
            data-toggle="collapse"
            attr.data-target="#collapse{{ticket}}"
            aria-expanded="false"
            attr.aria-controls="collapse{{ticket}}">
-            <div class="media ticket-header">
+            <div class="media invoice-header">
                 <img class=""
                      src="/assets/img/temp-event-thumb.png"
                      alt="">
-                <app-ticket-header style="width:100%"></app-ticket-header>
+                <app-invoice-header style="width:100%"></app-invoice-header>
             </div>
         </a>
 
@@ -21,12 +21,12 @@
          class="collapse"
          attr.aria-labelledby="heading{{ticket}}"
          data-parent="#accordion">
-        <div class="ticket-body">
+        <div class="invoice-body">
             <h6 class="title-underlined mt-2">Order Info</h6>
             <app-order-info></app-order-info>
             <h6 class="title-underlined mt-2">Ticket Info</h6>
-            <app-ticket-info *ngFor="let ticket of [1,2,3]"
-                             [ticket]="ticket"></app-ticket-info>
+            <app-ticket *ngFor="let ticket of [1,2,3]"
+                             [ticket]="ticket"></app-ticket>
         </div>
     </div>
 </div>
