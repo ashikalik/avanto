@@ -2,12 +2,17 @@
     <div class=""
          id="heading{{ticket}}">
         <a href="#"
-           class=""
+           class="my-ticket-toggle"
            data-toggle="collapse"
            attr.data-target="#collapse{{ticket}}"
            aria-expanded="false"
-           aria-controls="collapseOne">
-            <app-ticket-header></app-ticket-header>
+           attr.aria-controls="collapse{{ticket}}">
+            <div class="media ticket-header">
+                <img class=""
+                     src="/assets/img/temp-event-thumb.png"
+                     alt="">
+                <app-ticket-header style="width:100%"></app-ticket-header>
+            </div>
         </a>
 
     </div>

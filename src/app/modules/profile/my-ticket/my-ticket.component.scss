@@ -9,10 +9,42 @@
 
 }
 
+.ticket-header {
+    padding:0;
+    background: theme-color('gray-lightest', 'light');
+    border: 1px solid theme-color('gray-lightest', 'dark');
+    border-radius: 15px 15px 15px 15px;
+    img {
+        border-radius: 15px 0px 0px 15px;
+        width:95px;
+        height:95px;
+        &:lang(ar) {
+            border-radius: 0px 15px 15px 0px;
+        }
+    }
+}
+
+
+
 .ticket-body {
     padding: 10px;
     font-size: text-scale('sm');
     border: 1px solid theme-color('gray-lighter', 'base');
     border-top: 1px solid transparent;
-    border-radius:15px;
+    border-radius:0px 0px 15px 15px;
+}
+
+.my-ticket-toggle[aria-expanded="true"] {
+    .ticket-header {
+        border-radius: 15px 15px 0px 0px;
+        img {
+            border-radius: 15px 0px 0px 0px;
+            &:lang(ar) {
+                border-radius: 0px 15px 0px 0px;
+            }
+        }
+    }
+    .ticket-body {
+        border-radius: 0px 0px 15px 15px ;
+    }
 }
