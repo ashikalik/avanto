@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyTicketPageComponent implements OnInit {
 
-  constructor() { }
+  public currentStep:number;
+  constructor() { 
+    this.currentStep = 1;
+  }
 
   ngOnInit() {
+  }
+
+  handlePillClick(step:number){
+    this.currentStep = step;
+  }
+  handleNextButtonClick(step:number){
+
+  }
+  handlePreviosButtonClick(step:number){
+
   }
 
 }

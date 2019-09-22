@@ -1,0 +1,21 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.buy-ticket-pill {
+    display: block;
+    width:70px;
+    height:70px;
+    background: theme-color('gray-lightest', 'light');
+    border: 1px solid theme-color('gray-lightest', 'base');
+    border-radius:15px;
+
+    .icon {
+        width:20px;
+        height:20px;
+        margin:3px;
+        &.icon-select-ticket {
+            background:url(/assets/img/buy-ticket/check-icon-green-32x31.svg)
+        }
+    }
+
+    
+}

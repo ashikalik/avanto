@@ -19,7 +19,7 @@
                     <div class="col-sm-12 col-md-8 col-lg-6 py-3">
                         <app-personal-info [userProfileData]="userProfileData"></app-personal-info>
                         <app-update-password [userProfileData]="userProfileData"></app-update-password>
-                        <div class="my-3" *ngIf="userProfileData.data.user_type === 1>
+                        <div class="my-3" *ngIf="userProfileData.data.user_type === 1">
                                 <input type="button"
                                 class="btn evento-button evento-button-primary"
                                 value="{{ 'View CV' | translate }}"

@@ -1,1 +1,47 @@
-<p>buy-ticket-page works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 d-flex flex-column flex-md-row">
+            <div class="d-flex flex-row flex-md-column justify-content-center">
+                <div class=" ">
+                    <a class="d-block buy-ticket-pill"
+                       href="javascript:void(0);" (click)="handlePillClick(1)" >
+                       <div class="icon icon-select-ticket mx-auto"></div>
+                        Step 1
+                    </a>
+                </div>
+                <div>
+                    <a class="d-block buy-ticket-pill"
+                       href="javascript:void(0);" (click)="handlePillClick(2)">
+                       Step 2
+                    </a>
+                </div>
+                <div>
+                    <a class="d-block buy-ticket-pill"
+                       href="javascript:void(0);" (click)="handlePillClick(3)">
+                       Step 3
+                    </a>
+                </div>
+                <div>
+                    <a class="d-block buy-ticket-pill"
+                       href="javascript:void(0);" (click)="handlePillClick(4)">
+                       Step 4
+                    </a>
+                </div>
+            </div>
+            <div class="" [ngSwitch]="currentStep" >
+                <div  *ngSwitchCase="1" >
+                    <app-select-ticket></app-select-ticket>
+                </div>
+                <div *ngSwitchCase="2">
+                    <app-personal-info></app-personal-info>
+                </div>
+                <div *ngSwitchCase="3">
+                    <app-payment-info></app-payment-info>
+                </div>
+                <div *ngSwitchCase="4">
+                    <app-confirmation></app-confirmation>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
