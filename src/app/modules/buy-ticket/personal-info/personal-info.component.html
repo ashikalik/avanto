@@ -1,1 +1,115 @@
-<p>personal-info works!</p>
+<div class="row">
+    <div class="col-sm-12 col-lg-1 col-xl-2"></div>
+    <div class="col-sm-12 col-lg-10 col-xl-8">
+        <form [formGroup]="buyTicketForm">
+            <div class="row">
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <input formControlName="first_name"
+                               type="text"
+                               class="form-control evento-input"
+                               placeholder="{{ 'First Name' | translate }}">
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['first_name'].hasError('required') && !buyTicketForm.controls['first_name'].pristine"
+                             translate>This field is required
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['first_name'].hasError('minlength') && !buyTicketForm.controls['first_name'].pristine"
+                             translate>First name most have more than 3 letters
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['first_name'].hasError('maxlength') && !buyTicketForm.controls['first_name'].pristine">
+                            First name most have less than 40 letters
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <input formControlName="last_name"
+                               type="text"
+                               class="form-control evento-input"
+                               placeholder="{{ 'Last Name' | translate }}">
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['last_name'].hasError('required') && !buyTicketForm.controls['last_name'].pristine"
+                             translate>This field is required
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['last_name'].hasError('minlength') && !buyTicketForm.controls['last_name'].pristine"
+                             translate>Last name most have more than 3 letters
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['last_name'].hasError('maxlength') && !buyTicketForm.controls['last_name'].pristine"
+                             translate>Last name most have less than 40 letters
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <input formControlName="email"
+                               type="text"
+                               class="form-control evento-input"
+                               placeholder="{{ 'Email' | translate }}">
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['email'].hasError('required') && !buyTicketForm.controls['email'].pristine"
+                             translate>
+                            This field is required
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['email'].hasError('email') && !buyTicketForm.controls['email'].pristine"
+                             translate>
+                            Email format is not valid
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group">
+                        <input maxlength="10"
+                               formControlName="mobile"
+                               type="text"
+                               class="form-control evento-input"
+                               placeholder="{{ 'Phone Number' | translate }}">
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['mobile'].hasError('required') && !buyTicketForm.controls['mobile'].pristine"
+                             translate>
+                            This field is required
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['mobile'].hasError('pattern') && !buyTicketForm.controls['mobile'].pristine"
+                             translate>
+                            Mobile number most have 10 numbers
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group position-relative">
+                        <my-date-picker placeholder="تاريخ الميلاد"
+                                        [options]="datePicker"
+                                        formControlName="dateOfBirthGregorian"
+                                        (dateChanged)="onChangeDateBirth($event)"></my-date-picker>
+                        <div class="evento-form-error"
+                             *ngIf="buyTicketForm.controls['dateOfBirthGregorian'].hasError('required') && !buyTicketForm.controls['dateOfBirthGregorian'].pristine"
+                             translate>
+                            This field is required
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                    <div class="form-group position-relative">
+                        <select class="form-control evento-form-field evento-select"
+                                name="sellist"
+                                formControlName="audienceGender">
+                            <option value=""
+                                    translate>Gender</option>
+                            <option value="1"
+                                    translate>Male</option>
+                            <option value="2"
+                                    translate>Female</option>
+                        </select>
+                        <i class="fas fa-chevron-down embed"></i>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
