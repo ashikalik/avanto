@@ -47,10 +47,12 @@
                     <app-personal-info [buyTicketForm]="buyTicketForm"></app-personal-info>
                 </div>
                 <div *ngSwitchCase="3">
-                    <app-payment-info></app-payment-info>
+                    <app-order-review></app-order-review>
+                    <!-- <app-payment-info></app-payment-info> -->
                 </div>
                 <div *ngSwitchCase="4">
-                    <app-confirmation></app-confirmation>
+                        <app-payment-info></app-payment-info>
+                    <!-- <app-confirmation></app-confirmation> -->
                 </div>
             </div>
         </div>

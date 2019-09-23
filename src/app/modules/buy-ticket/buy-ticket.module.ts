@@ -6,6 +6,7 @@ import { BuyTicketPageComponent } from './buy-ticket-page/buy-ticket-page.compon
 import { SelectTicketComponent } from './select-ticket/select-ticket.component';
 import { PersonalInfoComponent } from './personal-info/personal-info.component';
 import { PaymentInfoComponent } from './payment-info/payment-info.component';
+import { OrderReviewComponent } from './order-review/order-review.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { MyDatePickerModule } from 'mydatepicker';
 import { TranslationModule } from 'src/app/common/translation/translation.module';
@@ -13,7 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from 'src/app/common/shared/shared.module';
 
 @NgModule({
-  declarations: [BuyTicketPageComponent, SelectTicketComponent, PersonalInfoComponent, PaymentInfoComponent, ConfirmationComponent],
+  declarations: [BuyTicketPageComponent, SelectTicketComponent, PersonalInfoComponent, PaymentInfoComponent, OrderReviewComponent, ConfirmationComponent],
   imports: [
     CommonModule,
     BuyTicketRoutingModule,
