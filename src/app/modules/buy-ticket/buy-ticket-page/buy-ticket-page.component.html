@@ -39,9 +39,9 @@
                     </a>
                 </div>
             </div>
-            <div class="" [ngSwitch]="currentStep" >
+            <div class="flex-grow-1" [ngSwitch]="currentStep" >
                 <div  *ngSwitchCase="1" >
-                    <app-select-ticket></app-select-ticket>
+                    <app-select-ticket [buyTicketForm]="buyTicketForm"></app-select-ticket>
                 </div>
                 <div *ngSwitchCase="2">
                     <app-personal-info></app-personal-info>
