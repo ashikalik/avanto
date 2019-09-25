@@ -7,8 +7,9 @@ import { Observable } from "rxjs";
 import { LatestEvents } from "../models/latest-event";
 import { EventDetails } from "../models/event-details";
 import { SearchEvents } from "../models/search-events";
-
 import { EventList } from "../model/event/event-list";
+import { EventDetailsResponse } from "../model/event/event-details-response";
+
 
 @Injectable({
   providedIn: "root"
@@ -26,6 +27,11 @@ export class EventService {
   public getLatestEventList(): Observable<EventList> {
     const url = environment.BASE_URL + NetworkConfig.LATEST_EVENTS;
     return this.httpClient.get<EventList>(url);
+  }
+
+  public getEventDetails(eventKey: string): Observable<EventDetailsResponse> {
+    const url = environment.BASE_URL + NetworkConfig.VIEW_EVENT + eventKey;
+    return this.httpClient.get<EventDetailsResponse>(url);
   }
 
   public getEventDetail(eventKey: string): Observable<EventDetails> {
