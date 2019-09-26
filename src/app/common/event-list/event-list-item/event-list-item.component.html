@@ -8,7 +8,7 @@
         <img defaultImage
              class="event-thumb"
              [src]="event.img"
-             [alt]="Evento">
+             [alt]="'Evento'">
 
 
     <div class="media-body px-3 py-2">
@@ -26,7 +26,7 @@
 
                 <button type="button"
                         class="btn see-more-button evento-button-xs evento-button-secondary"
-                        [routerLink]="['/event', event.event_key]">
+                        [routerLink]="['/event', event.event_id]">
                     See More
                 </button>
 

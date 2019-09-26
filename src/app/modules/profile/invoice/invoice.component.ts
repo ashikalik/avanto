@@ -11,6 +11,7 @@ import { TicketResponse } from "../../../core/model/ticket/ticket-response";
 export class InvoiceComponent implements OnInit {
 
   @Input() invoice: Invoice;
+  @Input() ticket: number;
   public showMore: boolean;
   public ticketResponse: TicketResponse;
 

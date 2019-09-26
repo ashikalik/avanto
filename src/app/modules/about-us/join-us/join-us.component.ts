@@ -12,4 +12,6 @@ export class JoinUsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSearch() {
+  }
 }

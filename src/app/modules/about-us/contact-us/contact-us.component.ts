@@ -11,5 +11,7 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit() {
   }
+  onSearch() {
+  }
 
 }

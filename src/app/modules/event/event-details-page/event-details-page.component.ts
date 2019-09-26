@@ -61,7 +61,7 @@ export class EventDetailsPageComponent implements OnInit {
     }
   }
 
-  public onRegisterOrganizerClick() {
+  public onRegisterOrganizerClick(ev) {
     this.errorSubmitRequest = null;
     this.eventService.submitRequest(this.eventKey).subscribe(
       res => {
@@ -72,4 +72,6 @@ export class EventDetailsPageComponent implements OnInit {
       }
     );
   }
+
+  
 }

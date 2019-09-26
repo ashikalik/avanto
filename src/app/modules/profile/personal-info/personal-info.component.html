@@ -3,12 +3,12 @@
 </app-error-message>
 
 <form [formGroup]="personalInfoForm"
-      (ngSubmit)="updateInfo(personalInfoForm)">
+      (ngSubmit)="updatePersonalInfo(personalInfoForm)">
 
    
 
     <div class="alert alert-success"
-         *ngIf="successInfo"
+         *ngIf="personalInfoSuccess"
          translate>
         Your information has been updated successfully
     </div>

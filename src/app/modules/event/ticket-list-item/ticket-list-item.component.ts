@@ -8,7 +8,7 @@ import { Package } from '../../../core/models/packages';
 })
 export class TicketListItemComponent implements OnInit {
   @Input('package') package:Package;
-  private showComplete:Boolean = false;
+  public showComplete:Boolean = false;
   constructor() { }
 
   ngOnInit() {

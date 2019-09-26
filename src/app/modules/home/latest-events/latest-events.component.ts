@@ -14,5 +14,7 @@ export class LatestEventsComponent implements OnInit {
 
   ngOnInit() {
   }
+  onSearch() {
+  }
 
 }

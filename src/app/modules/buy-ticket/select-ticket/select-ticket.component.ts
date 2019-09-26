@@ -24,8 +24,8 @@ import { EventDetailsResponse } from "../../../core/model/event/event-details-re
 import { Package } from "../../../core/model/package/package";import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BuyTicketService } from '../../../core/api-services/buy-ticket.service';
 import { MyDatePickerOptions } from '../../../core/models/date-picker-object';
-import { DisableDateUntilPipe } from '../../../common/shared/disable-date-until.pipe';
-import { DisableDateSincePipe } from '../../../common/shared/disable-date-since.pipe';
+// import { DisableDateUntilPipe } from '../../../common/shared/disable-date-until.pipe';
+// import { DisableDateSincePipe } from '../../../common/shared/disable-date-since.pipe';
 import { ServerError } from '../../../core/model/common/server-error';
 
 @Component({
@@ -80,8 +80,8 @@ export class SelectTicketComponent implements OnInit {
         
         this.package = this.eventDetailsResponse.data.packages.find(x => x.package_id == event);
 
-        this.myDatePickerOptions.disableUntil = new DisableDateUntilPipe().transform(this.eventDetailsResponse.data.details.from_date);
-        this.myDatePickerOptions.disableSince = new DisableDateSincePipe().transform(this.eventDetailsResponse.data.details.end_date);
+        //this.myDatePickerOptions.disableUntil = new DisableDateUntilPipe().transform(this.eventDetailsResponse.data.details.from_date);
+        //this.myDatePickerOptions.disableSince = new DisableDateSincePipe().transform(this.eventDetailsResponse.data.details.end_date);
 
         this.isDateRequired = this.buyTicketService.isDateRequired(this.package);
 
