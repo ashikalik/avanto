@@ -5,9 +5,9 @@ import {
   FormGroup,
   Validators
 } from "@angular/forms";
-import { ServerError } from "src/app/core/model/common/server-error";
+import { ServerError } from "../../../core/model/common/server-error";
 import { ProfileService } from "../../../core/api-services/profile.service";
-import { UserAuthService } from "src/app/core/service/user-auth.service";
+import { UserAuthService } from "../../../core/service/user-auth.service";
 import { UpdatePasswordRequest } from '../../../core/model/user/update-password-request';
 import { UserProfileData } from "../../../core/model/user/user-profile-data";
 

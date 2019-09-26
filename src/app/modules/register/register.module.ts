@@ -6,7 +6,7 @@ import { RegisterPageComponent } from "./register-page/register-page.component";
 import { RegisterBannerComponent } from "./register-banner/register-banner.component";
 import { RegisterGetStartedComponent } from "./register-get-started/register-get-started.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { TranslationModule } from "src/app/common/translation/translation.module";
+import { TranslationModule } from "../../common/translation/translation.module";
 import { RegisterMemberComponent } from "./register-member/register-member.component";
 import { RegisterOrganizerComponent } from "./register-organizer/register-organizer.component";
 import { RegisterOrganizationComponent } from "./register-organization/register-organization.component";

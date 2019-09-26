@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { DateTimeHelperService } from "../../../core/service/date-time-helper.service";
 import { Duration } from "../../../core/model/common/duration";
-import { EventData } from "src/app/core/model/event/event-data";
+import { EventData } from "../../../core/model/event/event-data";
 import { EventDisplayHelperService } from "../event-display-helper.service";
 
 @Component({
