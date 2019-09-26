@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { EventData } from 'src/app/core/model/event/event-data';
+import { EventData } from '../../core/model/event/event-data';
 
 @Injectable()
 export class EventDisplayHelperService {

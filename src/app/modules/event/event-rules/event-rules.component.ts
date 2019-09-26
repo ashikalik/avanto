@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Policy } from 'src/app/core/model/common/policy';
+import { Policy } from '../../../core/model/common/policy';
 
 @Component({
   selector: 'app-event-rules',

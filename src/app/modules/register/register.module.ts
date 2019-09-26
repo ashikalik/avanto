@@ -15,7 +15,7 @@ import { RecaptchaFormsModule } from "ng-recaptcha/forms";
 import { RegisterOrganizationFormComponent } from "./register-organization-form/register-organization-form.component";
 import { RegisterOrganizerFormComponent } from "./register-organizer-form/register-organizer-form.component";
 import { RegisterMemberFormComponent } from "./register-member-form/register-member-form.component";
-import { SharedModule } from 'src/app/common/shared/shared.module';
+import { SharedModule } from '../../common/shared/shared.module';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Package } from 'src/app/core/models/packages';
+import { Package } from '../../../core/models/packages';
 
 @Component({
   selector: 'app-ticket-list-item',

@@ -9,7 +9,7 @@ import {Location} from '@angular/common';
 import { AuthService } from "../../../core/api-services/auth.service";
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
-import { ServerError } from 'src/app/core/model/common/server-error';
+import { ServerError } from '../../../core/model/common/server-error';
 
 @Component({
   selector: 'app-register-member-form',

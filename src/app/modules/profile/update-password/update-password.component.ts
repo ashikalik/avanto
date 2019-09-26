@@ -8,7 +8,7 @@ import {
 import { ServerError } from "src/app/core/model/common/server-error";
 import { ProfileService } from "../../../core/api-services/profile.service";
 import { UserAuthService } from "src/app/core/service/user-auth.service";
-import { UpdatePasswordRequest } from 'src/app/core/model/user/update-password-request';
+import { UpdatePasswordRequest } from '../../../core/model/user/update-password-request';
 import { UserProfileData } from "../../../core/model/user/user-profile-data";
 
 

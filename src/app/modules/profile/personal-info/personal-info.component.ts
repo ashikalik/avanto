@@ -9,7 +9,7 @@ import { ServerError } from "../../../core/model/common/server-error";
 import { UserProfileData } from "../../../core/model/user/user-profile-data";
 import { UpdateInformation } from "../../../core/model/user/update-information-request";
 import { ProfileService } from "../../../core/api-services/profile.service";
-import { UserAuthService } from 'src/app/core/service/user-auth.service';
+import { UserAuthService } from '../../../core/service/user-auth.service';
 
 @Component({
   selector: "app-personal-info",

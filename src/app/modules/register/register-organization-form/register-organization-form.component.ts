@@ -14,7 +14,7 @@ import { City } from "../../../core/model/common/city";
 
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
-import { ServerError } from 'src/app/core/model/common/server-error';
+import { ServerError } from '../../../core/model/common/server-error';
 
 @Component({
   selector: "app-register-organization-form",

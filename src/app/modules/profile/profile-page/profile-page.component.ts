@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfileData } from 'src/app/core/model/user/user-profile-data';
-import { UserProfile } from 'src/app/core/model/user/user-profile';
+import { UserProfileData } from '../../../core/model/user/user-profile-data';
+import { UserProfile } from '../../../core/model/user/user-profile';
 import { Router } from '@angular/router';
 
 @Component({
