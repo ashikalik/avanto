@@ -3,15 +3,17 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
 import { NetworkConfig } from "../config/network.config";
-import { City } from "../models/city";
-import { EventType } from "../models/event-type";
-import { Nationality } from "../models/nationality";
-import { Educations } from "../models/educations";
-import { Audiences } from "../models/audience";
+// / import { City } from "../models/city";
+// import { EventType } from "../models/event-type";
+// import { Nationality } from "../models/nationality";
+// import { Educations } from "../models/educations";
+// import { Audiences } from "../models/audience";
 /******************************* */
 import { RegionList } from "../model/common/region-list";
 import { CityList } from "../model/common/city-list";
 import { EventTypeList } from "../model/event/event-type-list";
+import { EducationList } from "../model/common/education-list";
+import { AudienceList } from "../model/common/audience-list";
 
 @Injectable({
   providedIn: "root"
@@ -44,6 +46,20 @@ export class CommonService {
   getCityList(): Observable<CityList> {
     const url = environment.BASE_URL + NetworkConfig.CITY_LIST;
     return this.httpClient.get<CityList>(url);
+  }
+
+   /**
+   * Returns Observable of CityList by calling web service
+   * @returns Observable<CityList>
+   */
+   getEducations(): Observable<EducationList> {
+    const url = environment.BASE_URL + NetworkConfig.EDUCATIONS;
+    return this.httpClient.get<EducationList>(url);
+  }
+
+  getAudiance(): Observable<AudienceList> {
+    const url = environment.BASE_URL + NetworkConfig.AUDIANCE_LIST;
+    return this.httpClient.get<AudienceList>(url);
   }
 
 /****************** */

@@ -3,10 +3,11 @@ import { environment } from "../../../environments/environment";
 import { NetworkConfig } from "../config/network.config";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { UpdateInformation, UpdatePassword } from "../models/user-profile";
-import { Invoices } from "../models/my-ticket";
-import { Tickets } from "../models/tickets";
-import { CVDetails } from "../models/CV";
+import { UpdateInformationRequest } from "../model/user/update-information-request";
+import { UpdatePasswordRequest } from "../model/user/update-password-request";
+import { InvoiceResponse } from "../model/invoice/invoice-response";
+import { TicketResponse } from "../model/ticket/ticket-response";
+import { CvResponse } from "../model/cv/cv-response";
 
 @Injectable({
   providedIn: "root"
@@ -14,17 +15,17 @@ import { CVDetails } from "../models/CV";
 export class ProfileService {
   constructor(private httpClient: HttpClient) {}
 
-  public updateInfo(body: UpdateInformation, userID: number): Observable<any> {
+  public updateInfo(body: UpdateInformationRequest, userID: number): Observable<any> {
     const url = environment.BASE_URL + NetworkConfig.USERS + "/" + userID;
     return this.httpClient.put<any>(url, body);
   }
 
-  public updatePassword(body: UpdatePassword, userID: number): Observable<any> {
+  public updatePassword(body: UpdatePasswordRequest, userID: number): Observable<any> {
     const url = environment.BASE_URL + NetworkConfig.USERS + "/" + userID;
     return this.httpClient.put<any>(url, body);
   }
 
-  public getInvoices(limit: number, page: number): Observable<Invoices> {
+  public getInvoices(limit: number, page: number): Observable<InvoiceResponse> {
     const url =
       environment.BASE_URL +
       NetworkConfig.LIST_INVOCICE +
@@ -32,17 +33,17 @@ export class ProfileService {
       page +
       "&limit=" +
       limit;
-    return this.httpClient.get<Invoices>(url);
+    return this.httpClient.get<InvoiceResponse>(url);
   }
 
-  public getTickets(body: any): Observable<Tickets> {
+  public getTickets(body: any): Observable<TicketResponse> {
     const url = environment.BASE_URL + NetworkConfig.LIST_TICKETS_OF_INVOCE;
-    return this.httpClient.post<Tickets>(url, body);
+    return this.httpClient.post<TicketResponse>(url, body);
   }
 
-  public getCV(): Observable<CVDetails> {
+  public getCV(): Observable<CvResponse> {
     const url = environment.BASE_URL + NetworkConfig.CV;
-    return this.httpClient.get<CVDetails>(url);
+    return this.httpClient.get<CvResponse>(url);
   }
 
   public createCV(body: any): Observable<any> {

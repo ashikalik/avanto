@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {ContactUsService} from '../../../core/api-services/contact-us.service';
-import {EventoError} from "../../../core/models/error";
+import {ServerError} from "../../../core/model/common/server-error";
 
 @Component({
   selector: "app-contact-us-form",
@@ -11,7 +11,7 @@ import {EventoError} from "../../../core/models/error";
 export class ContactUsFormComponent implements OnInit {
   public questionForm: FormGroup;
   public sendQuestionSuccess: any;
-  public contactError: EventoError;
+  public contactError: ServerError;
   constructor(public formBuilder: FormBuilder,
     public contactUsService: ContactUsService) {}
 

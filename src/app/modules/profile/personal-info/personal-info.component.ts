@@ -7,7 +7,7 @@ import {
 } from "@angular/forms";
 import { ServerError } from "../../../core/model/common/server-error";
 import { UserProfileData } from "../../../core/model/user/user-profile-data";
-import { UpdateInformation } from "../../../core/model/user/update-information-request";
+import { UpdateInformationRequest } from "../../../core/model/user/update-information-request";
 import { ProfileService } from "../../../core/api-services/profile.service";
 import { UserAuthService } from '../../../core/service/user-auth.service';
 
@@ -73,7 +73,7 @@ export class PersonalInfoComponent implements OnInit {
   }
 
   public updatePersonalInfo(form: FormGroup) {
-    let body: UpdateInformation = form.value;
+    let body: UpdateInformationRequest = form.value;
     this.personalInfoError = null;
     this.personalInfoSuccess = false;
     this.profileService

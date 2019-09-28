@@ -1,5 +1,3 @@
-import {Meta} from "./meta";
-
 export interface Request {
     request_id: number;
     comment: string;
@@ -15,11 +13,3 @@ export interface Request {
     age: number;
     selectedRate: number;
 }
-
-export interface Requests {
-    meta: Meta;
-    data: Request[];
-}
-
-
-

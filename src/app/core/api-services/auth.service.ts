@@ -3,21 +3,22 @@ import { environment } from "../../../environments/environment";
 import { NetworkConfig } from "../config/network.config";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { LoginBody, LoginResponse } from "../models/login";
-import { ForgetPasswordRespons } from "../models/forget-password";
+import { LoginRequest } from "../model/user/login-request";
+import { LoginResponse } from "../model/user/login-response";
+import { ForgotPasswordResponse } from "../model/user/forgot-password-response";
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   public signup(body: any): Observable<any> {
     const url = environment.BASE_URL + NetworkConfig.USERS;
     return this.httpClient.post<any>(url, body);
   }
 
-  public login(body: LoginBody): Observable<LoginResponse> {
+  public login(body: LoginRequest): Observable<LoginResponse> {
     const url = environment.BASE_URL + NetworkConfig.LOGIN_URL;
     return this.httpClient.post<LoginResponse>(url, body);
   }
@@ -27,12 +28,12 @@ export class AuthService {
     return this.httpClient.get<any>(url);
   }
 
-  public forgetPassword(body: any): Observable<ForgetPasswordRespons> {
+  public forgetPassword(body: any): Observable<ForgotPasswordResponse> {
     const url = environment.BASE_URL + NetworkConfig.FORGET_PASSWORD;
-    return this.httpClient.post<ForgetPasswordRespons>(url, body);
+    return this.httpClient.post<ForgotPasswordResponse>(url, body);
   }
 
-  public reactivateEmail(body: any): Observable<ForgetPasswordRespons> {
+  public reactivateEmail(body: any): Observable<ForgotPasswordResponse> {
     const url = environment.BASE_URL + NetworkConfig.REACTIVATE;
     return this.httpClient.post<any>(url, body);
   }

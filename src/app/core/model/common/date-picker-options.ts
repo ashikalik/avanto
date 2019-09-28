@@ -1,4 +1,3 @@
-
 import {IMyDpOptions} from 'mydatepicker';
 
 export let  MyDatePickerOptions: IMyDpOptions = {

@@ -3,8 +3,8 @@ import { environment } from "../../../environments/environment";
 import { NetworkConfig } from "../config/network.config";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Requests } from "../models/requests";
-import { RequestDetials } from "../models/request-details";
+import { RequestList } from "../model/request/request-list";
+import { RequestData } from "../model/request/request-data";
 import { DateTimeHelperService } from "../service/date-time-helper.service";
 
 @Injectable({
@@ -21,7 +21,7 @@ export class RequestsService {
     page: number,
     status: number,
     search: string
-  ): Observable<Requests> {
+  ): Observable<RequestList> {
     let url =
       environment.BASE_URL +
       NetworkConfig.REQUEST +
@@ -35,13 +35,13 @@ export class RequestsService {
     if (search != null) {
       url = url + "&search=" + search;
     }
-    return this.httpClient.get<Requests>(url);
+    return this.httpClient.get<RequestList>(url);
   }
 
   public getRequestDetails(
     request_id: number,
     event_key: string
-  ): Observable<RequestDetials> {
+  ): Observable<RequestData> {
     const url =
       environment.BASE_URL +
       NetworkConfig.REQUEST +
@@ -49,7 +49,7 @@ export class RequestsService {
       request_id +
       "/" +
       event_key;
-    return this.httpClient.get<RequestDetials>(url);
+    return this.httpClient.get<RequestData>(url);
   }
 
   public preAccept(form: any, list: any, event_key: string): Observable<any> {

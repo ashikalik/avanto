@@ -4,9 +4,9 @@ import { environment } from "../../../environments/environment";
 import { NetworkConfig } from "../config/network.config";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { LatestEvents } from "../models/latest-event";
-import { EventDetails } from "../models/event-details";
-import { SearchEvents } from "../models/search-events";
+// import { LatestEvents } from "../models/latest-event";
+// import { EventDetails } from "../models/event-details";
+// import { SearchEvents } from "../models/search-events";
 import { EventList } from "../model/event/event-list";
 import { EventDetailsResponse } from "../model/event/event-details-response";
 
@@ -34,10 +34,10 @@ export class EventService {
     return this.httpClient.get<EventDetailsResponse>(url);
   }
 
-  public getEventDetail(eventKey: string): Observable<EventDetails> {
-    const url = environment.BASE_URL + NetworkConfig.VIEW_EVENT + eventKey;
-    return this.httpClient.get<EventDetails>(url);
-  }
+  // public getEventDetail(eventKey: string): Observable<EventDetails> {
+  //   const url = environment.BASE_URL + NetworkConfig.VIEW_EVENT + eventKey;
+  //   return this.httpClient.get<EventDetails>(url);
+  // }
 
   public search(
     limit: number,
@@ -46,7 +46,7 @@ export class EventService {
     type_id: any,
     region: any,
     need_vol: any
-  ): Observable<SearchEvents> {
+  ): Observable<EventList> {
     let url =
       environment.BASE_URL +
       NetworkConfig.SEARCH +
@@ -71,10 +71,10 @@ export class EventService {
       url = url + "&need_vol=" + need_vol;
     }
 
-    return this.httpClient.get<SearchEvents>(url);
+    return this.httpClient.get<EventList>(url);
   }
 
-  public getMyEvents(limit: number, page: number): Observable<LatestEvents> {
+  public getMyEvents(limit: number, page: number): Observable<EventList> {
     const url =
       environment.BASE_URL +
       NetworkConfig.EVENT +
@@ -82,7 +82,7 @@ export class EventService {
       limit +
       "&page=" +
       page;
-    return this.httpClient.get<LatestEvents>(url);
+    return this.httpClient.get<EventList>(url);
   }
 
   public submitRequest(event_key: string): any {

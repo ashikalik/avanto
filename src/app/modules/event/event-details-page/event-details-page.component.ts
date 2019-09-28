@@ -3,7 +3,7 @@ import { EventService } from "../../../core/api-services/event.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { EventData } from "../../../core/model/event/event-data";
 import { Meta, Title } from "@angular/platform-browser";
-import { EventoError } from "../../../core/models/error";
+import { ServerError } from "../../../core/model/common/server-error";
 
 @Component({
   selector: "app-event-details-page",
@@ -16,7 +16,7 @@ export class EventDetailsPageComponent implements OnInit {
   public lat: number = 51.678418;
   public lng: number = 7.809007;
 
-  public errorSubmitRequest: EventoError;
+  public errorSubmitRequest: ServerError;
 
   constructor(
     public eventService: EventService,
@@ -36,7 +36,7 @@ export class EventDetailsPageComponent implements OnInit {
   }
 
   public getEventDetail() {
-    this.eventService.getEventDetail(this.eventKey).subscribe(
+    this.eventService.getEventDetails(this.eventKey).subscribe(
       res => {
         if (res.data.details == null) this.router.navigate(["/home"]);
         this.eventData = res.data;

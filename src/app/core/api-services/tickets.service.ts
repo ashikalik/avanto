@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { environment } from "../../../environments/environment";
 import { NetworkConfig } from "../config/network.config";
-import { City } from "../models/city";
+import { City } from "../model/common/city";
 
 @Injectable({
   providedIn: "root"

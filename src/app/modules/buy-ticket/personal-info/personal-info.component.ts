@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { MyDatePickerOptions } from '../../../core/models/date-picker-object';
+import { MyDatePickerOptions } from '../../../core/model/common/date-picker-options';
 
 
 @Component({
