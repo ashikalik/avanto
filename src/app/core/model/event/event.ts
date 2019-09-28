@@ -1,6 +1,7 @@
 export interface Event {
     favorite?: any;
     event_id: number;
+    event_key:number;
     name: string;
     details: string;
     img: string;
