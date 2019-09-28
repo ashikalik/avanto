@@ -1,79 +1,101 @@
-<form [formGroup]="buyTicketForm">
-    <div class="row">
-        <div class="col-sm-12 col-md-4 mb-2">
-            <div class="form-group position-relative">
-                <select class="form-control evento-form-field evento-select"
-                        name="sellist"
-                        formControlName="package_id"
-                        (change)="onChangePackage($event.target.value)">
-                    <option value=""
-                            translate>Pick your tickets</option>
-                    <!-- <option [value]="package.package_id"
+<div class="row">
+    <div class="col-sm-12 col-lg-1 col-xl-2"></div>
+    <div class="col-sm-12 col-lg-10 col-xl-8">
+        <form [formGroup]="buyTicketForm">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 mb-2">
+                    <div class="form-group position-relative">
+                        <select class="form-control evento-form-field evento-select"
+                                name="sellist"
+                                formControlName="package_id"
+                                (change)="onChangePackage($event.target.value)">
+                            <option value=""
+                                    translate>Pick your tickets</option>
+                            <!-- <option [value]="package.package_id"
                         *ngFor="let package of eventDetail.data.packages">{{ package.name }}
                 </option> -->
-                </select>
-                <i class="fas fa-chevron-down embed"></i>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 mb-2">
-            <div class="form-group position-relative">
-                <my-date-picker placeholder="{{ 'Date of entery' | translate }}"
-                                [options]="myDatePickerOptions"
-                                formControlName="access_date"
-                                (dateChanged)="onChangeDate($event)"></my-date-picker>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 mb-2">
-            <div class="form-group position-relative">
-                <select class="form-control evento-form-field evento-select"
-                        name="sellist"
-                        formControlName="maleCount"
-                        (change)="onChangeNumOfTickets($event.target.value)">
-                    <option value=""
-                            translate>Male Count</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <i class="fas fa-chevron-down embed"></i>
-            </div>
-        </div>
+                        </select>
+                        <i class="fas fa-chevron-down embed"></i>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                    <div class="form-group position-relative">
+                        <my-date-picker placeholder="{{ 'Date of entery' | translate }}"
+                                        [options]="myDatePickerOptions"
+                                        formControlName="access_date"
+                                        (dateChanged)="onChangeDate($event)"></my-date-picker>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                    <div class="form-group position-relative">
+                        <select class="form-control evento-form-field evento-select"
+                                name="sellist"
+                                formControlName="maleCount"
+                                (change)="onChangeNumOfTickets($event.target.value)">
+                            <option value=""
+                                    translate>Male Count</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <i class="fas fa-chevron-down embed"></i>
+                    </div>
+                </div>
 
-        <div class="col-sm-12 col-md-4 mb-2">
-            <div class="form-group position-relative">
-                <select class="form-control evento-form-field evento-select"
-                        name="sellist"
-                        formControlName="femaleCount"
-                        (change)="onChangeNumOfTickets($event.target.value)">
-                    <option value=""
-                            translate>Female Count</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <i class="fas fa-chevron-down embed"></i>
+                <div class="col-sm-12 col-md-6 mb-2">
+                    <div class="form-group position-relative">
+                        <select class="form-control evento-form-field evento-select"
+                                name="sellist"
+                                formControlName="femaleCount"
+                                (change)="onChangeNumOfTickets($event.target.value)">
+                            <option value=""
+                                    translate>Female Count</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <i class="fas fa-chevron-down embed"></i>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 mb-2">
+                    <div class="form-group position-relative">
+                        <select class="form-control evento-form-field evento-select"
+                                name="sellist"
+                                formControlName="childCount"
+                                (change)="onChangeNumOfTickets($event.target.value)">
+                            <option value=""
+                                    translate>Children Count</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <i class="fas fa-chevron-down embed"></i>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="mx-2"
+                             translate>
+                            Price
+                        </div>
+                        <div class="mx-2"
+                             translate>
+                            <button class="btn evento-button-xs evento-button-secondary">700 SAR</button>
+                        </div>
+                        <div class="mx-2"
+                             translate>
+                            <button class="btn evento-button evento-button-primary">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-4 mb-2">
-            <div class="form-group position-relative">
-                <select class="form-control evento-form-field evento-select"
-                        name="sellist"
-                        formControlName="childCount"
-                        (change)="onChangeNumOfTickets($event.target.value)">
-                    <option value=""
-                            translate>Children Count</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <i class="fas fa-chevron-down embed"></i>
-            </div>
-        </div>
+        </form>
     </div>
-</form>
+</div>

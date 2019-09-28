@@ -59,6 +59,26 @@ body:lang(en) {
     color: theme-color('primary', 'base');
 }
 
+.mydp {
+    
+    
+    border-radius: calc(1.125rem + 1px) !important;
+    background: theme-color('background', 'light') !important;
+    border: 1px solid !important;
+    border-color: theme-color('gray-light', 'base') !important;
+
+    padding: 0.075rem 1.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    input.selection {
+        color: theme-color('foreground', 'base') !important;
+        font-family: font-family('bahnschrift') !important;
+        font-size:1rem !important;
+    }
+
+}
+
 
 .evento-input {
     border-radius: calc(1.125rem + 1px);
