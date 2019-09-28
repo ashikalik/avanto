@@ -1,5 +1,7 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject, PLATFORM_ID } from "@angular/core";
+import { isPlatformBrowser } from '@angular/common';
 import { JwtHelperService } from "@auth0/angular-jwt";
+
 
 @Injectable({
   providedIn: "root"
@@ -8,7 +10,7 @@ export class UserAuthService {
   /** The key for authentication token */
   private tokenKey: string;
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.tokenKey = "AUTH_TOKEN";
   }
 
@@ -18,7 +20,9 @@ export class UserAuthService {
    * @ return { void }
    */
   public setToken(token: string) {
-    localStorage.setItem(this.tokenKey, token);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(this.tokenKey, token);
+    }
   }
 
   /**
@@ -27,7 +31,9 @@ export class UserAuthService {
    * @ return { String } - The authentication token
    */
   public getToken() {
-    return localStorage.getItem(this.tokenKey);
+    if (isPlatformBrowser(this.platformId)) {
+      return localStorage.getItem(this.tokenKey);
+    }
   }
 
   /**
@@ -36,15 +42,19 @@ export class UserAuthService {
    * @ return { void }
    */
   public removeToken() {
-    localStorage.removeItem(this.tokenKey);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem(this.tokenKey);
+    }
   }
 
   public getUserProfile() {
-    const token: string = localStorage.getItem(this.tokenKey);
-    if (token) {
-      const helper = new JwtHelperService();
-      const decodedToken = helper.decodeToken(token);
-      return decodedToken;
+    if (isPlatformBrowser(this.platformId)) {
+      const token: string = localStorage.getItem(this.tokenKey);
+      if (token) {
+        const helper = new JwtHelperService();
+        const decodedToken = helper.decodeToken(token);
+        return decodedToken;
+      }
     }
 
     return null;

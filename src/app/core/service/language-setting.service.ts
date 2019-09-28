@@ -1,4 +1,5 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject, PLATFORM_ID } from "@angular/core";
+import { isPlatformBrowser } from '@angular/common';
 
 /**
  * LanguageSettingService service class
@@ -13,11 +14,15 @@ export class LanguageSettingService {
   private directionKey: string;
   private startDirectionKey: string;
 
-  constructor() {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     this.languageKey = "CURRENT_LANGUAGE";
     this.directionKey = "CURRENT_DIRECTION";
     this.startDirectionKey = "START_DIRECTION";
   }
+
+  // public getLanguage() {
+  //   return "ar";
+  // }
 
   /**
    * Store language in local storage
@@ -25,7 +30,9 @@ export class LanguageSettingService {
    * @return { void }
    */
   public setLanguage(language: string) {
-    localStorage.setItem(this.languageKey, language);
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem(this.languageKey, language);
+    }
   }
 
   /**
@@ -34,12 +41,16 @@ export class LanguageSettingService {
    * @return { String } - The language
    */
   public getLanguage() {
-    const language: string = localStorage.getItem(this.languageKey);
-    if (!language) {
-      this.setLanguage("ar");
-      return "ar";
+    if (isPlatformBrowser(this.platformId)) {
+      const language: string = localStorage.getItem(this.languageKey);
+      if (language) {
+        return language;
+      }
     }
-    return language;
+
+    this.setLanguage("ar");
+    return "ar";
+
   }
 
   /**
@@ -48,70 +59,9 @@ export class LanguageSettingService {
    * @return { void }
    */
   public removeLanguage() {
-    localStorage.removeItem(this.languageKey);
-  }
-
-  /**
-   * Store direction in local storage
-   * @param { string } direction - The direction
-   * @return { void }
-   */
-  public setDirection(direction: string) {
-    localStorage.setItem(this.directionKey, direction);
-  }
-
-  /**
-   * Retrieve direction from local storage
-   * @param { none }
-   * @return { String } - The direction
-   */
-  public getDirection() {
-    const direction: string = localStorage.getItem(this.directionKey);
-    if (!direction) {
-      this.setLanguage("ar");
-      return "ar";
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.removeItem(this.languageKey);
     }
-    return direction;
   }
 
-  /**
-   * Remove direction from local storage
-   * @param { none }
-   * @return { void }
-   */
-  public removeDirection() {
-    localStorage.removeItem(this.languageKey);
-  }
-
-  /**
-   * Store start direction in local storage
-   * @param { string } start direction - The direction
-   * @return { void }
-   */
-  public setStartDirection(startDirection: string) {
-    localStorage.setItem(this.startDirectionKey, startDirection);
-  }
-
-  /**
-   * Retrieve start direction from local storage
-   * @param { none }
-   * @return { String } - The start direction
-   */
-  public getStartDirection() {
-    const direction: string = localStorage.getItem(this.startDirectionKey);
-    if (!direction) {
-      this.setLanguage("ar");
-      return "ar";
-    }
-    return direction;
-  }
-
-  /**
-   * Remove start direction from local storage
-   * @param { none }
-   * @return { void }
-   */
-  public removeStartDirection() {
-    localStorage.removeItem(this.languageKey);
-  }
 }
