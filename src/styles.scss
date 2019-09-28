@@ -59,35 +59,14 @@ body:lang(en) {
     color: theme-color('primary', 'base');
 }
 
-.mydp {
-    
-    
-    border-radius: calc(1.125rem + 1px) !important;
-    background: theme-color('background', 'light') !important;
-    border: 1px solid !important;
-    border-color: theme-color('gray-light', 'base') !important;
-
-    padding: 0.075rem 1.25rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    input.selection {
-        color: theme-color('foreground', 'base') !important;
-        font-family: font-family('bahnschrift') !important;
-        font-size:1rem !important;
-    }
-
-}
-
-
-.evento-input {
-    border-radius: calc(1.125rem + 1px);
-    border-color: theme-color('foreground', 'base');
-    padding: 0.375rem 1.25rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
+// .evento-input {
+//     border-radius: calc(1.125rem + 1px);
+//     border-color: theme-color('foreground', 'base');
+//     padding: 0.375rem 1.25rem;
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     appearance: none;
+// }
 /* Select */
 
 .evento-select:lang(en) {
@@ -284,4 +263,31 @@ input[type="checkbox"]:lang(ar) {
     color: theme-color('background', 'light');
     outline: 0;
     box-shadow: 0 0 0 0.1rem theme-color('accent-one', 'light');
+}
+
+/**My Date picker style override */
+
+.mydp {
+   
+    border-radius: calc(1.125rem + 1px) !important;
+    background: theme-color('background', 'light') !important;
+    border: 1px solid !important;
+    border-color: theme-color('gray-light', 'base') !important;
+
+    padding: 0.075rem 1.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    input.selection {
+        color: theme-color('foreground', 'base') !important;
+        font-family: font-family('bahnschrift') !important;
+        font-size:1rem !important;
+    }
+
+    // input.selection:focus {
+    //     outline: 0;
+    //     box-shadow: 0 0 0 0.1rem theme-color('gray-light', 'light');
+    //     border-color: theme-color('gray-light', 'base');
+    // }
+
 }
