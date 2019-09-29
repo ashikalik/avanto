@@ -11,9 +11,11 @@
                                 (change)="onChangePackage($event.target.value)">
                             <option value=""
                                     translate>Pick your tickets</option>
-                            <!-- <option [value]="package.package_id"
-                        *ngFor="let package of eventDetail.data.packages">{{ package.name }}
-                </option> -->
+                            <ng-container *ngIf="eventDetails && eventDetails.data && eventDetails.data.packages">
+                                <option [value]="package.package_id"
+                                        *ngFor="let package of eventDetails.data.packages">{{ package.name }}
+                                </option>
+                            </ng-container>
                         </select>
                         <i class="fas fa-chevron-down embed"></i>
                     </div>
@@ -87,7 +89,7 @@
                         </div>
                         <div class="mx-2"
                              translate>
-                            <button class="btn evento-button-xs evento-button-secondary">700 SAR</button>
+                            <button class="btn evento-button-xs evento-button-secondary">{{total}} SAR</button>
                         </div>
                         <div class="mx-2"
                              translate>

@@ -35,7 +35,7 @@ import { ServerError } from '../../../core/model/common/server-error';
 })
 export class SelectTicketComponent implements OnInit {
 
-    @Input() eventDetailsResponse: EventDetailsResponse;
+    @Input('eventDetails') eventDetails: EventDetailsResponse;
     @Input('buyTicketForm') buyTicketForm : FormGroup;
     @Output() onNext: EventEmitter<any> = new EventEmitter();
     @Output() onBack: EventEmitter<any> = new EventEmitter();
@@ -78,10 +78,10 @@ export class SelectTicketComponent implements OnInit {
         this.buyTicketForm.get('access_date').setValue(null);
         this.buyTicketForm.updateValueAndValidity();
         
-        this.package = this.eventDetailsResponse.data.packages.find(x => x.package_id == event);
+        this.package = this.eventDetails.data.packages.find(x => x.package_id == event);
 
-        //this.myDatePickerOptions.disableUntil = new DisableDateUntilPipe().transform(this.eventDetailsResponse.data.details.from_date);
-        //this.myDatePickerOptions.disableSince = new DisableDateSincePipe().transform(this.eventDetailsResponse.data.details.end_date);
+        //this.myDatePickerOptions.disableUntil = new DisableDateUntilPipe().transform(this.eventDetails.data.details.from_date);
+        //this.myDatePickerOptions.disableSince = new DisableDateSincePipe().transform(this.eventDetails.data.details.end_date);
 
         this.isDateRequired = this.buyTicketService.isDateRequired(this.package);
 
@@ -143,12 +143,13 @@ export class SelectTicketComponent implements OnInit {
 
 
         const body = {
-            event_key: this.eventDetailsResponse.data.details.event_key,
+            event_key: this.eventDetails.data.details.event_key,
             package_id: selectedPackage,
             access_date: access_date
         }
         this.buyTicketService.validatePackage(body).subscribe(res => {
             this.validatePackageRes = res.data;
+            debugger;
             if (this.validatePackageRes.left <= 0) {
                 this.isSoldOut = true;
             }
