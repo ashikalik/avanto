@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
@@ -8,10 +8,19 @@ import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class OrderReviewComponent implements OnInit {
   @Input('buyTicketForm') buyTicketForm : FormGroup;
-
+  @Output() nextButtonClick: EventEmitter<any> = new EventEmitter();
+  @Output() backButtonClick: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  handleNextButtonClick() {
+    this.nextButtonClick.emit();
+  }
+
+  handleBackButtonClick() {
+    this.backButtonClick.emit();
   }
 
 }

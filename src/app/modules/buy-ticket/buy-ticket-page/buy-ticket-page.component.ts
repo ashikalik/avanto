@@ -58,8 +58,12 @@ export class BuyTicketPageComponent implements OnInit {
   handlePillClick(step: number) {
     this.currentStep = step;
   }
-  handleNextButtonClick(step: number) {}
-  handlePreviosButtonClick(step: number) {}
+  onNextButtonClick(step: number) {
+    this.currentStep++;
+  }
+  onBackButtonClick(step: number) {
+    this.currentStep--;
+  }
 
   public initBuyTicketForm() {
     this.buyTicketForm = this.formBuilder.group({

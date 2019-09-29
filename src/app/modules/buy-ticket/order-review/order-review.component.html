@@ -1,29 +1,80 @@
-<div class="row">
-    <div class="col-sm-6 col-md-6 label-value">
-        <span class="label">{{ 'Ticket' | translate }}</span>
-        <span class="value">{{ buyTicketForm.get('first_name').value }} {{ buyTicketForm.get('last_name').value }}</span>
-    </div>
-    <div class="col-sm-6 col-md-6 label-value">
-        <span class="label">{{ 'Phone Number' | translate }}</span>
-        <span class="value" style="direction: ltr">{{ buyTicketForm.get('mobile').value}}</span>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-1 col-xl-2"></div>
+        <div class="col-sm-12 col-lg-10 col-xl-8">
+            <div class="row">
+                <div class="col-sm-12 evento-section-title title-underlined mb-4"
+                     translate>
+                    Order Review
+                </div>
+
+                <div class="col-sm-6 col-md-6 label-value">
+                    <span class="label">{{ 'Name' | translate }}</span>
+                    <span class="value">{{ buyTicketForm.get('first_name').value }} {{
+                        buyTicketForm.get('last_name').value }}</span>
+                </div>
+                <div class="col-sm-6 col-md-6 label-value">
+                    <span class="label">{{ 'Phone Number' | translate }}</span>
+                    <span class="value"
+                          style="direction: ltr">{{ buyTicketForm.get('mobile').value}}</span>
+                </div>
+
+                <div class="col-sm-12 col-md-12 label-value">
+                    <span class="label">{{ 'Email' | translate }}</span>
+                    <span class="value">{{ buyTicketForm.get('email').value }}</span>
+                </div>
+
+                <div class="col-sm-12 col-md-6 label-value">
+                    <span class="label">{{ 'Ticket' | translate }}</span>
+                    <span class="value">abcd</span>
+                </div>
+
+                <div class="col-sm-6 col-md-6 label-value">
+                    <span class="label">{{ 'QTY' | translate }}</span>
+                    <span class="value">{{ buyTicketForm.get('num_ticket').value }}</span>
+                </div>
+                <div class="col-sm-6 col-md-6 label-value">
+                    <span class="label">{{ 'Date' | translate }}</span>
+                    <span class="value">{{ buyTicketForm.get('access_date').value.formatted }}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 evento-section-title title-underlined mb-4"
+                     translate>
+                    Visitor Info Review
+                </div>
+                <div class="col-sm-12"
+                     *ngFor="let visitor of buyTicketForm.get('visitors').value; let index = index;">
+                    <div class="d-flex justify-content-between ticket-row mx-1 mb-1">
+                        <div><span class="label">{{ 'Ticket' | translate }}</span><span class="label">{{index + 1}}</span>
+                        </div>
+                        <div><span class="label">{{ 'First Name' | translate }}</span><span>{{ visitor.first_name }}</span></div>
+                        <div><span class="label">{{ 'Last Name' | translate }}</span><span>{{ visitor.last_name }}</span></div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 mt-4">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <div class="mx-2"
+                             translate>
+                            <button class="btn evento-button evento-button-secondary"
+                                    (click)="handleBackButtonClick();">Back</button>
+                        </div>
+                        <div class="mx-2"
+                             translate>
+                            <button class="btn evento-button evento-button-primary"
+                                    (click)="handleNextButtonClick();">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div class="col-sm-12 col-md-12 label-value">
-        <span class="label">{{ 'Email' | translate }}</span>
-        <span class="value">{{ buyTicketForm.get('email').value }}</span>
-    </div>
-
-    <div class="col-sm-12 col-md-12 label-value">
-        <span class="label">{{ 'Ticket' | translate }}</span>
-        <span class="value">abcd</span>
-    </div>
-
-    <div class="col-sm-6 col-md-6 label-value">
-        <span class="label">{{ 'QTY' | translate }}</span>
-        <span class="value">{{ buyTicketForm.get('num_ticket').value }}</span>
-    </div>
-    <div class="col-sm-6 col-md-6 label-value">
-        <span class="label">{{ 'Date' | translate }}</span>
-        <span class="value">{{ buyTicketForm.get('access_date').value.formatted }}</span>
-    </div>
 </div>

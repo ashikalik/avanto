@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MyDatePickerOptions } from '../../../core/model/common/date-picker-options';
 
@@ -9,18 +9,28 @@ import { MyDatePickerOptions } from '../../../core/model/common/date-picker-opti
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
-  @Input('buyTicketForm') buyTicketForm : FormGroup;
+  @Output() nextButtonClick: EventEmitter<any> = new EventEmitter();
+  @Output() backButtonClick: EventEmitter<any> = new EventEmitter();
+  @Input('buyTicketForm') buyTicketForm: FormGroup;
   public myDatePickerOptions = MyDatePickerOptions;
 
   constructor() { }
 
   ngOnInit() {
   }
-  onChangeDateBirth(ev){
-    
-  }
-  selectedPackage(){
+  onChangeDateBirth(ev) {
 
+  }
+  selectedPackage() {
+
+  }
+
+  handleNextButtonClick() {
+    this.nextButtonClick.emit();
+  }
+
+  handleBackButtonClick() {
+    this.backButtonClick.emit();
   }
 
 }

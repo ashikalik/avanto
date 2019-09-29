@@ -37,8 +37,8 @@ export class SelectTicketComponent implements OnInit {
 
     @Input('eventDetails') eventDetails: EventDetailsResponse;
     @Input('buyTicketForm') buyTicketForm : FormGroup;
-    @Output() onNext: EventEmitter<any> = new EventEmitter();
-    @Output() onBack: EventEmitter<any> = new EventEmitter();
+    @Output() nextButtonClick: EventEmitter<any> = new EventEmitter();
+    @Output() backButtonClick: EventEmitter<any> = new EventEmitter();
     @Output() selectedPackage: EventEmitter<any> = new EventEmitter();
 
     public visitors: FormArray;
@@ -149,7 +149,6 @@ export class SelectTicketComponent implements OnInit {
         }
         this.buyTicketService.validatePackage(body).subscribe(res => {
             this.validatePackageRes = res.data;
-            debugger;
             if (this.validatePackageRes.left <= 0) {
                 this.isSoldOut = true;
             }
@@ -161,12 +160,12 @@ export class SelectTicketComponent implements OnInit {
         })
     }
 
-    onButtonNext() {
-        this.onNext.emit();
+    handleNextButtonClick() {
+        this.nextButtonClick.emit();
     }
 
-    onButtonBack() {
-        this.onBack.emit();
+    handleBackButtonClick() {
+        this.backButtonClick.emit();
     }
 
 }

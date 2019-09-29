@@ -3,6 +3,10 @@
     <div class="col-sm-12 col-lg-10 col-xl-8">
         <form [formGroup]="buyTicketForm">
             <div class="row">
+                <div class="col-sm-12 evento-section-title title-underlined mb-4"
+                     translate>
+                    Your Info
+                </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <input formControlName="first_name"
@@ -22,7 +26,6 @@
                             First name most have less than 40 letters
                         </div>
                     </div>
-
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
@@ -110,15 +113,72 @@
                     </div>
                 </div>
 
+                <div class="col-sm-12 evento-section-title title-underlined mb-4"
+                     translate>
+                    Visitor Info
+                </div>
+                <div class="col-sm-12">
+                    <form formArrayName="visitors">
+                        <ng-container *ngFor="let visitor of buyTicketForm.get('visitors')['controls']; let i = index;">
+                            <div class="row"
+                                 [formGroupName]="i">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input formControlName="first_name"
+                                               type="text"
+                                               class="form-control evento-form-field"
+                                               placeholder="{{ 'First Name' | translate }}">
+                                        <div class="evento-form-error"
+                                             *ngIf="visitor.controls['first_name'].hasError('required') && visitor.controls['first_name'].dirty">
+                                            هذا الحقل إجباري
+                                        </div>
+                                        <div class="evento-form-error"
+                                             *ngIf="visitor.controls['first_name'].hasError('minlength') && visitor.controls['first_name'].dirty">
+                                            هذا الحقل يجب ان لايقل عن 3 احرف
+                                        </div>
+                                        <div class="evento-form-error"
+                                             *ngIf="visitor.controls['first_name'].hasError('maxlength') && visitor.controls['first_name'].dirty">
+                                            هذا الحقل يجب ان لايزيد عن 40 حرف
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input formControlName="last_name"
+                                               type="text"
+                                               class="form-control evento-form-field"
+                                               placeholder="{{ 'Last Name' | translate }}">
+                                        <div class="evento-form-error"
+                                             *ngIf="visitor.controls['last_name'].hasError('required') && visitor.controls['last_name'].dirty">
+                                            هذا الحقل إجباري
+                                        </div>
+                                        <div class="evento-form-error"
+                                             *ngIf="visitor.controls['last_name'].hasError('minlength') && visitor.controls['last_name'].dirty">
+                                            هذا الحقل يجب ان لايقل عن 3 احرف
+                                        </div>
+                                        <div class="evento-form-error"
+                                             *ngIf="visitor.controls['last_name'].hasError('maxlength') && visitor.controls['last_name'].dirty">
+                                            هذا الحقل يجب ان لايزيد عن 40 حرف
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                    </form>
+                </div>
+
                 <div class="col-sm-12 mt-4">
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="mx-2"
                              translate>
-                            <button class="btn evento-button evento-button-secondary">Back</button>
+                            <button class="btn evento-button evento-button-secondary"
+                                    (click)="handleBackButtonClick();">Back</button>
                         </div>
                         <div class="mx-2"
                              translate>
-                            <button class="btn evento-button evento-button-primary">Next</button>
+                            <button class="btn evento-button evento-button-primary"
+                                    (click)="handleNextButtonClick();">Next</button>
                         </div>
                     </div>
                 </div>

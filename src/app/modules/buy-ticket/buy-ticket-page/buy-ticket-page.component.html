@@ -49,17 +49,19 @@
                     </a>
                 </div>
             </div>
-            <div class="flex-grow-1 pt-2"
+            <div class="flex-grow-1 pt-1"
                  [ngSwitch]="currentStep">
                 <div *ngSwitchCase="1">
                     <app-select-ticket [buyTicketForm]="buyTicketForm"
-                                       [eventDetails]="eventDetailsResponse"></app-select-ticket>
+                                       [eventDetails]="eventDetailsResponse"
+                                       (nextButtonClick)="onNextButtonClick()">
+                                    </app-select-ticket>
                 </div>
                 <div *ngSwitchCase="2">
-                    <app-personal-info [buyTicketForm]="buyTicketForm"></app-personal-info>
+                    <app-personal-info [buyTicketForm]="buyTicketForm" (backButtonClick)="onBackButtonClick()" (nextButtonClick)="onNextButtonClick()"></app-personal-info>
                 </div>
                 <div *ngSwitchCase="3">
-                    <app-order-review [buyTicketForm]="buyTicketForm"> </app-order-review>
+                    <app-order-review [buyTicketForm]="buyTicketForm" (nextButtonClick)="onNextButtonClick()"> </app-order-review>
                     <!-- <app-payment-info></app-payment-info> -->
                 </div>
                 <div *ngSwitchCase="4">
