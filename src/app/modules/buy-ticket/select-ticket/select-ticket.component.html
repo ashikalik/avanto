@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12 mt-4">
+                <div class="col-sm-12 mt-4" *ngIf="total != null">
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="mx-2"
                              translate>
@@ -91,10 +91,10 @@
                              translate>
                             <button class="btn evento-button-xs evento-button-secondary">{{total}} SAR</button>
                         </div>
-                        <div class="mx-2"
+                        <!-- <div class="mx-2"
                              translate>
                             <button class="btn evento-button evento-button-primary" (click)="handleNextButtonClick();">Next</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

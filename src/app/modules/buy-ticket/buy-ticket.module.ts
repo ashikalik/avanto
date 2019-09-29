@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RecaptchaModule } from "ng-recaptcha";
+import { RecaptchaFormsModule } from "ng-recaptcha/forms";
 
 import { BuyTicketRoutingModule } from './buy-ticket-routing.module';
 import { BuyTicketPageComponent } from './buy-ticket-page/buy-ticket-page.component';
@@ -22,7 +24,9 @@ import { SharedModule } from '../../common/shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
-    TranslationModule
+    TranslationModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
   ]
 })
 export class BuyTicketModule { }

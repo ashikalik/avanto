@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { EventService } from "../../../core/api-services/event.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable } from "rxjs";
@@ -8,7 +8,11 @@ import { BuyTicketService } from '../../../core/api-services/buy-ticket.service'
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServerError } from '../../../core/model/common/server-error';
 import { Meta, Title } from "@angular/platform-browser";
+import { environment } from '../../../../environments/environment';
+
 //import { NetworkConfig } from '../../network-layer/network.config';
+
+declare var Checkout: any;
 
 @Component({
   selector: "app-buy-ticket-page",
@@ -36,7 +40,7 @@ export class BuyTicketPageComponent implements OnInit {
     public formBuilder: FormBuilder,
     public router: Router,
     public title: Title,
-    public meta: Meta) {
+    public meta: Meta, private renderer: Renderer2) {
 
     this.currentStep = 1;
     this.completedPayment = false;
@@ -52,18 +56,37 @@ export class BuyTicketPageComponent implements OnInit {
 
   ngOnInit() {
    
+    this.addJsToElement(environment.MERCHANT_JS).onload = () => {
+      //this.showSubmit = true;
+      console.log("merchant js loaded")
+    } 
+
     this.initBuyTicketForm();
+
   }
 
   handlePillClick(step: number) {
     this.currentStep = step;
   }
-  onNextButtonClick(step: number) {
+  handleNextButtonClick(step: number) {
     this.currentStep++;
   }
-  onBackButtonClick(step: number) {
+  handleBackButtonClick(step: number) {
     this.currentStep--;
   }
+  handlePayNowButtonClick() {
+    console.log(this.buyTicketForm);
+    this.buyTicket();
+  }
+
+  addJsToElement(src: string): HTMLScriptElement {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = src;
+    this.renderer.appendChild(document.body, script);
+    return script;
+  }
+
 
   public initBuyTicketForm() {
     this.buyTicketForm = this.formBuilder.group({
@@ -122,5 +145,60 @@ export class BuyTicketPageComponent implements OnInit {
         }
     )
 }
+
+public buyTicket() {
+  this.buyTicketError = null;
+
+  this.buyTicketService.createInvoice(this.buyTicketForm.value, this.eventDetailsResponse.data.details.event_key).subscribe(
+      res => {
+          
+        debugger;
+
+          // this is for free ticket to show success payment
+          if (res.data.price == 0 && res.data.total_with_vat == 0) {
+              this.completedPayment = true;
+              this.router.navigate(['/validate-payment/' + res.data.reference])
+          } else {
+              // this.completedPayment = false;
+              // this.changeStepForward(null);
+              Checkout.configure({
+                  merchant: environment.MERCHANT_ID,
+                  order: {
+                      amount: res.data.total_with_vat,
+                      currency: 'SAR',
+                      description: res.data.event_name,
+                      id: res.data.reference
+                  },
+                  session: {
+                      id: res.data.session
+                  },
+                  interaction: {
+                      merchant: {
+                          name: 'Evento ايفينتو',
+                          logo: 'https://i.ibb.co/BGDvmqs/Logo-PNG-1-copy.png'
+                      },
+                      locale: 'ar_SA',
+                      theme: 'default',
+                      displayControl: {
+                          billingAddress: 'HIDE',
+                          customerEmail: 'HIDE',
+                          orderSummary: 'HIDE',
+                          shipping: 'HIDE'
+                      }
+                  }
+              });
+
+              Checkout.showPaymentPage()
+
+          }
+
+
+
+
+      }, err => {
+          this.buyTicketError = err.value.error;
+      })
+}
+
 
 }

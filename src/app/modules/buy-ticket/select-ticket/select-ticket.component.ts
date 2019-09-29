@@ -37,8 +37,8 @@ export class SelectTicketComponent implements OnInit {
 
     @Input('eventDetails') eventDetails: EventDetailsResponse;
     @Input('buyTicketForm') buyTicketForm : FormGroup;
-    @Output() nextButtonClick: EventEmitter<any> = new EventEmitter();
-    @Output() backButtonClick: EventEmitter<any> = new EventEmitter();
+    // @Output() nextButtonClick: EventEmitter<any> = new EventEmitter();
+    // @Output() backButtonClick: EventEmitter<any> = new EventEmitter();
     @Output() selectedPackage: EventEmitter<any> = new EventEmitter();
 
     public visitors: FormArray;
@@ -160,13 +160,13 @@ export class SelectTicketComponent implements OnInit {
         })
     }
 
-    handleNextButtonClick() {
-        this.nextButtonClick.emit();
-    }
+    // handleNextButtonClick() {
+    //     this.nextButtonClick.emit();
+    // }
 
-    handleBackButtonClick() {
-        this.backButtonClick.emit();
-    }
+    // handleBackButtonClick() {
+    //     this.backButtonClick.emit();
+    // }
 
 }
 

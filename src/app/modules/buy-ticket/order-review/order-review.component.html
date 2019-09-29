@@ -58,6 +58,34 @@
             </div>
 
             <div class="row">
+                <div class="col-sm-12 evento-section-title title-underlined mb-4"
+                     translate>
+                    Payment Review
+                </div>
+                <div class="col-sm-6 col-md-6 label-value">
+                    <span class="label">{{ 'QTY' | translate }}</span>
+                    <span class="value">{{ buyTicketForm.get('num_ticket').value }}</span>
+                </div>
+
+                <div class="col-sm-6 col-md-6 label-value">
+                    <span class="label">{{ 'Rate' | translate }}</span>
+                    <span class="value">{{selectedPackage.price}} {{ 'SR' | translate }}</span>
+                </div>
+
+                <div class="col-sm-6 col-md-6 label-value">
+                    <span class="label">{{ 'Total' | translate }}</span>
+                    <span class="value">{{totalWithoutVat}} {{ 'SR' | translate }}</span>
+                </div>
+                <form [formGroup]="buyTicketForm">
+                    <div class="col-sm-12">
+                        <re-captcha #captchaRef
+                                    formControlName="recaptcha"></re-captcha>
+                    </div>
+                </form>
+
+            </div>
+
+            <!-- <div class="row">
                 <div class="col-sm-12 mt-4">
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="mx-2"
@@ -72,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>

@@ -9,8 +9,8 @@ import { MyDatePickerOptions } from '../../../core/model/common/date-picker-opti
   styleUrls: ['./personal-info.component.scss']
 })
 export class PersonalInfoComponent implements OnInit {
-  @Output() nextButtonClick: EventEmitter<any> = new EventEmitter();
-  @Output() backButtonClick: EventEmitter<any> = new EventEmitter();
+  // @Output() nextButtonClick: EventEmitter<any> = new EventEmitter();
+  // @Output() backButtonClick: EventEmitter<any> = new EventEmitter();
   @Input('buyTicketForm') buyTicketForm: FormGroup;
   public myDatePickerOptions = MyDatePickerOptions;
 
@@ -25,12 +25,12 @@ export class PersonalInfoComponent implements OnInit {
 
   }
 
-  handleNextButtonClick() {
-    this.nextButtonClick.emit();
-  }
+  // handleNextButtonClick() {
+  //   this.nextButtonClick.emit();
+  // }
 
-  handleBackButtonClick() {
-    this.backButtonClick.emit();
-  }
+  // handleBackButtonClick() {
+  //   this.backButtonClick.emit();
+  // }
 
 }

@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   BASE_URL                : 'https://www.dev.evento.sa/api',
+  MERCHANT_ID              : '3000000016',          // DEV
+  MERCHANT_JS             :  "https://test-gateway.mastercard.com/checkout/version/51/checkout.js", // DEV
 };
 
 /*

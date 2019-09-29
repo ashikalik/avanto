@@ -49,25 +49,57 @@
                     </a>
                 </div>
             </div>
-            <div class="flex-grow-1 pt-1"
-                 [ngSwitch]="currentStep">
-                <div *ngSwitchCase="1">
-                    <app-select-ticket [buyTicketForm]="buyTicketForm"
-                                       [eventDetails]="eventDetailsResponse"
-                                       (nextButtonClick)="onNextButtonClick()">
-                                    </app-select-ticket>
-                </div>
-                <div *ngSwitchCase="2">
-                    <app-personal-info [buyTicketForm]="buyTicketForm" (backButtonClick)="onBackButtonClick()" (nextButtonClick)="onNextButtonClick()"></app-personal-info>
-                </div>
-                <div *ngSwitchCase="3">
-                    <app-order-review [buyTicketForm]="buyTicketForm" (nextButtonClick)="onNextButtonClick()"> </app-order-review>
-                    <!-- <app-payment-info></app-payment-info> -->
-                </div>
-                <div *ngSwitchCase="4">
-                    <app-payment-info></app-payment-info>
-                    <!-- <app-confirmation></app-confirmation> -->
-                </div>
+
+            <div class="flex-grow-1 pt-1">
+                <form [formGroup]="buyTicketForm">
+                    <div [ngSwitch]="currentStep">
+                        <div *ngSwitchCase="1">
+                            <app-select-ticket [buyTicketForm]="buyTicketForm"
+                                               [eventDetails]="eventDetailsResponse"
+                                               (nextButtonClick)="onNextButtonClick()">
+                            </app-select-ticket>
+                        </div>
+                        <div *ngSwitchCase="2">
+                            <app-personal-info [buyTicketForm]="buyTicketForm"
+                                               (backButtonClick)="onBackButtonClick()"
+                                               (nextButtonClick)="onNextButtonClick()"></app-personal-info>
+                        </div>
+                        <div *ngSwitchCase="3">
+                            <app-order-review [buyTicketForm]="buyTicketForm"
+                                              [eventDetails]="eventDetailsResponse"
+                                              (nextButtonClick)="onNextButtonClick()"> </app-order-review>
+                            <!-- <app-payment-info></app-payment-info> -->
+                        </div>
+                        <div *ngSwitchCase="4">
+                            <app-payment-info></app-payment-info>
+                            <!-- <app-confirmation></app-confirmation> -->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 mt-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="mx-2"
+                                     translate>
+                                    <button class="btn evento-button evento-button-secondary"
+                                            (click)="handleBackButtonClick();">Back</button>
+                                </div>
+                                <div class="mx-2"
+                                     translate
+                                     *ngIf="currentStep < 3">
+                                    <button class="btn evento-button evento-button-primary"
+                                            (click)="handleNextButtonClick();">Next</button>
+                                </div>
+                                <div class="mx-2"
+                                     *ngIf="currentStep===3" >
+                                    <button class="btn evento-button evento-button-primary" [disabled]="!buyTicketForm.valid"
+                                            (click)="handlePayNowButtonClick();">Pay Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
             </div>
         </div>
     </div>
