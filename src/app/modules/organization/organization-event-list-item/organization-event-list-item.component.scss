@@ -1,0 +1,27 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+.organization-event-list-item-header {
+    a, a:hover {
+        text-decoration: none;
+        color: theme-color('foreground', 'base');
+    }
+}
+
+.organization-event-list-item-body {
+    margin-top:-15px;
+    padding: 15px;
+    padding-top: 30px;
+    font-size: text-scale('sm');
+    border:1px solid theme-color('gray-lightest', 'base');
+    border-top:1px solid transparent;
+    border-radius: 0 0 15px 15px;
+
+    .explanation {
+        font-size: text-scale('xs');
+    }
+
+    .answer, .apply-button {
+        min-width: 110px;
+        
+    }
+}
+

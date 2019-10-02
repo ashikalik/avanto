@@ -5,38 +5,39 @@
 </div>
 <div class="media event-item shadow-sm"
      *ngIf="event">
-        <img defaultImage
-             class="event-thumb"
-             [src]="event.img"
-             [alt]="'Evento'">
+    <img defaultImage
+         class="event-thumb"
+         [src]="event.img"
+         [alt]="'Evento'">
 
 
     <div class="media-body px-3 py-2">
         <h5 class="mt-1 event-title">{{event.name}}</h5>
         <div class="event-description">
-            {{event.details}}
+            {{event.details | truncate:[200] }}
         </div>
         <div class="event-location text-small mt-2">
             <div class="d-flex justify-content-between">
 
-                <div class="">
+                <div class="flex-grow-1">
                     <span><i class="fas fa-map-marker"></i>&nbsp;</span>
                     <span>{{event.city}}</span>
                 </div>
 
-                <button type="button"
+                <div class="when d-flex flex-row  evento-text-faded"
+                     *ngIf="event">
+                    <div class="">{{event.from_date}} | {{event.from_time}}</div>
+                </div>
+
+                <!-- <button type="button"
                         class="btn see-more-button evento-button-xs evento-button-secondary"
                         [routerLink]="['/event', event.event_key]">
                     See More
-                </button>
+                </button> -->
 
 
             </div>
 
         </div>
     </div>
-</div>
-<div class="when d-flex flex-row mx-3 evento-text-faded"
-     *ngIf="event">
-    <div class="">{{event.from_date}} | {{event.from_time}}</div>
 </div>

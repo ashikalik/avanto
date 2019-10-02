@@ -56,19 +56,22 @@ export class BuyTicketPageComponent implements OnInit {
 
   ngOnInit() {
    
-    this.addJsToElement(environment.MERCHANT_JS).onload = () => {
-      //this.showSubmit = true;
-      console.log("merchant js loaded")
-    } 
+    
 
     this.initBuyTicketForm();
 
   }
 
   handlePillClick(step: number) {
-    this.currentStep = step;
+    if(step < this.currentStep) {
+      this.currentStep = step;
+    }
+      
   }
   handleNextButtonClick(step: number) {
+    this.buyTicketForm.updateValueAndValidity();
+    console.log(this.buyTicketForm);
+
     this.currentStep++;
   }
   handleBackButtonClick(step: number) {
@@ -76,7 +79,10 @@ export class BuyTicketPageComponent implements OnInit {
   }
   handlePayNowButtonClick() {
     console.log(this.buyTicketForm);
-    this.buyTicket();
+    this.addJsToElement(environment.MERCHANT_JS).onload = () => {
+      console.log("merchant js loaded");
+      this.buyTicket();
+    }    
   }
 
   addJsToElement(src: string): HTMLScriptElement {

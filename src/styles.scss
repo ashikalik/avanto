@@ -70,7 +70,8 @@ body:lang(en) {
 /* Select */
 
 .evento-select:lang(en) {
-    padding-right: 20px;
+    //padding-right: 30px !important;
+    padding-right: 1.5rem;
     + i.fas {
         position: absolute;
         top: 12px;
@@ -80,7 +81,7 @@ body:lang(en) {
 }
 
 .evento-select:lang(ar) {
-    padding-left: 20px;
+    padding-left: 1.5rem;
 
     + i.fas {
         position: absolute;
