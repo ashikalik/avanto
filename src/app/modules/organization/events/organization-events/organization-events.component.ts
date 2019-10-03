@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Meta, Title } from "@angular/platform-browser";
-import { EventService } from "../../../core/api-services/event.service";
-import { EventList } from "../../../core/model/event/event-list";
+import { EventService } from "../../../../core/api-services/event.service";
+import { EventList } from "../../../../core/model/event/event-list";
 
 @Component({
   selector: 'app-organization-events',

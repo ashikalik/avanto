@@ -1,0 +1,10 @@
+@import '../../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.organization-events {
+    background-color: theme-color('secondary', 'base');
+    color: theme-color('background', 'base');
+}
+
+.img-create-event {
+    width:300px;
+}

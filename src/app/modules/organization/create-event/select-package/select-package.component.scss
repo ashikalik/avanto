@@ -1,0 +1,31 @@
+// .card-stack {
+//     min-height:240px;
+//     //background: blue;
+//     margin-left:20px;
+// }
+// .stackable-card {
+//     min-width:200px;
+//     min-height:200px;
+//     background:gray;
+//     border:1px solid black;
+//     //margin-left:-20px;
+//     //margin-right:-20px;
+    
+//     z-index: 0;
+//     opacity: 0.9;
+
+//     -webkit-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
+//     -moz-box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
+//     box-shadow: 10px 10px 50px 0px rgba(0,0,0,0.75);
+
+//     -webkit-transition: width 0.3s, height 0.3s; /* For Safari 3.1 to 6.0 */
+//     transition: width 0.3s, height 0.3s;
+   
+//     &.selected {
+//         z-index: 1;
+//         min-height:220px;
+//         background:white;
+//         opacity: 1.0;
+//     }
+
+// }
