@@ -1,0 +1,20 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+
+
+.radio-toolbar .radio-as-button {
+    display: none;
+    //visibility: hidden;
+}
+
+.radio-toolbar label {
+    // display:block;
+    min-width: 200px;
+    border: 2px solid theme-color('secondary', 'base');
+    color: theme-color('foreground', 'base');
+}
+
+.radio-toolbar .radio-as-button:checked+label {
+    border: 2px solid theme-color('primary', 'base');
+    color: theme-color('primary', 'base');
+}

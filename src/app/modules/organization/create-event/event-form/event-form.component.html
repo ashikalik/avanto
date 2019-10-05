@@ -100,8 +100,8 @@
                 <!-- /CITY-->
                 <!--EVENT DESCRIPTION-->
                 <div class="form-group">
-                    <textarea rows="4"
-                              cols="50"
+                    <textarea rows="6"
+                              
                               class="form-control evento-form-field"
                               formControlName="details"
                               placeholder="{{ 'Event Description' | translate }}"></textarea>
@@ -209,6 +209,51 @@
                 </div>
                 <!-- /EVENT START DATE-->
 
+                <div class="d-flex">
+                        <!--START TIME-->
+                        <div class="form-group flex-grow-1">
+                            <input type="text"
+                                   class="form-control evento-form-field"
+                                   placeholder="{{'Event Starts Time' | translate}}"
+                                   formControlName="from_time">
+                            <div class="evento-form-error"
+                                 *ngIf="createEventForm.controls['from_time'].hasError('required') && !createEventForm.controls['from_time'].pristine"
+                                 translate>
+                                This field is required
+                            </div>
+                            <div class="evento-form-error"
+                                 *ngIf="createEventForm.controls['from_time'].hasError('pattern') && !createEventForm.controls['from_time'].pristine"
+                                 translate>
+                                Time pattern invalid
+                            </div>
+                           
+                        </div>
+    
+                        <!--END TIME-->
+    
+                        <!--AM PM-->
+                        <div class="radio-switch">
+                            <input type="radio"
+                                   class="radio-as-switch"
+                                   id="am"
+                                   formControlName="from_time_type"
+                                   value="am">
+                            <label for="am" translate>Am</label>
+    
+                            <input type="radio"
+                                   class="radio-as-switch"
+                                   id="pm"
+                                   formControlName="from_time_type"
+                                   value="pm">
+                            <label for="pm" translate>Pm</label>
+                        </div>
+    
+    
+                        <!--AM PM-->
+                    </div>
+
+
+
                 <!--EVENT END DATE-->
                 <div class="form-group">
                     <div class="event-edit form-group position-relative grey-color">
@@ -216,12 +261,12 @@
                                         [placeholder]="'Event Ends Date' | translate"
                                         formControlName="end_date"
                                         class="data-evento"></my-date-picker>
-                        <div class="error"
+                        <div class="evento-form-error"
                              *ngIf="createEventForm.controls['end_date'].hasError('required') && !createEventForm.controls['end_date'].pristine"
                              translate>
                             This field is required
                         </div>
-                        <div class="error"
+                        <div class="evento-form-error"
                              *ngIf="createEventForm.hasError('dateError') && createEventForm.dirty"
                              translate>
                             End date should be more than or equal From date
@@ -230,16 +275,61 @@
                 </div>
                 <!--/EVENT END DATE-->
 
+                <div class="d-flex">
+                    <!--END TIME-->
+                    <div class="form-group flex-grow-1">
+                        <input type="text"
+                               class="form-control evento-form-field"
+                               placeholder="{{'Event Ends Time' | translate}}"
+                               formControlName="end_time">
+                        <div class="evento-form-error"
+                             *ngIf="createEventForm.controls['end_time'].hasError('required') && !createEventForm.controls['end_time'].pristine"
+                             translate>
+                            This field is required
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="createEventForm.controls['end_time'].hasError('pattern') && !createEventForm.controls['end_time'].pristine"
+                             translate>
+                            Time pattern invalid
+                        </div>
+                        <!-- <div class="evento-form-error"
+                             *ngIf="createEventForm.hasError('timeError') && createEventForm.dirty"
+                             translate>
+                            End time should be more than start time
+                        </div> -->
+                    </div>
 
+                    <!--END TIME-->
+
+                    <!--AM PM-->
+                    <div class="radio-switch">
+                        <input type="radio"
+                               class="radio-as-switch"
+                               id="end_am"
+                               formControlName="end_time_type"
+                               value="am">
+                        <label for="end_am" translate>Am</label>
+
+                        <input type="radio"
+                               class="radio-as-switch"
+                               id="end_pm"
+                               formControlName="end_time_type"
+                               value="pm">
+                        <label for="end_pm" translate>Pm</label>
+                    </div>
+
+
+                    <!--AM PM-->
+                </div>
 
 
             </div>
 
             <!--LOCATION MAP-->
-            <div class=" col-sm-12 col-lg-6 py-4"
-                 >
+            <div class=" col-sm-12 col-lg-6 py-4">
                 <p class="event-edit"><b translate>Event Location on Map</b></p>
-                <agm-map [latitude]="lat" style="height: 300px;"
+                <agm-map [latitude]="lat"
+                         style="height: 300px;"
                          [longitude]="lng"
                          (mapClick)="placeMarker($event)"
                          [zoom]="14">
@@ -259,14 +349,14 @@
 
 
                 <div class="form-check ">
-                  
-                        <input type="checkbox"
-                        class="form-check-label"
-                               id="agreementChecked"
-                               name="agreementChecked"
-                               formControlName="agreementChecked">
-                        <label for="agreementChecked">موافق على ‏الشروط‏ و الاحكام </label>
-                    
+
+                    <input type="checkbox"
+                           class="form-check-label"
+                           id="agreementChecked"
+                           name="agreementChecked"
+                           formControlName="agreementChecked">
+                    <label for="agreementChecked">موافق على ‏الشروط‏ و الاحكام </label>
+
                 </div>
 
                 <button type="button"

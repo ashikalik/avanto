@@ -1,0 +1,48 @@
+@import '../../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+
+.radio-switch:lang(en) {
+    min-width: 116px;;
+    margin-left: 5px;
+}
+.radio-switch:lang(ar) {
+    min-width: 136px;
+    margin-right: 5px;
+}
+.radio-switch .radio-as-switch {
+    display: none;
+}
+
+.radio-switch label {
+    margin: 0 0px;
+    border: 1px solid theme-color('secondary', 'base');
+    color: theme-color('foreground', 'base');
+    text-align:center;
+   // border-radius: calc(1.125rem + 1px);
+    padding: 0.375rem 1.0rem;
+}
+.radio-switch label:nth-child(2) {
+    border-radius: calc(1.125rem + 1px) 0 0 calc(1.125rem + 1px);
+    border-right:1px solid transparent;
+    border-left: 1px solid theme-color('secondary', 'base');
+}
+.radio-switch label:nth-child(4) {
+    border-radius: 0 calc(1.125rem + 1px)  calc(1.125rem + 1px)  0 ;
+    border-left:1px solid transparent;
+    border-right: 1px solid theme-color('secondary', 'base');
+}
+.radio-switch label:nth-child(2):lang(ar) {
+    border-radius: 0 calc(1.125rem + 1px)  calc(1.125rem + 1px)  0;
+    border-left:1px solid transparent;
+    border-right: 1px solid theme-color('secondary', 'base');
+
+}
+.radio-switch label:nth-child(4):lang(ar) {
+    border-radius:  calc(1.125rem + 1px) 0 0 calc(1.125rem + 1px) ;
+    border-right:1px solid transparent;
+    border-left: 1px solid theme-color('secondary', 'base');
+}
+.radio-switch .radio-as-switch:checked+label {
+    background: theme-color('primary', 'base');
+    color: theme-color('background', 'base');
+}
