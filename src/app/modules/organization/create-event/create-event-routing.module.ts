@@ -20,7 +20,7 @@ const routes: Routes = [
                 component: SelectPackageComponent,
             },
             {
-                path: 'select-package',
+                path: 'event-details',
                 component: EventFormComponent,
             }
         ]

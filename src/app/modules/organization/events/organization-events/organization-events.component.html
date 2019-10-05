@@ -28,10 +28,9 @@
                                                           [eventIndex]="i"></app-organization-event-list-item>
                     </div>
                 </div>
-                <div class="row"
+                <div class="row text-center"
                      *ngIf="!organizationEventList || !organizationEventList.data || organizationEventList.data.length < 1">
-                    <h3 class="no-result py-3 text-center"
-                        translate>No Events Found</h3>
+                    <h3 class="no-result py-3 "translate>No Events Found</h3>
                 </div>
             </div>
         </div>

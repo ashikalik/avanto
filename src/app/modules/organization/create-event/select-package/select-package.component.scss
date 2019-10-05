@@ -1,3 +1,8 @@
+@import '../../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+
+
+
 // .card-stack {
 //     min-height:240px;
 //     //background: blue;
@@ -29,3 +34,94 @@
 //     }
 
 // }
+
+// .create-event {
+//     background-color: theme-color('secondary', 'base');
+//     color: theme-color('background', 'base');
+// }
+.title-section {
+    background-color: theme-color('secondary', 'base');
+    color: theme-color('background', 'base');
+}
+.package {
+    margin-bottom: 20px;
+    min-width: 200px;
+    max-width: 220px;
+    background: theme-color('gray-lightest', 'light');
+    border:1px solid theme-color('gray-lightest', 'dark');
+    border-radius:15px;
+
+    &.selected {
+        border:5px solid theme-color('primary', 'base');
+        border-radius:15px;
+        //padding:15px;
+    }
+
+    .header {
+        border-radius:15px 15px 0 0;
+        color: theme-color('background', 'light'); 
+        padding:15px;
+        &.type-1 {
+            background: theme-color('primary', 'base');
+        }
+        &.type-2 {
+            background: theme-color('accent-one', 'base');
+        }
+        &.type-3 {
+            background: theme-color('accent-two', 'base');
+        }
+    }
+    .content {
+        padding:15px;
+    }
+    .title {
+        font-size:text-scale('md')
+    }
+    .from,.to {
+        font-size:text-scale('sm');
+        &::after{
+            content: '  ';
+        }
+    }
+    .currency {
+        font-size:text-scale('xs')
+    }
+    .hiphen {
+        &::before{
+            content: '  ';
+        }
+        &::after{
+            content: '  ';
+        }
+        
+    }
+
+    .percent {
+        font-size:text-scale('lg')
+    }
+    .perticket {
+        font-size:text-scale('xs');
+        color: theme-color('primary', 'light');
+    }
+    .description{
+        font-size:text-scale('xs');
+    }
+}
+
+@media (min-width: 768px) { 
+    .package {
+        max-width: 220px;
+    }
+ }
+
+@media (min-width: 992px) { 
+    .package {
+        max-width: 250px;
+    }
+ }
+
+@media (min-width: 1200px) { 
+    .package {
+        max-width: 300px;
+    }
+ }

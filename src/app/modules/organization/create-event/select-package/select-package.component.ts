@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-select-package',
@@ -9,12 +10,19 @@ export class SelectPackageComponent implements OnInit {
 
   public  packages = ["1","2","3"];
   public  selectedPackage = 1;
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {
   }
 
-  handlePackageClick(index){
+  handleSelectButtonClick(index){
     this.selectedPackage = index;
+    //this.router.navigate(["/organization/create-event/event-details"]);
+    //console.log(index);
+  }
+  handleContinueButtonClick(index){
+    
+    this.router.navigate(["/organization/create-event/event-details"]);
+    console.log(index);
   }
 }
