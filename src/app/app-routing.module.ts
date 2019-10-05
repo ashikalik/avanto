@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: "organization",
     loadChildren: "./modules/organization/organization.module#OrganizationModule"
+  },
+  {
+    path: "dashboard",
+    loadChildren: "./modules/dashboard/dashboard.module#DashboardModule"
   }
 ];
 
