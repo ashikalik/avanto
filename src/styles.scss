@@ -108,7 +108,7 @@ input[type="radio"]:lang(ar) {
 /* Checkbox */
 input[type="checkbox"]:lang(en) {
     + label {
-        margin-left : 0px;
+        margin-left : 10px;
         margin-right : 0px;
     }
 }
@@ -116,7 +116,7 @@ input[type="checkbox"]:lang(en) {
 input[type="checkbox"]:lang(ar) {
     + label {
         margin-left : 0px;
-        margin-right : 20px;
+        margin-right : 10px;
     }
 }
 

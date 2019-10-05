@@ -14,7 +14,7 @@ import { OrganizationEventListItemComponent } from './events/organization-event-
   imports: [
     CommonModule,
     OrganizationRoutingModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class OrganizationModule { }

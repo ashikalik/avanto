@@ -6,12 +6,7 @@
     </div>
 </div> -->
 
-<div class="row title-section pb-4">
-    <div class="col-sm-12 text-center">
-        <h3 class="">Create your Event</h3>
-        <div class="sub-title">And Start selling tickets now!</div>
-    </div>
-</div>
+
 
 <div class="container">
 
@@ -19,7 +14,7 @@
         <div class="col-sm-12 col-md-4 "
              *ngFor="let package of packages;let i = index">
             <div class="mx-auto package text-center"
-                 [ngClass]="{'selected': selectedPackage === i}"
+                 [ngClass]="{'selected shadow-lg': selectedPackage === i}"
                  (click)="handleSelectButtonClick(i);">
                 <div class="header type-{{i % 3 +1}}">
                     <div class="title">PACKAGE {{i+1}}</div>
@@ -39,7 +34,9 @@
                     <div class="description evento-text-faded">Neque porro quisquam est qui dolorem ipsum quia dolor sit
                         amet, consectetur, adipisci velit...</div>
 
-                    <!-- <button class="evento-button evento-button-primary my-3">Select</button> -->
+                    <div *ngIf="selectedPackage === i" class="check-mark my-3">
+                        <i class="fa fa-check"></i>
+                    </div>
                 </div>
 
             </div>
@@ -52,10 +49,9 @@
                 <input type="radio"
                        class="radio-as-button"
                        id="member"
-                       formControlName="iagree"
                        name="iagree"
-                       value="agrred"
-                       (change)="handleRegisterAsValueChange()">
+                       value="agreed"
+                       >
                 <label for="member"
                        class="evento-button">I read, understand and agreed the terms and conditions</label>
 

@@ -1,1 +1,290 @@
-<p>event-form works!</p>
+<div class="container">
+
+    <!-- <app-error-message ></app-error-message> -->
+
+    <form [formGroup]="createEventForm"
+          (ngSubmit)="addEvent(createEventForm);">
+        <div class="row py-5">
+
+            <div class="col-sm-12 col-md-6">
+                <!-- EVENT NAME-->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control evento-form-field"
+                           placeholder="{{ 'Event name' | translate }}"
+                           formControlName="name">
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['name'].hasError('required') && !createEventForm.controls['name'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['name'].hasError('minlength') && !createEventForm.controls['name'].pristine"
+                         translate>
+                        Field should be at least 3 characters
+                    </div>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['name'].hasError('maxlength') && !createEventForm.controls['name'].pristine"
+                         translate>
+                        Field should be at most 40 characters
+                    </div>
+                </div>
+                <!-- /EVENT NAME-->
+
+                <!-- /EVENT CATEGORY-->
+                <div class="form-group position-relative">
+                    <select class="form-control evento-form-field evento-select"
+                            name=""
+                            formControlName="type_id">
+                        <option value=""
+                                translate>Choose Event Type</option>
+                        <ng-container *ngIf="eventTypeList">
+                            <option *ngFor="let type of eventTypeList.data"
+                                    [value]="type.id">{{
+                        type.name }}
+                            </option>
+                        </ng-container>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['type_id'].hasError('required') && !createEventForm.controls['type_id'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                </div>
+                <!-- /EVENT CATEGORY-->
+                <!--DISTICT-->
+                <div class="form-group position-relative">
+                    <select class="form-control evento-form-field evento-select"
+                            name=""
+                            (change)="onChangeRegion($event.target.value)"
+                            formControlName="region">
+                        <option value=""
+                                translate>Choose Region</option>
+                        <ng-container *ngIf="regionList">
+                            <option *ngFor="let region of regionList.data"
+                                    [value]="region.region_id">
+                                {{ region.name }}
+                            </option>
+                        </ng-container>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['region'].hasError('required') && !createEventForm.controls['region'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                </div>
+                <!-- /DISTICT-->
+                <!--CITY-->
+                <div class="form-group position-relative">
+                    <select class="form-control evento-form-field evento-select"
+                            name=""
+                            formControlName="city_id">
+                        <option value=""
+                                translate>Choose City</option>
+                        <ng-container *ngIf="cityList">
+                            <option *ngFor="let city of updatedCityList"
+                                    [value]="city.id">
+                                {{ city.name }}
+                            </option>
+                        </ng-container>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['city_id'].hasError('required') && !createEventForm.controls['city_id'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                </div>
+                <!-- /CITY-->
+                <!--EVENT DESCRIPTION-->
+                <div class="form-group">
+                    <textarea rows="4"
+                              cols="50"
+                              class="form-control evento-form-field"
+                              formControlName="details"
+                              placeholder="{{ 'Event Description' | translate }}"></textarea>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['details'].hasError('required') && !createEventForm.controls['details'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['details'].hasError('minlength') && !createEventForm.controls['details'].pristine"
+                         translate>
+                        Field should be at least 10 characters
+                    </div>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['details'].hasError('maxlength') && !createEventForm.controls['details'].pristine"
+                         translate>
+                        Field should be at most 1000 characters
+                    </div>
+
+                </div>
+                <!--/EVENT DESCRIPTION-->
+
+            </div>
+
+
+
+
+            <div class="col-sm-12 col-md-6">
+                <!--MAX AUDIANCE-->
+                <div class="form-group">
+                    <input type="number"
+                           class="form-control evento-form-field"
+                           placeholder="{{'Maximum Number Of Audience'| translate}}"
+                           formControlName="maximum_capacity">
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['maximum_capacity'].hasError('required') && !createEventForm.controls['maximum_capacity'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['maximum_capacity'].hasError('min') && !createEventForm.controls['maximum_capacity'].pristine"
+                         translate>
+                        Field should be at least 1
+                    </div>
+                </div>
+                <!--/MAX AUDIANCE-->
+
+                <!-- MIN AGE-->
+                <div class="form-group">
+                    <input type="number"
+                           class="form-control evento-form-field"
+                           placeholder="{{'Minimum Age'|translate}}"
+                           formControlName="minimum_age">
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['minimum_age'].hasError('required') && !createEventForm.controls['minimum_age'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['minimum_age'].hasError('min') && !createEventForm.controls['minimum_age'].pristine"
+                         translate>
+                        Field should be at least Zero
+                    </div>
+                </div>
+
+                <!-- /MIN AGE-->
+
+                <!--TARGETTED AUDIANCE-->
+                <div class="form-group position-relative">
+                    <select class="form-control evento-form-field evento-select"
+                            name=""
+                            formControlName="audience_gender">
+                        <option value=""
+                                translate>Choose Audience</option>
+                        <ng-container *ngIf="audiencesList">
+                            <option *ngFor="let audience of audiencesList.data"
+                                    [value]="audience.audience_id">
+                                {{ audience.name }}
+                            </option>
+                        </ng-container>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="evento-form-error"
+                         *ngIf="createEventForm.controls['audience_gender'].hasError('required') && !createEventForm.controls['audience_gender'].pristine"
+                         translate>
+                        This field is required
+                    </div>
+                </div>
+                <!--/TARGETTED AUDIANCE-->
+
+                <!-- EVENT START DATE-->
+                <div class="form-group">
+                    <div class="form-group position-relative">
+                        <my-date-picker [options]="myDatePickerOptions"
+                                        [placeholder]="'Event Starts Date' | translate"
+                                        formControlName="from_date"
+                                        class="data-evento">
+                        </my-date-picker>
+                        <div class="evento-form-error"
+                             *ngIf="createEventForm.controls['from_date'].hasError('required') && !createEventForm.controls['from_date'].pristine"
+                             translate>
+                            This field is required
+                        </div>
+                    </div>
+                </div>
+                <!-- /EVENT START DATE-->
+
+                <!--EVENT END DATE-->
+                <div class="form-group">
+                    <div class="event-edit form-group position-relative grey-color">
+                        <my-date-picker [options]="myDatePickerOptions"
+                                        [placeholder]="'Event Ends Date' | translate"
+                                        formControlName="end_date"
+                                        class="data-evento"></my-date-picker>
+                        <div class="error"
+                             *ngIf="createEventForm.controls['end_date'].hasError('required') && !createEventForm.controls['end_date'].pristine"
+                             translate>
+                            This field is required
+                        </div>
+                        <div class="error"
+                             *ngIf="createEventForm.hasError('dateError') && createEventForm.dirty"
+                             translate>
+                            End date should be more than or equal From date
+                        </div>
+                    </div>
+                </div>
+                <!--/EVENT END DATE-->
+
+
+
+
+            </div>
+
+            <!--LOCATION MAP-->
+            <div class=" col-sm-12 col-lg-6 py-4"
+                 >
+                <p class="event-edit"><b translate>Event Location on Map</b></p>
+                <agm-map [latitude]="lat" style="height: 300px;"
+                         [longitude]="lng"
+                         (mapClick)="placeMarker($event)"
+                         [zoom]="14">
+                    <agm-marker [latitude]="lat"
+                                [longitude]="lng"></agm-marker>
+                </agm-map>
+            </div>
+
+            <!--/LOCATION MAP-->
+
+            <div class="col-sm-12 text-center">
+
+                <div class=" text-center">
+                    <re-captcha #captchaRef
+                                formControlName="recaptcha"></re-captcha>
+                </div>
+
+
+                <div class="form-check ">
+                  
+                        <input type="checkbox"
+                        class="form-check-label"
+                               id="agreementChecked"
+                               name="agreementChecked"
+                               formControlName="agreementChecked">
+                        <label for="agreementChecked">موافق على ‏الشروط‏ و الاحكام </label>
+                    
+                </div>
+
+                <button type="button"
+                        class="evento-button evento-button-secondary"
+                        (click)="onCancel()"
+                        translate>
+                    Cancel
+                </button>
+                <button [disabled]="!createEventForm.valid"
+                        type="submit"
+                        class="evento-button evento-button-primary"
+                        translate>
+                    Save
+                </button>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>
