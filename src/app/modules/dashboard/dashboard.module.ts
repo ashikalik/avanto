@@ -11,16 +11,19 @@ import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.componen
 import { SharedModule } from '../../common/shared/shared.module';
 import { EventTermsConditionsFormComponent } from './event/event-terms-conditions-form/event-terms-conditions-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EventLinkWithGeaComponent } from './event/event-link-with-gea/event-link-with-gea.component';
+import { TranslationModule } from '../../common/translation/translation.module';
 
 
 @NgModule({
-  declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsPageComponent, DashboardMenuComponent, EventTermsConditionsFormComponent],
+  declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsPageComponent, DashboardMenuComponent, EventTermsConditionsFormComponent, EventLinkWithGeaComponent],
   imports: [
     CommonModule,
     SharedModule,
     DashboardRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    TranslationModule
   ]
 })
 export class DashboardModule { }

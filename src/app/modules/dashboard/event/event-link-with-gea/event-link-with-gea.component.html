@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h3 class="add-condition" translate>Link With GEA</h3>
+    </div>
+
+    <div class="col-sm-12 mb-4">
+        <img src="./assets/img/gea-logo.png"
+             alt="">
+    </div>
+
+    <div class="col-sm-12">
+        <form [formGroup]="linkWithGeaFrom"
+              (ngSubmit)="linkGEA(form);">
+            <div class="row">
+                <div class="col-sm-12 col-md-9 col-lg-8 col-xl-6">
+                    <div class="event-edit form-group grey-color">
+                        <input type="text"
+                               class="form-control evento-form-field"
+                               placeholder="{{'MOI Number' | translate}}"
+                               minlength="10"
+                               maxlength="10"
+                               formControlName="crNumber">
+                        <div class="evento-form-error"
+                             *ngIf="linkWithGeaFrom.controls['crNumber'].hasError('required') && !linkWithGeaFrom.controls['crNumber'].pristine"
+                             translate>
+                            This field is required
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="linkWithGeaFrom.controls['crNumber'].hasError('pattern') && !linkWithGeaFrom.controls['crNumber'].pristine"
+                             translate>
+                            This field should be numeric
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="linkWithGeaFrom.controls['crNumber'].hasError('minlength') && !linkWithGeaFrom.controls['crNumber'].pristine"
+                             translate>
+                            This failed should be at least 10 numbers
+                        </div>
+                        <div class="evento-form-error"
+                             *ngIf="linkWithGeaFrom.controls['crNumber'].hasError('maxlength') && !linkWithGeaFrom.controls['crNumber'].pristine"
+                             translate>
+                            This failed should be not more than 10 numbers
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-4 col-xl-6">
+                    <button type="submit"
+                            class="evento-button evento-button-primary"
+                            [disabled]="linkWithGeaFrom.invalid"
+                            translate>
+                        Save
+                    </button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

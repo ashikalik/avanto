@@ -6,6 +6,7 @@ import { EventDetailsComponent } from './event/event-details/event-details.compo
 import { EventSettingsComponent } from './event/event-settings/event-settings.component';
 import { EventTermsConditionsComponent } from './event/event-terms-conditions/event-terms-conditions.component';
 import { EventTermsConditionsFormComponent } from './event/event-terms-conditions-form/event-terms-conditions-form.component';
+import { EventLinkWithGeaComponent } from './event/event-link-with-gea/event-link-with-gea.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,12 @@ const routes: Routes = [
       {
         path: 'event-terms-conditions',
         component: EventTermsConditionsComponent
+        //canActivate: [ OrganizationGuard],
+
+      },
+      {
+        path: 'link-with-gea',
+        component: EventLinkWithGeaComponent
         //canActivate: [ OrganizationGuard],
 
       },
