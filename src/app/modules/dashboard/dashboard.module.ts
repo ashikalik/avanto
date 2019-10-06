@@ -6,12 +6,12 @@ import { EventDetailsComponent } from './event/event-details/event-details.compo
 import { EventSettingsComponent } from './event/event-settings/event-settings.component';
 import { EventTermsConditionsComponent } from './event/event-terms-conditions/event-terms-conditions.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
-import { StatisticsComponent } from './report/statistics/statistics.component';
-import { StatisticsPageComponent } from './report/statistics-page/statistics-page.component';
+import { StatisticsPageComponent } from './report/statistics/statistics-page/statistics-page.component';
+import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
 
 
 @NgModule({
-  declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsComponent, StatisticsPageComponent],
+  declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsPageComponent, DashboardMenuComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule

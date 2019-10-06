@@ -1,7 +1,7 @@
 @import '../../../scss/themes/evento-light/evento-theme-light.scss';
 
 .footer {
-    background-color: theme-color('secondary', 'base');
+    background-color: theme-color('secondary', 'dark');
     color: theme-color('background', 'base');
 }
 
@@ -22,7 +22,7 @@
 }
 
 .links {
-    background-color: theme-color('secondary', 'light'); 
+    background-color: theme-color('secondary', 'base'); 
 }
 
 .link-list {

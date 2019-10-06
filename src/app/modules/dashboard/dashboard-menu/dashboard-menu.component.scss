@@ -1,0 +1,44 @@
+@import '../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+
+
+.menu,
+.sub-menu {
+    background-color: theme-color('secondary', 'base');
+    color: theme-color('background', 'base');
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+        background-color: theme-color('secondary', 'dark');
+        font-size:text-scale('base');
+        a,
+        a:hover {
+            display: block;
+            padding: 10px 15px;
+            color: theme-color('background', 'base');
+            text-decoration: none;
+        }
+    }
+}
+
+.sub-menu {
+
+    li {
+        background-color: theme-color('secondary', 'base');
+        border-bottom: 1px solid theme-color('secondary', 'light');
+
+        a,
+        a:hover {
+            padding: 8px 30px;
+
+            &.selected {
+                background-color: theme-color('primary', 'base');
+            }
+
+        }
+
+       
+    }
+}
