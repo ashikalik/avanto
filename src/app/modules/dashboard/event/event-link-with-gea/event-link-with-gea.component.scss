@@ -2,11 +2,13 @@
 
 .gea-card {
     padding: 10px 10px;
-    min-width:120px;
     background-color: theme-color('gray-lightest', 'light');
     border: 1px solid theme-color('gray-lightest', 'base');
     border-radius: 15px;
-    margin-right:10px;
+    
+    &:lang(en) {
+        margin-right:10px;
+    }
     &:lang(ar) {
         margin-left:10px;
     }
@@ -23,7 +25,10 @@
         vertical-align: baseline;
     }
     .icon-wrapper {
-        margin-left: 20px;
+       
+        &:lang(en) {
+            margin-left: 20px;
+        }
         &:lang(ar) {
             margin-right: 20px;
         }
