@@ -17,9 +17,21 @@
         a:hover {
             display: block;
             padding: 10px 15px;
-            color: theme-color('background', 'base');
+            color: theme-color('background', 'dark');
             text-decoration: none;
+
+            img {
+                margin-right:10px;
+                width:20px;
+                vertical-align: baseline;
+
+                &.icon-event {
+                    vertical-align: middle;
+                }
+            }
         }
+
+        
     }
 }
 
@@ -31,7 +43,7 @@
 
         a,
         a:hover {
-            padding: 8px 30px;
+            padding: 8px 45px;
 
             &.selected {
                 background-color: theme-color('primary', 'base');
