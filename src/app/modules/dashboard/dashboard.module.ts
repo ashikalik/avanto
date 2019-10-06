@@ -9,15 +9,18 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { StatisticsPageComponent } from './report/statistics/statistics-page/statistics-page.component';
 import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
 import { SharedModule } from '../../common/shared/shared.module';
+import { EventTermsConditionsFormComponent } from './event/event-terms-conditions-form/event-terms-conditions-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsPageComponent, DashboardMenuComponent],
+  declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsPageComponent, DashboardMenuComponent, EventTermsConditionsFormComponent],
   imports: [
     CommonModule,
     SharedModule,
-    DashboardRoutingModule
-    
+    DashboardRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class DashboardModule { }

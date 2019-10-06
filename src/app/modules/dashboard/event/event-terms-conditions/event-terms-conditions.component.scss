@@ -1,0 +1,37 @@
+@import '../../../../../scss/themes/evento-light/evento-theme-light.scss';
+
+.terms-conditions-wrapper {
+    border: 1px solid theme-color('gray-lightest', 'base');
+    background: theme-color('gray-lightest', 'light');
+    border-radius: 15px;
+
+    li {
+        list-style: none;
+        margin-bottom: 15px;
+
+        &::before {
+            content: '-  '
+        }
+
+        a {
+            border-radius: 15px;
+            border: 1px solid theme-color('gray-lightest', 'base');
+            background: theme-color('gray-lightest', 'light');
+            padding: 5px 15px;
+            font-size:text-scale('xs');
+
+            &.delete {
+                border: 1px solid theme-color('primary', 'base');
+                background: theme-color('primary', 'base');
+                color: theme-color('background', 'light');
+                margin:0 10px;
+            }
+
+            &.edit {
+                border: 1px solid theme-color('secondary', 'base');
+                background: theme-color('secondary', 'base');
+                color: theme-color('background', 'light');
+            }
+        }
+    }
+}

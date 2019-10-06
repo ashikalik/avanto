@@ -1,0 +1,43 @@
+<form action=""
+      [formGroup]="termsForm">
+    <div class="row">
+        <div class="col-sm-12 mt-4">
+            <textarea rows="4"
+                      cols="50"
+                      class="form-control evento-form-field"
+                      formControlName="policy"
+                      placeholder=""></textarea>
+            <div class="evento-form-error"
+                 *ngIf="termsForm.controls['policy'].hasError('required') && !termsForm.controls['policy'].pristine"
+                 translate>
+                This field is required
+            </div>
+            <div class="evento-form-error"
+                 *ngIf="termsForm.controls['policy'].hasError('minlength') && !termsForm.controls['policy'].pristine"
+                 translate>
+                Field should be at least 3 characters
+            </div>
+            <div class="evento-form-error"
+                 *ngIf="termsForm.controls['policy'].hasError('maxlength') && !termsForm.controls['policy'].pristine"
+                 translate>
+                Field should be at most 500 characters
+            </div>
+        </div>
+
+        <div class="col-sm-12 d-flex flex-row-reverse my-4">
+
+            <button type="button"
+                    class="evento-button evento-button-primary"
+                    [disabled]="termsForm.invalid"
+                    (click)="handleSaveButtonClick()"
+                    translate>Save
+            </button>
+            <button type="button"
+                    class="evento-button evento-button-secondary"
+                    (click)="handleCancelButtonClick();"
+                    translate>
+                Cancel
+            </button>
+        </div>
+    </div>
+</form>

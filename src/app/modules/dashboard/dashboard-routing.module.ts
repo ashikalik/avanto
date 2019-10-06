@@ -4,6 +4,8 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { StatisticsPageComponent } from './report/statistics/statistics-page/statistics-page.component';
 import { EventDetailsComponent } from './event/event-details/event-details.component';
 import { EventSettingsComponent } from './event/event-settings/event-settings.component';
+import { EventTermsConditionsComponent } from './event/event-terms-conditions/event-terms-conditions.component';
+import { EventTermsConditionsFormComponent } from './event/event-terms-conditions-form/event-terms-conditions-form.component';
 
 
 const routes: Routes = [
@@ -25,6 +27,12 @@ const routes: Routes = [
       {
         path: 'event-settings',
         component: EventSettingsComponent
+        //canActivate: [ OrganizationGuard],
+
+      },
+      {
+        path: 'event-terms-conditions',
+        component: EventTermsConditionsComponent
         //canActivate: [ OrganizationGuard],
 
       },
