@@ -7,11 +7,15 @@ import { OrganizationEventsComponent } from './events/organization-events/organi
 import { OrganizationPageComponent } from './events/organization-page/organization-page.component';
 import { OrganizationEventListItemHeaderComponent } from './events/organization-event-list-item-header/organization-event-list-item-header.component';
 import { OrganizationEventListItemComponent } from './events/organization-event-list-item/organization-event-list-item.component';
-import { OrganizationEventSettingsComponent } from './events/organization-event-settings/organization-event-settings.component';
 
 
 @NgModule({
-  declarations: [OrganizationEventsComponent, OrganizationPageComponent, OrganizationEventListItemHeaderComponent, OrganizationEventListItemComponent, OrganizationEventSettingsComponent],
+  declarations: [
+    OrganizationEventsComponent,
+    OrganizationPageComponent,
+    OrganizationEventListItemHeaderComponent,
+    OrganizationEventListItemComponent
+  ],
   imports: [
     CommonModule,
     OrganizationRoutingModule,

@@ -17,6 +17,7 @@ import { SharedModule } from '../../common/shared/shared.module';
     CommonModule,
     SharedModule,
     DashboardRoutingModule
+    
   ]
 })
 export class DashboardModule { }

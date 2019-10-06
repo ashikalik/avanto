@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { EventMapComponent } from './event-map/event-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { OrganizationEventSettingsComponent } from './organization-event-settings/organization-event-settings.component';
 
 
 
@@ -22,7 +23,8 @@ import { AgmCoreModule } from '@agm/core';
     EventBannerComponent,
     EventListItemComponent,
     SearchEventFormComponent,
-    EventMapComponent
+    EventMapComponent,
+    OrganizationEventSettingsComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +38,7 @@ import { AgmCoreModule } from '@agm/core';
     EventListItemComponent,
     SearchEventFormComponent,
     EventMapComponent,
+    OrganizationEventSettingsComponent,
     DefaultImageBannerDirective,
     TruncatePipe
   ]

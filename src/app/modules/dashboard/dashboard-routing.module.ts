@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { StatisticsPageComponent } from './report/statistics/statistics-page/statistics-page.component';
 import { EventDetailsComponent } from './event/event-details/event-details.component';
+import { EventSettingsComponent } from './event/event-settings/event-settings.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,12 @@ const routes: Routes = [
       {
         path: 'event-details',
         component: EventDetailsComponent
+        //canActivate: [ OrganizationGuard],
+
+      },
+      {
+        path: 'event-settings',
+        component: EventSettingsComponent
         //canActivate: [ OrganizationGuard],
 
       },
