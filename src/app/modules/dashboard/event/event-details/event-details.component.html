@@ -1,1 +1,73 @@
-<p>event-details works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-lg-6">
+            <app-event-banner></app-event-banner>
+        </div>
+
+    </div>
+    <div class="row mt-5">
+        <div class="col-sm-12 col-lg-6">
+            <div class="key-value">
+                <div class="key">Event Name</div>
+                <div class="value">ABC - Event</div>
+            </div>
+            <div class="key-value">
+                <div class="key">Event Category</div>
+                <div class="value">ABC - Event</div>
+            </div>
+            <div class="key-value">
+                <div class="key">City</div>
+                <div class="value">ABC - Event</div>
+            </div>
+            <div class="key-value">
+                <div class="key">District</div>
+                <div class="value">ABC - Event</div>
+            </div>
+            <div class="key-value">
+                <div class="key">Description</div>
+                <div class="value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mattis pellentesque accumsan. Vivamus venenatis mi eu risus eleifend, at cursus neque lobortis. Maecenas neque massa, tincidunt non nisl vel, aliquam feugiat est. Fusce viverra mi viverra velit egestas faucibus. Proin placerat erat vitae ligula viverra, ac tempus augue egestas. </div>
+            </div>
+            <div class="key-value">
+                <div class="key">Event Address</div>
+                <div class="value">ABC - Event Address</div>
+            </div>
+            <div class="mb-3">
+                <app-event-map [latitude]="lat"
+                               [longitude]="lng">
+                </app-event-map>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-lg-6 column-two">
+            <div class="key-value">
+                <div class="key">Max Number of Audiance</div>
+                <div class="value">100</div>
+            </div>
+            <div class="key-value">
+                <div class="key">Age Restriction</div>
+                <div class="value">0</div>
+            </div>
+            <div class="key-value">
+                <div class="key">Targeted Audiance</div>
+                <div class="value">Men Only</div>
+            </div>
+            <div class="key-value">
+                <div class="key">Event Starts</div>
+                <div class="value">09-10-2019 09:00 PM</div>
+            </div>
+            <div class="key-value">
+                <div class="key">Event Ends</div>
+                <div class="value">10-10-2019 12:00 AM</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row my-5">
+        <div class="col-sm-12 text-center">
+            <button class="evento-button evento-button-primary">Edit</button>
+        </div>
+
+    </div>
+
+</div>

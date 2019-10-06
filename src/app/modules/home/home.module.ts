@@ -6,10 +6,9 @@ import { LatestEventsComponent } from './latest-events/latest-events.component';
 import { PartnersComponent } from './partners/partners.component';
 import { FormsModule } from '@angular/forms';
 import { CreateEventComponent } from './create-event/create-event.component';
-import { SearchEventModule } from '../../common/search-event/search-event.module';
-import { EventListModule } from '../../common/event-list/event-list.module';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { CoreModule } from '../../core/core.module';
+import { SharedModule } from '../../common/shared/shared.module';
 
 
 @NgModule({
@@ -24,9 +23,8 @@ import { CoreModule } from '../../core/core.module';
     CommonModule,
     FormsModule,
     HomeRoutingModule,
-    SearchEventModule,
-    EventListModule,
-    CoreModule
+    CoreModule,
+    SharedModule
   ]
 })
 export class HomeModule { }

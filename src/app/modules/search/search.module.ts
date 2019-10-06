@@ -2,16 +2,15 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { SearchRoutingModule } from "./search-routing.module";
 import { SearchPageComponent } from "./search-page/search-page.component";
-import { SearchEventModule } from "../../common/search-event/search-event.module";
-import { EventListModule } from "../../common/event-list/event-list.module";
+import { SharedModule } from '../../common/shared/shared.module';
+
 
 @NgModule({
   declarations: [SearchPageComponent],
   imports: [
     CommonModule,
     SearchRoutingModule,
-    SearchEventModule,
-    EventListModule
+    SharedModule
   ]
 })
 export class SearchModule {}

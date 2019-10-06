@@ -11,8 +11,6 @@ import { EventRulesComponent } from "./event-rules/event-rules.component";
 import { EventDescriptionComponent } from "./event-description/event-description.component";
 import { EventDateTimeComponent } from "./event-date-time/event-date-time.component";
 import { EventSponsorsComponent } from "./event-sponsors/event-sponsors.component";
-import { EventBannerComponent } from "./event-banner/event-banner.component";
-import { EventMapComponent } from "./event-map/event-map.component";
 import { SharedModule } from "../../common/shared/shared.module";
 import { EventDisplayHelperService } from "./event-display-helper.service";
 
@@ -26,10 +24,8 @@ import { EventDisplayHelperService } from "./event-display-helper.service";
     EventDescriptionComponent,
     EventDateTimeComponent,
     EventSponsorsComponent,
-    EventBannerComponent,
-    EventMapComponent
   ],
-  imports: [CommonModule, AgmCoreModule, EventRoutingModule, SharedModule],
+  imports: [CommonModule, EventRoutingModule, SharedModule],
   providers: [EventDisplayHelperService]
 })
 export class EventModule {}

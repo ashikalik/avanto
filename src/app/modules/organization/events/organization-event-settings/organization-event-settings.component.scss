@@ -1,10 +1,5 @@
 @import '../../../../../scss/themes/evento-light/evento-theme-light.scss';
-.organization-event-list-item-header {
-    a, a:hover {
-        text-decoration: none;
-        color: theme-color('foreground', 'base');
-    }
-}
+
 
 .organization-event-settings {
     margin-top:-15px;
@@ -24,4 +19,3 @@
         
     }
 }
-

@@ -8,12 +8,14 @@ import { EventTermsConditionsComponent } from './event/event-terms-conditions/ev
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { StatisticsPageComponent } from './report/statistics/statistics-page/statistics-page.component';
 import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
+import { SharedModule } from '../../common/shared/shared.module';
 
 
 @NgModule({
   declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsPageComponent, DashboardMenuComponent],
   imports: [
     CommonModule,
+    SharedModule,
     DashboardRoutingModule
   ]
 })
