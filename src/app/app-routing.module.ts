@@ -50,6 +50,10 @@ const routes: Routes = [
   {
     path: "dashboard",
     loadChildren: "./modules/dashboard/dashboard.module#DashboardModule"
+  },
+  {
+    path: "activate-account",
+    loadChildren: "./modules/activate-account/activate-account.module#ActivateAccountModule"
   }
 ];
 
