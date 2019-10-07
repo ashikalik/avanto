@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row activate-account-page">
+
+        <div class="col-sm-12 text-center mb-5 mt-5">
+            <img class="img-fluid img-plan-event"
+                 src="assets/img/Step5-ART-407x258.png"
+                 alt="" />
+        </div>
+
+        <div class="col-sm-12 col-md-4"></div>
+        <div class="col-sm-12 col-md-4 mb-5">
+
+            <div *ngIf="isActivated"
+                 translate
+                 class="evento-text-faded text-center">
+                Your account has been activated successfuly!
+
+                <div class="mt-4 mb-4 mx-2 text-center">
+                    <button (click)="onSigninButton()"
+                            type="button"
+                            class="btn evento-button evento-button-primary"
+                            translate> Login </button>
+                </div>
+            </div>
+
+            <div *ngIf="!isActivated"
+                 translate
+                 class="evento-text-faded text-center">
+                {{error.meta.message}}
+
+                <div translate
+                     class="evento-text-faded">
+                    If you need any supports, please
+                    <a [routerLink]="['/contact-us']"
+                       class="text-danger"
+                       translate>Contact us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
