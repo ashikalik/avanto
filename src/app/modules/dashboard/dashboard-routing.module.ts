@@ -7,6 +7,7 @@ import { EventSettingsComponent } from './event/event-settings/event-settings.co
 import { EventTermsConditionsComponent } from './event/event-terms-conditions/event-terms-conditions.component';
 import { EventTermsConditionsFormComponent } from './event/event-terms-conditions-form/event-terms-conditions-form.component';
 import { EventLinkWithGeaComponent } from './event/event-link-with-gea/event-link-with-gea.component';
+import { SupervisorListPageComponent } from './event/event-supervisor/supervisor-list-page/supervisor-list-page.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,12 @@ const routes: Routes = [
       {
         path: 'event-settings',
         component: EventSettingsComponent
+        //canActivate: [ OrganizationGuard],
+
+      },
+      {
+        path: 'event-supervisors',
+        component: SupervisorListPageComponent
         //canActivate: [ OrganizationGuard],
 
       },

@@ -8,7 +8,7 @@
         margin-right: auto;
         margin-left: auto;
     }
- }
+}
 
 body:lang(ar) {
     font-family: font-family('sky');
@@ -24,7 +24,7 @@ body:lang(en) {
 
 .evento-nav-bar {
     background-color: theme-color('background', 'light');
-    
+
     color: theme-color('foreground', 'dark');
 
     .nav-link {
@@ -33,7 +33,7 @@ body:lang(en) {
 }
 
 .evento-img-featured {
-    max-width:300px;
+    max-width: 300px;
 }
 
 .evento-section-title {
@@ -46,7 +46,7 @@ body:lang(en) {
 }
 
 .title-underlined {
-    padding-bottom:5px;
+    padding-bottom: 5px;
     border-bottom: 1px solid theme-color('gray-lighter', 'base');
 }
 
@@ -55,7 +55,8 @@ body:lang(en) {
     color: theme-color('gray-medium', 'base');
 }
 
-.evento-text-primary, .evento-text-primary:hover {
+.evento-text-primary,
+.evento-text-primary:hover {
     color: theme-color('primary', 'base');
 }
 
@@ -72,7 +73,8 @@ body:lang(en) {
 .evento-select:lang(en) {
     //padding-right: 30px !important;
     padding-right: 1.5rem;
-    + i.fas {
+
+    +i.fas {
         position: absolute;
         top: 12px;
         right: 12px;
@@ -83,7 +85,7 @@ body:lang(en) {
 .evento-select:lang(ar) {
     padding-left: 1.5rem;
 
-    + i.fas {
+    +i.fas {
         position: absolute;
         top: 12px;
         left: 12px;
@@ -93,30 +95,31 @@ body:lang(en) {
 
 /* Radio */
 input[type="radio"]:lang(en) {
-    + label {
-        margin-left : 0px;
-        margin-right : 0px;
+    +label {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }
 
 input[type="radio"]:lang(ar) {
-    + label {
-        margin-left : 0px;
-        margin-right : 20px;
+    +label {
+        margin-left: 0px;
+        margin-right: 20px;
     }
 }
+
 /* Checkbox */
 input[type="checkbox"]:lang(en) {
-    + label {
-        margin-left : 10px;
-        margin-right : 0px;
+    +label {
+        margin-left: 10px;
+        margin-right: 0px;
     }
 }
 
 input[type="checkbox"]:lang(ar) {
-    + label {
-        margin-left : 0px;
-        margin-right : 10px;
+    +label {
+        margin-left: 0px;
+        margin-right: 10px;
     }
 }
 
@@ -140,9 +143,15 @@ input[type="checkbox"]:lang(ar) {
 }
 
 .evento-form-error {
-    color:theme-color('primary', 'light');
+    color: theme-color('primary', 'light');
     @include text-setting('xs');
-    padding:2px 20px 0 20px;
+    padding: 2px 20px 0 20px;
+}
+
+.evento-form-label {
+    color: theme-color('gray-medium', 'light');
+    @include text-setting('xs');
+    padding: 2px 20px 0 20px;
 }
 
 /* Buttons */
@@ -166,6 +175,7 @@ input[type="checkbox"]:lang(ar) {
     background-color: theme-color('primary', 'base');
     color: theme-color('background', 'base');
 }
+
 .evento-button-primary:disabled {
     background-color: theme-color('primary', 'base');
     color: theme-color('background', 'base');
@@ -266,10 +276,89 @@ input[type="checkbox"]:lang(ar) {
     box-shadow: 0 0 0 0.1rem theme-color('accent-one', 'light');
 }
 
+/*** ACCORDION ***/
+
+
+.evento-accordion-row {
+    border: 1px solid theme-color('gray-lightest', 'base');
+    border-bottom: 1px solid transparent;
+    &:last-child {
+        border-bottom: 1px solid theme-color('gray-lightest', 'base');
+    }
+}
+.evento-accordion-header {
+    
+    background: theme-color('gray-lightest', 'light');
+    
+
+    a, a:hover {
+        display: block;
+        color: theme-color('foreground', 'light');
+        text-decoration: none;
+        padding: 10px 15px;
+    }
+
+    .arrow-icon {
+        float: right;
+        vertical-align: middle;
+        background: theme-color('background', 'light');
+        border: 1px solid theme-color('gray-lightest', 'base');
+        text-align: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        line-height: 24px;
+        transition: all .35s ease-in-out;
+    }
+
+    .arrow-icon:lang(en) {
+        float: right;
+    }
+
+    .arrow-icon:lang(ar) {
+        float: left;
+    }
+
+    a[aria-expanded="true"],
+    a:hover[aria-expanded="true"] {
+        .arrow-icon {
+            transform: rotate(180deg);
+        }
+    }
+    a[aria-expanded="false"],
+    a:hover[aria-expanded="false"] {
+        .arrow-icon {
+            transform: rotate(0deg);
+        }
+    }
+}
+
+.evento-accordion-body {
+    padding: 10px 15px;
+    background: theme-color('background', 'light');
+
+}
+
+
+/******/
+
+.key-value {
+    margin-bottom: 15px;
+
+    .key {
+        color: theme-color('foreground', 'base');
+        font-size:text-scale('sm');
+        margin-bottom: 2px;
+    }
+    .value {
+        color: theme-color('gray-medium', 'light');
+    }
+}
+
 /**My Date picker style override */
 
 .mydp {
-   
+
     border-radius: calc(1.125rem + 1px) !important;
     background: theme-color('background', 'light') !important;
     border: 1px solid !important;
@@ -279,10 +368,11 @@ input[type="checkbox"]:lang(ar) {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+
     input.selection {
         color: theme-color('foreground', 'base') !important;
         font-family: font-family('bahnschrift') !important;
-        font-size:1rem !important;
+        font-size: 1rem !important;
     }
 
     // input.selection:focus {

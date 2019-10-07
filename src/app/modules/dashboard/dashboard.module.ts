@@ -13,10 +13,29 @@ import { EventTermsConditionsFormComponent } from './event/event-terms-condition
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EventLinkWithGeaComponent } from './event/event-link-with-gea/event-link-with-gea.component';
 import { TranslationModule } from '../../common/translation/translation.module';
+import { SupervisorListPageComponent } from './event/event-supervisor/supervisor-list-page/supervisor-list-page.component';
+import { SupervisorListItemContentComponent } from './event/event-supervisor/supervisor-list-item-content/supervisor-list-item-content.component';
+import { SupervisorListItemHeaderComponent } from './event/event-supervisor/supervisor-list-item-header/supervisor-list-item-header.component';
+import { SupervisorDetailComponent } from './event/event-supervisor/supervisor-detail/supervisor-detail.component';
+import { SupervisorFormComponent } from './event/event-supervisor/supervisor-form/supervisor-form.component';
 
 
 @NgModule({
-  declarations: [EventDetailsComponent, EventSettingsComponent, EventTermsConditionsComponent, DashboardPageComponent, StatisticsPageComponent, DashboardMenuComponent, EventTermsConditionsFormComponent, EventLinkWithGeaComponent],
+  declarations: [
+    EventDetailsComponent,
+    EventSettingsComponent,
+    EventTermsConditionsComponent,
+    DashboardPageComponent,
+    StatisticsPageComponent,
+    DashboardMenuComponent,
+    EventTermsConditionsFormComponent,
+    EventLinkWithGeaComponent,
+    SupervisorListPageComponent,
+    SupervisorListItemContentComponent,
+    SupervisorListItemHeaderComponent,
+    SupervisorDetailComponent,
+    SupervisorFormComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,

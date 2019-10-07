@@ -1,0 +1,184 @@
+<form [formGroup]="supervisorForm"
+      (ngSubmit)="updateSupervisor(form)">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">First Name</div>
+            <div class="form-group">
+                <input type="text"
+                       class="form-control evento-form-field"
+                       placeholder=""
+                       formControlName="first_name">
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['first_name'].hasError('required') && !supervisorForm.controls['first_name'].pristine"
+                     translate>
+                    This field is required
+                </div>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['first_name'].hasError('minlength') && !supervisorForm.controls['first_name'].pristine"
+                     translate>
+                    Field should be at least 3 characters
+                </div>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['first_name'].hasError('maxlength') && !supervisorForm.controls['first_name'].pristine"
+                     translate>
+                    Field should be at most 40 characters
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">Last Name</div>
+            <div class="form-group">
+                <input type="text"
+                       class="form-control evento-form-field"
+                       placeholder=""
+                       formControlName="last_name">
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['last_name'].hasError('required') && !supervisorForm.controls['last_name'].pristine"
+                     translate>
+                    This field is required
+                </div>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['last_name'].hasError('minlength') && !supervisorForm.controls['last_name'].pristine"
+                     translate>
+                    Field should be at least 3 characters
+                </div>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['last_name'].hasError('maxlength') && !supervisorForm.controls['last_name'].pristine"
+                     translate>
+                    Field should be at most 40 characters
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">Status</div>
+            <div class="form-group position-relative">
+                <select class="form-control evento-form-field evento-select"
+                        formControlName="status_id"
+                        name="">
+                    <option value=""
+                            translate>Choose Status</option>
+                    <option value="1"
+                            translate>Active</option>
+                    <option value="3"
+                            translate>Blocked</option>
+                </select>
+                <i class="fas fa-chevron-down embed"></i>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['status_id'].hasError('required') && !supervisorForm.controls['status_id'].pristine"
+                     translate>
+                    This field is required
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">Email</div>
+            <div class="event-edit form-group grey-color">
+                <input type="text"
+                       class="form-control evento-form-field"
+                       placeholder=""
+                       formControlName="mail">
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['mail'].hasError('required') && !supervisorForm.controls['mail'].pristine"
+                     translate>This field is required
+                </div>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['mail'].hasError('email') && !supervisorForm.controls['mail'].pristine"
+                     translate>
+                    Email format is not valid
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">Gender</div>
+            <div class="event-edit form-group position-relative grey-color">
+                <select class="form-control evento-form-field evento-select"
+                        formControlName="gender"
+                        name="">
+                    <option value=""
+                            translate>Choose Gender</option>
+                    <option value="1"
+                            translate>Male</option>
+                    <option value="2"
+                            translate>Female</option>
+                </select>
+                <i class="fas fa-chevron-down embed"></i>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['gender'].hasError('required') && !supervisorForm.controls['gender'].pristine"
+                     translate>This field is required
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">Phone Number</div>
+            <div class="event-edit form-group grey-color">
+                <input type="text"
+                       class="form-control evento-form-field"
+                       placeholder=""
+                       formControlName="mobile">
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['mobile'].hasError('required') && !supervisorForm.controls['mobile'].pristine"
+                     translate>
+                    This field is required
+                </div>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['mobile'].hasError('pattern') && !supervisorForm.controls['mobile'].pristine"
+                     translate>
+                    Mobile number is invalid
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">Organizers</div>
+            <div class="event-edit form-group position-relative grey-color">
+                <select class="form-control evento-form-field evento-select"
+                        formControlName="requests"
+                        name="">
+                    <option value=""
+                            translate>Choose Permission</option>
+                    <option value="1"
+                            translate>Authorized</option>
+                    <option value="2"
+                            translate>UnAuthorized</option>
+                </select>
+                <i class="fas fa-chevron-down embed"></i>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['requests'].hasError('required') && !supervisorForm.controls['requests'].pristine"
+                     translate>This field is required
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 ">
+            <div class="evento-form-label">Sales</div>
+            <div class="event-edit form-group position-relative grey-color">
+                <select class="form-control evento-form-field evento-select"
+                        formControlName="sellers"
+                        name="">
+                    <option value=""
+                            translate>Choose Permission</option>
+                    <option value="1"
+                            translate>Authorized</option>
+                    <option value="2"
+                            translate>UnAuthorized</option>
+                </select>
+                <i class="fas fa-chevron-down embed"></i>
+                <div class="evento-form-error"
+                     *ngIf="supervisorForm.controls['sellers'].hasError('required') && !supervisorForm.controls['sellers'].pristine"
+                     translate>This field is required
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-12 d-flex flex-row-reverse">
+            <button class="evento-button evento-button-primary"
+                    (click)="handleSaveButtonClick(supervisor)">Save</button>
+            <button class="evento-button evento-button-secondary mx-2"
+                    (click)="handleCancelButtonClick(supervisor)">Cancel</button>
+
+        </div>
+    </div>
+</form>

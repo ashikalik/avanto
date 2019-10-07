@@ -7,15 +7,4 @@
     border-right:1px solid theme-color('gray-lightest', 'base');
 }
 
-.key-value {
-    margin-bottom: 15px;
 
-    .key {
-        color: theme-color('foreground', 'base');
-        font-size:text-scale('sm');
-        margin-bottom: 2px;
-    }
-    .value {
-        color: theme-color('gray-medium', 'light');
-    }
-}

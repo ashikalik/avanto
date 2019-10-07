@@ -1,0 +1,8 @@
+<app-supervisor-detail *ngIf="!showEditForm"
+                       [supervisor]="modelSupervisor"
+                       (editButtonClick)="onEditButtonClick(supervisor)"
+                       (deleteButtonClick)="onDeleteButtonClick(supervisor)"></app-supervisor-detail>
+<app-supervisor-form *ngIf="showEditForm"
+                     [supervisor]="modelSupervisor"
+                     (saveButtonClick)="onSaveButtonClick(supervisorForm)"
+                     (cancelButtonClick)="onCancelButtonClick()"></app-supervisor-form>
